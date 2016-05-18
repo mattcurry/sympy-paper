@@ -25,6 +25,15 @@
         "sympy_commits": 1443
     },
     {
+        "email": "mrocklin@gmail.com",
+        "github_id": "mrocklin",
+        "institution": "Continuum Analytics, Inc.",
+        "institution_address": "221 W. 6th St. #1550, Austin, TX 78701 USA",
+        "institution_address_siam": "Austin, TX 78701",
+        "name": "Matthew Rocklin",
+        "sympy_commits": 1046
+    },
+    {
         "email": "dtu.amit@gmail.com",
         "github_id": "aktech",
         "institution": "Delhi Technological University",
