@@ -8,6 +8,14 @@
         "sympy_commits": 2636
     },
     {
+        "email": "mattpap@gmail.com",
+        "github_id": "mattpap",
+        "institution": "Continuum Analytics",
+        "institution_address": "221 W. 6th St. #1550, Austin, TX 78701 USA",
+        "name": "Mateusz Paprocki",
+        "sympy_commits": 1450
+    },
+    {
         "email": "ondrej.certik@gmail.com",
         "github_id": "certik",
         "institution": "Los Alamos National Laboratory",
@@ -22,6 +30,14 @@
         "institution_address": "Delhi Technological University, Shahbad Daulatpur, Bawana Road, New Delhi 110042, India ",
         "name": "AMiT Kumar",
         "sympy_commits": 263
+    },
+    {
+        "email": "scolobb@colimite.fr",
+        "github_id": "scolobb",
+        "institution": "??",
+        "institution_address": "??",
+        "name": "Sergiu Ivanov",
+        "sympy_commits": 260
     },
     {
         "email": "jkm@ucdavis.edu",
@@ -45,6 +61,14 @@
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Thilina Rathnayake",
+        "sympy_commits": 186
+    },
+    {
+        "email": "sean.v.775@gmail.com",
+        "github_id": "flacjacket",
+        "institution": "??",
+        "institution_address": "??",
+        "name": "Sean Vig",
         "sympy_commits": 186
     },
     {
