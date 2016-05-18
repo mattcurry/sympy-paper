@@ -12,6 +12,7 @@
         "github_id": "mattpap",
         "institution": "Continuum Analytics, Inc.",
         "institution_address": "221 W. 6th St. #1550, Austin, TX 78701 USA",
+        "institution_address_siam": "Austin, TX 78701",
         "name": "Mateusz Paprocki",
         "sympy_commits": 1450
     },
@@ -36,6 +37,7 @@
         "github_id": "scolobb",
         "institution": "??",
         "institution_address": "??",
+        "institution_address_siam": "??",
         "name": "Sergiu Ivanov",
         "sympy_commits": 260
     },
@@ -66,8 +68,9 @@
     {
         "email": "sean.v.775@gmail.com",
         "github_id": "flacjacket",
-        "institution": "??",
-        "institution_address": "??",
+        "institution": "University of Illinois at Urbana-Champaign",
+        "institution_address": "1110 W Green St, Urbana, IL 61801, USA",
+        "institution_address_siam": "Urbana, IL 61801",
         "name": "Sean Vig",
         "sympy_commits": 186
     },
