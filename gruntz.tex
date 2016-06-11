@@ -48,10 +48,10 @@ dict_keys([exp(x + 2*exp(-x)), exp(x), exp(-x)])
 \end{verbatim}
 
 Next, an arbitrary item $\omega$ is taken from mrv set that converges to zero for
-$x\to\infty$ and doesn't have subexpressions in the given mrv set.  In our case,
-only item $\omega=e^{-x}$ can be accepted.  If such a term is not
+$x\to\infty$ and doesn't have subexpressions in the given mrv set.  If such a term is not
 present in the mrv set (i.e., all terms converge to infinity instead of zero),
-the relation $f(x)\sim {1\over f(x)}$ can be used.
+the relation $f(x)\sim {1\over f(x)}$ can be used.  In the
+considered case, only item $\omega=e^{-x}$ can be accepted.
 
 The next step is to rewrite the mrv set in terms of $\omega=g(x)$.  Every element
 $f(x)$ of the mrv set is rewritten as $A \omega^c$, where
@@ -61,22 +61,19 @@ c = \lim\limits_{x\to\infty} \frac{\log{f(x)}}{\log{g(x)}},
 \qquad
 A = e^{\log f - c \log g}
 \end{equation}
-Note that this step include calculation of more simple limits, for instance
+Note that this step includes calculation of more simple limits, for instance
 \begin{equation}
 	\lim\limits_{x\to\infty} \frac{\log{e^{x + 2 e^{-x}}}}{\log e^{-x}}=
 	\lim\limits_{x\to\infty} \frac{x + 2 e^{-x}}{-x} = -1
 \end{equation}
-In our example we obtain the rewritten mrv set: $\{{1\over\omega},
-\omega, {1\over\omega}e^{2\omega}\}$. This can be done in the SymPy with
+In this example we obtain the rewritten mrv set: $\{{1\over\omega},
+\omega, {1\over\omega}e^{2\omega}\}$. This can be done in SymPy with
 \begin{verbatim}
 >>> from sympy.series.gruntz import mrv, rewrite
 >>> m = mrv(exp(x+2*exp(-x))-exp(x) + 1/x, x)
 >>> w = Symbol('w')
 >>> rewrite(m[1], m[0], x, w)[0]
-     2*w
-1   e      1
-- + ---- - -
-x    w     w
+1/x + exp(2*w)/w - 1/w
 \end{verbatim}
 Then the rewritten subexpressions are
 substituted back into $f(x)$ in~(\ref{gruntz_example_fn})
@@ -95,7 +92,7 @@ f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
     \to 2 + {1\over x}
 \end{equation}
 
-In our example the result ($2+{1\over x}$) still depends on $x$, so the above procedure is
+In this example the result ($2+{1\over x}$) still depends on $x$, so the above procedure is
 repeated until just a value independent of $x$ is obtained. This is the final
 limit. In the above case the limit is $2$, as can be
 verified by SymPy:
