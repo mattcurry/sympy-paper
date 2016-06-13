@@ -1,3 +1,30 @@
+SymPy provides all the basic operations of calculus, such as calculating
+limits, derivatives, integrals, or summations.
+
+Limits are computed with the \verb|limit| function, using the Gruntz
+algorithm~\cite{Gruntz1996limits} for computing symbolic limits and heuristics (a description of the Gruntz algorithm may be found in the supplement).
+For example, the following computes
+$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
+$\infty$ as \verb|oo|.
+\begin{verbatim}
+>>> limit(x*sin(1/x), x, oo)
+1
+\end{verbatim}
+As a more complex example, SymPy computes \[\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
+  1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
+      \right )}}} = e.\]
+\begin{verbatim}
+>>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
+E
+\end{verbatim}
+
+Derivatives are computed with the \verb|diff| function, which recursively uses
+the various differentiation rules.
+\begin{verbatim}
+>>> diff(sin(x)*exp(x), x)
+exp(x)*sin(x) + exp(x)*cos(x)
+\end{verbatim}
+
 Integrals are calculated with the \verb|integrate| function. SymPy
 implements a combination of the Risch
 algorithm~\cite{bronstein2005integration}, table lookups, a reimplementation
@@ -15,13 +42,6 @@ demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left 
 log(log(x) + 1) + 1/(exp(x**2) + 1)
 \end{verbatim}
 
-Derivatives are computed with the \verb|diff| function, which recursively uses
-the various differentiation rules.
-\begin{verbatim}
->>> diff(sin(x)*exp(x), x)
-exp(x)*sin(x) + exp(x)*cos(x)
-\end{verbatim}
-
 Summations are computed with \verb|summation|  using a combination of Gosper's
 algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer
 G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
@@ -34,23 +54,6 @@ are computed with \verb|product| function via a suite of heuristics.
 2**n - 1
 >>> summation(i*factorial(i), (i, 1, n))
 n*factorial(n) + factorial(n) - 1
-\end{verbatim}
-
-Limits are computed with the \verb|limit| function, using the Gruntz
-algorithm~\cite{Gruntz1996limits} for computing symbolic limits and heuristics (a description of the Gruntz algorithm may be found in the supplement).
-For example, the following computes
-$\lim\limits_{x\to \infty} x\sin(\frac{1}{x})=1$. Note that SymPy denotes
-$\infty$ as \verb|oo|.
-\begin{verbatim}
->>> limit(x*sin(1/x), x, oo)
-1
-\end{verbatim}
-As a more complex example, SymPy computes \[\lim\limits_{x\to 0}{\left(2 e^{\frac{1 - \cos{\left (x \right )}}{\sin{\left (x \right )}}} -
-  1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
-      \right )}}} = e.\]
-\begin{verbatim}
->>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
-E
 \end{verbatim}
 
 Integrals, derivatives, summations, products, and limits that cannot be
