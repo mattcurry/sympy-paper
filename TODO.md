@@ -77,3 +77,11 @@ citations and "URL citations".
 - [x] Something on printers
 
 - [x] Conclusion
+
+## PeerJ:
+
+  [ ] Add keywords
+
+  [ ] Switch to author-year citations
+
+  [ ] Merge or decide how to refer to supplement

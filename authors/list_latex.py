@@ -9,12 +9,9 @@ author_list = load(open("authors.json"))
 author_list = list(filter(lambda x: x["sympy_commits"] > 0, author_list))
 
 with open("../authors.tex", "w", encoding='utf-8') as f:
-    f.write(u"\\author{%\n")
     for n, author in enumerate(author_list):
-        f.write((u"%s%%\n" % author["name"]))
-        f.write(u"\\thanks{%s, %s (\\email{%s}).}%%\n" \
-                % (author["institution"], author["institution_address_siam"],
+        f.write((u"\\author[%d]{%s}%%\n" % (n+1, author["name"])))
+    for n, author in enumerate(author_list):
+        f.write(u"\\affil[%d]{%s, %s (\\email{%s}).}%%\n" \
+                % (n+1, author["institution"], author["institution_address_siam"],
                     author["email"]))
-        if n < len(author_list) - 1:
-            f.write(u"\\and\n")
-    f.write(u"}\n")
