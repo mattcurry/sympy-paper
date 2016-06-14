@@ -190,6 +190,15 @@
         "sympy_commits": 46
     },
     {
+        "email": "stepan.roucka@mff.cuni.cz",
+        "github_id": "rouckas",
+        "institution": "Faculty of Mathematics and Physics, Charles University in Prague",
+        "institution_address": "V Holešovičkách 2, 180 00 Praha, Czech Republic",
+        "institution_address_siam": "V Holešovičkách 2, 180 00 Praha, Czech Republic",
+        "name": "Štěpán Roučka",
+        "sympy_commits": 24
+    },
+    {
         "email": "ashutosh.saboo96@gmail.com",
         "github_id": "ashutoshsaboo",
         "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
