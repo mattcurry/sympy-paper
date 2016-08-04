@@ -171,10 +171,9 @@ t
 
 Some of the common assumptions that SymPy allows are \texttt{positive},
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
-\texttt{prime} and \texttt{commutative}.\footnote{If $A$ and
-$B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
-$A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked with the
-\verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
+\texttt{prime} and \texttt{commutative}. Assumptions on any object can
+be checked with the \verb|is_|\texttt{\textit{assumption}} attributes,
+like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
 simplifications can be performed. They are not required to make the domain match
@@ -184,7 +183,11 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}.  Note that \texttt{False}
+\texttt{True}, \texttt{False}, and \texttt{None}.\footnote{Special
+case is the \texttt{commutative} assumption: it can't be \texttt{None}.
+Unless a Symbol is created with \texttt{commutative=False}, it's
+assumed to commute with any other object with respect
+to the multiplication operation.} Note that \texttt{False}
 is returned if the SymPy object doesn't or can't have the assumption.
 For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
 \texttt{False} for the imaginary unit \texttt{I}.
