@@ -1,4 +1,4 @@
-all: authors.tex pprint tex supplement
+all: authors.tex pprint tex supplement rebuttal
 
 tex:
 	pdflatex -shell-escape --halt-on-error paper.tex
@@ -11,6 +11,10 @@ supplement:
 	bibtex supplement
 	pdflatex -shell-escape --halt-on-error supplement.tex
 	pdflatex -shell-escape --halt-on-error supplement.tex
+
+rebuttal:
+	pdflatex -shell-escape --halt-on-error rebuttal.tex
+	pdflatex -shell-escape --halt-on-error rebuttal.tex
 
 authors.tex: authors/list_latex.py authors/authors.json
 	cd authors; ./list_latex.py
