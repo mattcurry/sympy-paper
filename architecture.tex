@@ -102,7 +102,10 @@ tuple, indicating that it is a leaf node.
 \end{verbatim}
 
 A useful way to view an expression tree is using the \texttt{srepr} function, which
-returns a string representation of an expression as valid Python code
+returns a string representation of an expression as valid Python code\footnote{
+The \texttt{dotprint} function from the \texttt{sympy.printing.dot} package
+prints output to dot format, which can be rendered with Graphviz to
+visualize expression trees graphically.}
 with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
