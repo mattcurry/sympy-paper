@@ -68,12 +68,6 @@ mpf('0.100000000000000000000192874984794')
 0.100000000000000000000192874985
 \end{verbatim}
 
-For pure numerical computing, it is convenient to use mpmath directly
-with \texttt{from mpmath import *}.  Nevertheless, it is best to avoid such an
-import statement when using SymPy simultaneously, since the names of numerical
-functions such as \texttt{exp} will collide the symbolic counterparts
-in SymPy.
-
 Like SymPy, mpmath is a pure Python library.
 Internally, mpmath represents a floating-point number
 ${(-1)}^s x \cdot 2^y$ by a tuple $(s, x, y, b)$ where
