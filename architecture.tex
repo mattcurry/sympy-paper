@@ -10,7 +10,12 @@ user-facing code as appropriate.
 % symbols, various ways to declare them
 
 The following statement
-imports all SymPy functions into the global Python namespace.
+imports all SymPy functions into the global Python namespace.\footnote{
+Nevertheless, it is best to avoid such wildcard import statements
+in production code, as they make it unclear which names are present
+in the namespace and injected names could clash with already existing
+imports from another package.  For example, both SymPy and standard
+Python \texttt{math} library define the \texttt{exp} function.}
 From here on, all examples in this paper assume that this statement has been
 executed.\footnote{All examples in this paper use SymPy version 1.0.}
 
@@ -97,7 +102,10 @@ tuple, indicating that it is a leaf node.
 \end{verbatim}
 
 A useful way to view an expression tree is using the \texttt{srepr} function, which
-returns a string representation of an expression as valid Python code
+returns a string representation of an expression as valid Python code\footnote{
+The \texttt{dotprint} function from the \texttt{sympy.printing.dot} package
+prints output to dot format, which can be rendered with Graphviz to
+visualize expression trees graphically.}
 with all the nested class constructor calls to create the given expression.
 \begin{verbatim}
 >>> srepr(expr)
@@ -171,10 +179,9 @@ t
 
 Some of the common assumptions that SymPy allows are \texttt{positive},
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
-\texttt{prime} and \texttt{commutative}.\footnote{If $A$ and
-$B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
-$A\cdot B$ and $B\cdot A$ distinct.} Assumptions on any object can be checked with the
-\verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
+\texttt{prime} and \texttt{commutative}. Assumptions on any object can
+be checked with the \verb|is_|\texttt{\textit{assumption}} attributes,
+like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
 simplifications can be performed. They are not required to make the domain match
@@ -184,7 +191,11 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}.  Note that \texttt{False}
+\texttt{True}, \texttt{False}, and \texttt{None}.\footnote{Special
+case is the \texttt{commutative} assumption: it can't be \texttt{None}.
+Unless a Symbol is created with \texttt{commutative=False}, it's
+assumed to commute with any other object with respect
+to the multiplication operation.} Note that \texttt{False}
 is returned if the SymPy object doesn't or can't have the assumption.
 For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
 \texttt{False} for the imaginary unit \texttt{I}.
@@ -215,17 +226,18 @@ based on the assumptions of their arguments. For instance, if \texttt{x} and
 \subsection{Extensibility}
 
 While the core of SymPy is relatively small, it has been extended to a wide variety
-of domains by a broad range of contributors.  This is due in part because the
-same language, Python, is used both for the internal implementation and the
-external usage by users.  All of the extensibility capabilities available to
+of domains by a broad range of contributors.
+This is due, in part, to the fact that the same language, Python,
+is used both for the internal implementation and the external usage by users.
+All of the extensibility capabilities available to
 users are also utilized by SymPy itself. This eases the transition pathway from
 SymPy user to SymPy developer.
 
 The typical way to create a custom SymPy object is to subclass an existing
 SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
-\texttt{Function}. All SymPy classes used for expression trees\footnote{Some
+\texttt{Function}. All SymPy classes\footnote{Some
   internal classes, such as those used in the polynomial module, do not follow
-  this rule for efficiency reasons.} should be subclasses of the base class
+  this rule for efficiency reasons.} used for expression trees should be subclasses of the base class
 \texttt{Basic}, which defines some basic methods for symbolic expression
 trees. \texttt{Expr} is the subclass for mathematical expressions that can be
 added and multiplied together. Instances of \texttt{Expr} typically represent
