@@ -9,13 +9,14 @@ user-facing code as appropriate.
 
 % symbols, various ways to declare them
 
-The following statement
-imports all SymPy functions into the global Python namespace.\footnote{
-Nevertheless, it is best to avoid such wildcard import statements
-in production code, as they make it unclear which names are present
-in the namespace and injected names could clash with already existing
-imports from another package.  For example, both SymPy and standard
-Python \texttt{math} library define the \texttt{exp} function.}
+The following statement imports all SymPy functions into the global Python
+namespace.\footnote{\texttt{import *} has been used here to aid the
+  readability of the paper, but is best to avoid such wildcard import
+  statements in production code, as they make it unclear which names are
+  present in the namespace. Furthermore, imported names could clash with
+  already existing imports from another package. For example, SymPy, the
+  standard Python \texttt{math} library, and NumPy all define the \texttt{exp}
+  function, but only the SymPy one will work with SymPy symbolic expressions.}
 From here on, all examples in this paper assume that this statement has been
 executed.\footnote{All examples in this paper use SymPy version 1.0.}
 

@@ -207,7 +207,19 @@ The code will break because sympy has it's own sin that gets imported that doesn
 I tested using Sympy 1.0 and Python 3.
 
 \begin{solution}
+We have used \verb|import *| on purpose, as we felt that explicitly importing
+names would unnecessarily distract from the content of the paper, but the
+reviewer is absolutely right that this is bad practice for actual code. We
+have added a footnote:
 
+\begin{quote}\texttt{import *} has been used here to aid the
+  readability of the paper, but is best to avoid such wildcard import
+  statements in production code, as they make it unclear which names are
+  present in the namespace. Furthermore, imported names could clash with
+  already existing imports from another package. For example, SymPy, the
+  standard Python \texttt{math} library, and NumPy all define the \texttt{exp}
+  function, but only the SymPy one will work with SymPy symbolic expressions.
+\end{quote}
 \end{solution}
 \question Later in the text, a similar assertion is made by you (line 485) in reference to a different package that may break sympy.
 
@@ -241,6 +253,7 @@ the phrase 'Expression tree' is cited but this is not the first time you've used
 \end{solution}
 \question Page 8: Footnote 5
 The line reads
+
 The measure parameter of the simplify function lets specify the Python function used to determine how
 
 should this be..
