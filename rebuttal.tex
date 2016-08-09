@@ -1,5 +1,6 @@
 \documentclass[answers,12pt]{exam}
 \usepackage{xcolor}
+\usepackage{hyperref}
 
 \unframedsolutions
 \shadedsolutions
@@ -7,7 +8,7 @@
 
 \begin{document}
 
-Dear Editor, \bigskip
+Dear Editors, \bigskip
 
 Please read below our answer about the
 questions made by you and reviewers. I hope that you agree
@@ -19,16 +20,67 @@ The authors
 
 \pagebreak
 
-\section{Editor}
+\section{Comments from Editor}
 
 \begin{questions}
-\question Spell foo as bar
+\question I found the \url{http://live.sympy.org/} site very convenient for trying things
+out in SymPy, but it is only mentioned in the supplement, which might be
+overlooked by readers. I suggest moving that section into the main paper, as
+it provides a great way to play along with the examples while reading the
+paper.
 \begin{solution}
- We opted to follow the ABC style of ...
+  % TODO
 \end{solution}
-\question  Include reference to Really, Important and Stuff (2010)
+\question The Basic Usage section omits what I think is an important point:
+how does one distinguish between evaluating exp(1) in Python and exp(1) in
+SymPy? In other words, how are symbolic constants specified?
 \begin{solution}
-Section 2 has been updated and the discussion ...
+  % TODO. I'm unclear what the editor is asking here.
+\end{solution}
+\question The first
+thing I tried after seeing Table 2 (simplication functions) did not work:
+
+\begin{verbatim}
+>>> trigsimp (exp( Matrix(2, 2, [0, -y, y, 0])) )
+\end{verbatim}
+fails to recognize cos and
+sin. Am I expecting too much?
+\begin{solution}
+  This indeed does not work. The implementation in \verb|trigsimp| primarily
+  thus far has focused on transforming trigonometric functions into other
+  trigonometric functions. The ability to simplify complex exponentials is
+  something that we would like to work.
+  \href{https://github.com/sympy/sympy/issues/11459}{Issue 11459} in our
+  public issue tracker tracks this feature.
+\end{solution}
+\question Section 3.6: are eigenvalues and singular
+values included? If not, why not?
+\begin{solution}
+  % TODO
+\end{solution}
+\question Like one of the referees, I expected to
+see MPFR mentioned in Section 4.1, at least to mention the pros and cons and
+say why it isn’t used.
+\begin{solution}
+  % TODO
+\end{solution}
+\question Section 4.1: please state whether the syntax for
+functions in mpmath is identical, or not, to that in Sympy.
+\begin{solution}
+  % TODO
+\end{solution}
+\question Unless I have
+missed something, a weakness of the paper is that speed is mentioned only
+twice, on lines 496 and 666. My assumption is that SymPy is slow compared with
+its commercial competitors. Please comment on the speed issue, and not just in
+the conclusions.
+\begin{solution}
+  % TODO
+\end{solution}
+\question Editors are needed for [20].
+\begin{solution}
+  % TODO: I do not know how to make bibtex (with apalike) show the editor
+  % here.
 \end{solution}
 \end{questions}
 
