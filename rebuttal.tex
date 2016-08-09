@@ -145,19 +145,118 @@ Computation or some such?
 \end{solution}
 \end{questions}
 
-\section{Reviewer 2}
+\section{Reviewer 2 (Michael Croucher)}
 
+\subsection{Basic reporting}
+No Comments.
+
+\subsection{Experimental design}
+No Comments
+
+\subsection{Validity of the findings}
 \begin{questions}
-\question one
+\question There is a minor problem with the supplementary notebook
+
+The final cell is
+
+\begin{verbatim}
+>>> circuit_plot(fourier, nqubits=3);
+plt.savefig('./images/circuitplot-qft.pdf', format='pdf')
+\end{verbatim}
+
+This fails if the user does not have an images folder.
 \begin{solution}
- We opted to follow the ABC style of ...
+We have added
+
+\begin{verbatim}
+%mkdir -p './images'
+\end{verbatim}
+
+to the cell before the call to \verb|savefig|.
 \end{solution}
-\question  two
+
+\question I suggest removing the >>> before each line. It looks strange in a notebook.
 \begin{solution}
-Section 2 has been updated and the discussion ...
+We have done this.
 \end{solution}
 \end{questions}
+\subsection{Comments for the author}
+Sympy is a superb package and I am happy to see that there is now a paper that describes its current state. Here are a few comments that you may wish to consider before publication.
 
+\begin{questions}
+\question Line 105
+It is generally frowned upon to import all symbols from a Python module in this manner.
+I understand why you are doing it in this paper, it makes subsequent sympy commands less verbose.
+It might, however, encourage bad practice. It may also lead to a poor user experience for newbies.
+
+For example, say I had the following code
+
+\begin{verbatim}
+𝔬mνmpyimportsin,arraytest=array(123)sin(test)
+\end{verbatim}
+[sic]
+
+I decide that I want to use sympy for something and, following your example, do
+
+\begin{verbatim}
+𝔬mνmpyimportsin,array𝔬msympyimport⋅test=array(123)sin(test)x,y,z=symbols(′xyz′)
+\end{verbatim}
+[sic]
+
+The code will break because sympy has it's own sin that gets imported that doesn't work on numpy arrays. As a newbie, I might not know this.
+I tested using Sympy 1.0 and Python 3.
+
+\begin{solution}
+
+\end{solution}
+\question Later in the text, a similar assertion is made by you (line 485) in reference to a different package that may break sympy.
+
+\question Lines 151-153
+Minor comment: srepr is a useful command. As someone who also uses Mathematica, I wonder if there is a sympy version of the TreeForm command which produces a visualisation of the expression tree, or maybe an output format that I could pass to a graph library for visualisation?
+
+\begin{solution}
+
+\end{solution}
+\question Section 2.3 - Assumptions
+Is there a way of the user listing all available assumptions?
+
+\begin{solution}
+
+\end{solution}
+\question Section 2.4
+Line 216 - This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.
+
+This reads badly. Perhaps the following might be better?
+
+This is due, in part, to the fact that the same language, Python, is used both for the internal implementation and the external usage by users.
+
+\begin{solution}
+
+\end{solution}
+\question Line 221:
+the phrase 'Expression tree' is cited but this is not the first time you've used it. Perhaps cite earlier? Line 129 perhaps?
+
+\begin{solution}
+
+\end{solution}
+\question Page 8: Footnote 5
+The line reads
+The measure parameter of the simplify function lets specify the Python function used to determine how
+
+should this be..
+
+The measure parameter of the simplify function lets the user specify the Python function used to determine how
+
+\begin{solution}
+
+\end{solution}
+\question Section 4.1
+Should mpmath be cited here?
+
+\begin{solution}
+
+\end{solution}
+\end{questions}
 
 \section{Reviewer 3}
 
