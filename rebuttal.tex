@@ -84,16 +84,64 @@ the conclusions.
 \end{solution}
 \end{questions}
 
-\section{Reviewer 1}
-
+\section{Reviewer 1 (James Davenport)}
+\subsection{Basic reporting}
 \begin{questions}
-\question one
+\question Generally good. A part that confused me is the assertion (footnote 3) that "If
+A and B are Symbols created with commutative=False then SymPy will keep A·B
+and B·A distinct." Does that mean that BOTH of them must be created this way,
+and that A and x (if x is created normally) will commute? Is there any way to
+declare commutators? How does one guarantee that other pieces of code, e.g.
+Gaussian elimination, respect non-commutativity?
 \begin{solution}
- We opted to follow the ABC style of ...
+  % TODO.
 \end{solution}
-\question  two
+
+\question References reasonable, though [8], an excellent reference, makes almost
+precisely the opposite point to that for which it is cited --- ``simplification
+is not well-defined''. I think the authors are trying to follow [8]'s
+definition of simplification.
 \begin{solution}
-Section 2 has been updated and the discussion ...
+  % TODO. I agree that [8] is a bad reference, because we are not actually
+  % using their definition. The aim was just to have a reference for
+  % "simplification is not well-defined", but that paper aims to define it.
+  % What is a better reference here? Perhaps Moses [19] from the Carette
+  % paper? Perhaps we can remove the reference (the referenced statement is
+  % "it must be emphasized that simplification is not a rigorously defined
+  % mathematical operation").
+\end{solution}
+\end{questions}
+
+\subsection{Experimental design}
+\begin{questions}
+\question The referee is asked to comment whether the research is withinthe scope of the
+journal, defined as "PeerJ is an Open Access, peer-reviewed, scholarly
+journal. It considers articles in the Biological Sciences, Medical Sciences,
+and Health Sciences. PeerJ does not publish in the Physical Sciences, the
+Mathematical Sciences, the Social Sciences, or the Humanities (except where
+articles in those areas have clear applicability to the core areas of
+Biological, Medical or Health sciences)."
+
+Hence I fear a software description on the maths/cmputing boundary with no
+cited applications is out of scope.
+
+\begin{solution}
+  The editor has confirmed that the paper is in scope for PeerJ Computer Science.
+\end{solution}
+\end{questions}
+
+\subsection{Validity of the findings}
+\begin{questions}
+\question There are no findings as such, since this is a software description, not an
+experimental paper.
+\end{questions}
+
+\subsection{Comments for the author}
+\begin{questions}
+\question Nice paper - pity it seems totally out of scope. Why not J. Symbolic
+Computation or some such?
+\begin{solution}
+  See above.
 \end{solution}
 \end{questions}
 
