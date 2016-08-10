@@ -584,57 +584,58 @@ Obviously, like your own example, these are problematic because a part of the co
 include how an interested reader can see SymPy's steps of computation:
 
 \begin{verbatim}
-     >>> import os
-     >>> os.environ['SYMPY_DEBUG'] = 'True'
-     >>> from sympy import *
-     >>> x = symbols('x')
-     >>> limit(sin(x)/x, x, 0)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(1, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     limitinf(x*sin(1/x), x) = 1
-     +-mrv_leadterm(_p*sin(1/_p), _p) = (1, 0)
-     | +-mrv(_p*sin(1/_p), _p) = ({_p: _Dummy_14}, {}, _Dummy_14*sin(1/_Dummy_14))
-     | | +-mrv(_p, _p) = ({_p: _Dummy_14}, {}, _Dummy_14)
-     | | +-mrv(sin(1/_p), _p) = ({_p: _Dummy_15}, {}, sin(1/_Dummy_15))
-     | |   +-mrv(1/_p, _p) = ({_p: _Dummy_15}, {}, 1/_Dummy_15)
-     | |     +-mrv(_p, _p) = ({_p: _Dummy_15}, {}, _Dummy_15)
-     | +-rewrite(_Dummy_14*sin(1/_Dummy_14), {exp(_p): _Dummy_14}, {}, _p, _w)
-             = (sin(_w)/_w, -_p)
-     | | +-sign(_p, _p) = 1
-     | | +-limitinf(1, _p) = 1
-     | +-calculate_series(sin(_w)/_w, _w) = 1
-     |   +-limitinf(_w, _w) = oo
-     |   | +-mrv_leadterm(_w, _w) = (1, -1)
-     |   | | +-mrv(_w, _w) = ({_w: _Dummy_18}, {}, _Dummy_18)
-     |   | | +-rewrite(_Dummy_18, {exp(_w): _Dummy_18}, {}, _w, _w) = (1/_w, -_w)
-     |   | | | +-sign(_w,_w)=1
-     |   | | | +-limitinf(1, _w) = 1
-     |   | | +-calculate_series(1/_w, _w) = 1/_w
-     |   | +-sign(-1, _w) = -1
-     |   | +-sign(1, _w) = 1
-     |   +-limitinf(_w, _w) = oo
-     |   +-limitinf(_w, _w) = oo
-     |   +-limitinf(_w, _w) = oo
-     +-sign(0, _p) = 0
-     +-limitinf(1, _p) = 1
+>>> import os
+>>> os.environ['SYMPY_DEBUG'] = 'True'
+>>> from sympy import *
+sympy/external/importtools.py:145: UserWarning: gmpy2 module is not installed
+  warnings.warn("%s module is not installed" % module, UserWarning)
+>>> x = symbols('x')
+>>> limit(sin(x)/x, x, 0)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(1, 1, None, None)] with symbol _w 
+DEBUG: returned None
+limitinf(x*sin(1/x), x) = 1
++-mrv_leadterm(_p*sin(1/_p), _p) = (1, 0)
+| +-mrv(_p*sin(1/_p), _p) = ({_p: _Dummy_19}, {}, _Dummy_19*sin(1/_Dummy_19))
+| | +-mrv(_p, _p) = ({_p: _Dummy_19}, {}, _Dummy_19)
+| | +-mrv(sin(1/_p), _p) = ({_p: _Dummy_20}, {}, sin(1/_Dummy_20))
+| |   +-mrv(1/_p, _p) = ({_p: _Dummy_20}, {}, 1/_Dummy_20)
+| |     +-mrv(_p, _p) = ({_p: _Dummy_20}, {}, _Dummy_20)
+| +-rewrite(_Dummy_19*sin(1/_Dummy_19), {exp(_p): _Dummy_19}, {}, _p, _w) = (sin(_w)/_w, -_p)
+| | +-sign(_p, _p) = 1
+| | +-limitinf(1, _p) = 1
+| +-calculate_series(sin(_w)/_w, _w) = 1
+|   +-limitinf(_w, _w) = oo
+|   | +-mrv_leadterm(_w, _w) = (1, -1)
+|   | | +-mrv(_w, _w) = ({_w: _Dummy_23}, {}, _Dummy_23)
+|   | | +-rewrite(_Dummy_23, {exp(_w): _Dummy_23}, {}, _w, _w) = (1/_w, -_w)
+|   | | | +-sign(_w, _w) = 1
+|   | | | +-limitinf(1, _w) = 1
+|   | | +-calculate_series(1/_w, _w) = 1/_w
+|   | +-sign(-1, _w) = -1
+|   | +-sign(1, _w) = 1
+|   +-limitinf(_w, _w) = oo
+|   +-limitinf(_w, _w) = oo
++-sign(0, _p) = 0
++-limitinf(1, _p) = 1
+1
 \end{verbatim}
 
 Emphasize that the environment variable \texttt{SYMPY\_DEBUG} must be set before importing SymPy for the first time.
