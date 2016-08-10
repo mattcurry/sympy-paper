@@ -206,16 +206,20 @@ It might, however, encourage bad practice. It may also lead to a poor user exper
 For example, say I had the following code
 
 \begin{verbatim}
-𝔬mνmpyimportsin,arraytest=array(123)sin(test)
+from numpy import sin, array
+test=array(123)
+sin(test)
 \end{verbatim}
-[sic]
 
 I decide that I want to use sympy for something and, following your example, do
 
 \begin{verbatim}
-𝔬mνmpyimportsin,array𝔬msympyimport⋅test=array(123)sin(test)x,y,z=symbols(′xyz′)
+from numpy import sin, array
+from sympy import *
+x,y,z=symbols(′xyz′)
+test=array(123)
+sin(test)
 \end{verbatim}
-[sic]
 
 The code will break because sympy has it's own sin that gets imported that doesn't work on numpy arrays. As a newbie, I might not know this.
 I tested using Sympy 1.0 and Python 3.
