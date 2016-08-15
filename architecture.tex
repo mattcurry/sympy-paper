@@ -192,11 +192,7 @@ $\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
 
 The assumptions system additionally has deductive capabilities. The
 assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}.\footnote{Special
-case is the \texttt{commutative} assumption: it can't be \texttt{None}.
-Unless a Symbol is created with \texttt{commutative=False}, it's
-assumed to commute with any other object with respect
-to the multiplication operation.} Note that \texttt{False}
+\texttt{True}, \texttt{False}, and \texttt{None}. Note that \texttt{False}
 is returned if the SymPy object doesn't or can't have the assumption.
 For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
 \texttt{False} for the imaginary unit \texttt{I}.
