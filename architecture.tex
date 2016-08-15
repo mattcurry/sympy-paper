@@ -180,9 +180,12 @@ t
 
 Some of the common assumptions that SymPy allows are \texttt{positive},
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
-\texttt{prime} and \texttt{commutative}. Assumptions on any object can
-be checked with the \verb|is_|\texttt{\textit{assumption}} attributes,
-like \verb|t.is_positive|.
+\texttt{prime} and \texttt{commutative}\footnote{SymPy assumes that two
+  expressions $A$ and $B$ commute with each other multiplicatively, that is,
+  $A\cdot B=B\cdot A$, unless they both have \texttt{commutative=False}. Many
+  algorithms in SymPy require special consideration to work correctly with
+  noncommutative products.}. Assumptions on any object can be checked with the
+\verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
 simplifications can be performed. They are not required to make the domain match
