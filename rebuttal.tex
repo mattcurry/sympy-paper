@@ -96,7 +96,18 @@ and that A and x (if x is created normally) will commute? Is there any way to
 declare commutators? How does one guarantee that other pieces of code, e.g.
 Gaussian elimination, respect non-commutativity?
 \begin{solution}
-  % TODO.
+  We have clarified the footnote. Both expressions must be set as
+  \texttt{commutative=False}. Internally, in \texttt{Mul}, the ``commutative
+  part'' of an expression is pulled out to the front and canonically ordered,
+  and the ``noncommutative part'' is not reordered.
+
+Commutators are implemented in the \texttt{sympy.physics.quantum} module and
+are discussed in section 5.2.
+
+Different algorithms do generally require special consideration for
+noncommutative expressions to be correct. If an algorithm implicitly assumes
+that expressions commute, it may return incorrect results when given a
+noncommutative expression.
 \end{solution}
 
 \question References reasonable, though [8], an excellent reference, makes almost
