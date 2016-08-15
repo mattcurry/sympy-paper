@@ -62,7 +62,7 @@ values included? If not, why not?
 \end{solution}
 \question Like one of the referees, I expected to
 see MPFR mentioned in Section 4.1, at least to mention the pros and cons and
-say why it isn’t used.
+say why it isn't used.
 \begin{solution}
   % TODO
 \end{solution}
@@ -239,7 +239,7 @@ Later in the text, a similar assertion is made by you (line 485) in reference to
 We have also removed the reference to \texttt{from mpmath import *} from line 485.
 \end{solution}
 
-\question Lines 151-153
+\question Lines 151--153
 Minor comment: srepr is a useful command. As someone who also uses Mathematica, I wonder if there is a sympy version of the TreeForm command which produces a visualisation of the expression tree, or maybe an output format that I could pass to a graph library for visualisation?
 
 \begin{solution}
@@ -247,7 +247,7 @@ We have added a footnote about the \texttt{dotprint} function (footnote 3),
 which outputs expressions in the dot format that can be rendered with Graphviz.
 \end{solution}
 
-\question Section 2.3 - Assumptions
+\question Section 2.3: Assumptions
 Is there a way of the user listing all available assumptions?
 
 \begin{solution}
@@ -258,7 +258,7 @@ private method). The recommended list is in the SymPy documentation, at
 \url{http://docs.sympy.org/latest/modules/core.html#module-sympy.core.assumptions}.
 \end{solution}
 \question Section 2.4
-Line 216 - This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.
+Line 216: This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.
 
 This reads badly. Perhaps the following might be better?
 
@@ -268,7 +268,7 @@ This is due, in part, to the fact that the same language, Python, is used both f
 We have changed the sentence as suggested.
 \end{solution}
 \question Line 221:
-the phrase 'Expression tree' is cited but this is not the first time you've used it. Perhaps cite earlier? Line 129 perhaps?
+the phrase `Expression tree' is cited but this is not the first time you've used it. Perhaps cite earlier? Line 129 perhaps?
 
 \begin{solution}
 The footnote here was in reference to the SymPy classes. We have moved the
@@ -298,7 +298,7 @@ We have added a citation for mpmath.
 
 \begin{questions}
 
-\question Explaining what Python is (lines 70–72) should go before talking about SymPy as a “CAS written in Python”. Further, the paper assumes a moderate familiarity with Python (for example, Python’s console, OOP, and exceptions), and this should be specified. There should be a short note on the used Python console (>>> is the prompt, with the results of computation following immediately in the lines after it). The citation [25] from line 65 should be moved next to “Python” in line 70.
+\question Explaining what Python is (lines 70--72) should go before talking about SymPy as a ``CAS written in Python''. Further, the paper assumes a moderate familiarity with Python (for example, Python's console, OOP, and exceptions), and this should be specified. There should be a short note on the used Python console (\texttt{>>>} is the prompt, with the results of computation following immediately in the lines after it). The citation [25] from line 65 should be moved next to ``Python'' in line 70.
 \begin{solution}
 
 \end{solution}
@@ -308,32 +308,39 @@ We have added a citation for mpmath.
 
 \end{solution}
 
-\question The plural “CASs” is usually written as “CASes” or “CAS’s”, with the latter being somewhat problematic due to it looking like it implies posses- sion.
+\question The plural ``CASs'' is usually written as ``CASes'' or ``CAS's'', with the latter being somewhat problematic due to it looking like it implies possession.
 \begin{solution}
 
 \end{solution}
 
-\question Line 88 mentions “printers”, but it doesn’t state what they are, which is confusing for those readers that are yet to learn the concept in section 3.4.
+\question Line 88 mentions ``printers'', but it doesn't state what they are, which is confusing for those readers that are yet to learn the concept in section 3.4.
 \begin{solution}
 
 \end{solution}
 
-\question Also in line 88, Jupyter’s citation [30] is actually about IPython and should be replaced by a more up-to-date version.
+\question Also in line 88, Jupyter's citation [30] is actually about IPython and should be replaced by a more up-to-date version.
 \begin{solution}
 
 \end{solution}
 
-\question The word “software” in line 91 is ambiguous; “library” or “package” would make a better choice.
+\question The word ``software'' in line 91 is ambiguous; ``library'' or ``package'' would make a better choice.
 \begin{solution}
 
 \end{solution}
 
-\question Lines 91–96: “we discuss/look at/etc” is the preferred form, instead of “section discusses/looks at/etc”.
+\question Lines 91--96: ``we discuss/look at/etc'' is the preferred form, instead of ``section discusses/looks at/etc''.
 \begin{solution}
 
 \end{solution}
 
-\question The paragraph in lines 103–105 should be moved to the introduction, and the footnote from line 104 should be added to that paragraph as a full-blown sentence, expanded by all the relevant technical information (Python version, OS,...). Given that the end of life for Python 2 is 2020., a comment on whether all the presented examples work in both Python 2 and 3 should be included as well. Further, emphasise that wildcard imports, “import *”, should almost never be used in programs (see PEP 8, the item “wildcard imports”). The same goes for the import mentioned in lines 484–487.
+\question The paragraph in lines 103--105 should be moved to the introduction,
+and the footnote from line 104 should be added to that paragraph as a
+full-blown sentence, expanded by all the relevant technical information
+(Python version, OS, \ldots). Given that the end of life for Python 2 is
+2020., a comment on whether all the presented examples work in both Python 2
+and 3 should be included as well. Further, emphasise that wildcard imports,
+``\texttt{import *}'', should almost never be used in programs (see PEP 8, the
+item ``wildcard imports''). The same goes for the \texttt{import} mentioned in lines 484--487.
 \begin{solution}
 
 \end{solution}
@@ -343,27 +350,27 @@ We have added a citation for mpmath.
 
 \end{solution}
 
-\question In line 121 the word “stored” should be replaced by “used as keys”.
+\question In line 121 the word ``stored'' should be replaced by ``used as keys''.
 \begin{solution}
 
 \end{solution}
 
-\question Whatdotheauthorsmeanby“therebypermittingfeaturessuchascaching” in line 122? Caching can be done for mutable types as well, just not through hashing. 2
+\question What do the authors mean by ``thereby permitting features such as caching'' in line 122? Caching can be done for mutable types as well, just not through hashing.
 \begin{solution}
 
 \end{solution}
 
-\question There is no need to repeat “(CAS)” in line 124, as it was already given in line 64.
+\question There is no need to repeat ``(CAS)'' in line 124, as it was already given in line 64.
 \begin{solution}
 
 \end{solution}
 
-\question In the same line, the word “represents” should be replaced by “stores”.
+\question In the same line, the word ``represents'' should be replaced by ``stores''.
 \begin{solution}
 
 \end{solution}
 
-\question In line 184, “symbols are” should be replaced by “t is” (the general rule is already given in line 179).
+\question In line 184, ``symbols are'' should be replaced by ``\texttt{t} is'' (the general rule is already given in line 179).
 \begin{solution}
 
 \end{solution}
@@ -373,96 +380,108 @@ We have added a citation for mpmath.
 
 \end{solution}
 
-\question The footnote 4 should be moved from line 221 to line 222, right after “Basic”.
+\question The footnote 4 should be moved from line 221 to line 222, right after ``Basic''.
 \begin{solution}
 
 \end{solution}
 
-\question The part “which defines some basic methods for symbolic expression trees” should be removed from line 222, as it was already given in line 130.
+\question The part ``which defines some basic methods for symbolic expression trees'' should be removed from line 222, as it was already given in line 130.
 \begin{solution}
 
 \end{solution}
 
-\question In line 225, the sentence “Not all SymPy classes are subclasses of Expr.” sounds confusing as a reader new to SymPy wouldn’t expect, for example, symbols to inherit “Expr”. It would be better to expand this, for example “Most of the SymPy classes (including Symbol) are subclasses of Expr, but there are exceptions to this rule”.
+\question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
 \begin{solution}
 
 \end{solution}
 
-\question The title “Features” in line 276 is ambiguous, as a “feature” has no precise meaning in Python (or even software libraries in general). It should be replaced by “Packages and modules” or a similar more precise wording. The same goes for ‘feature” in most other places in the paper (for exam- ple, the caption of Table 1. and line 495). It would be very useful to also include actual names of the packages/modules in Table 1., as well as in any section covering those packages/modules.
+\question The title ``Features'' in line 276 is ambiguous, as a ``feature''
+has no precise meaning in Python (or even software libraries in general). It
+should be replaced by ``Packages and modules'' or a similar more precise
+wording. The same goes for ``feature'' in most other places in the paper (for
+example, the caption of Table 1.\ and line 495). It would be very useful to also include actual names of the packages/modules in Table 1., as well as in any section covering those packages/modules.
 \begin{solution}
 
 \end{solution}
 
-\question The sets support listing is unnaturally split in two by the “This includes...” sentence which would fit better in parentheses.
+\question The sets support listing is unnaturally split in two by the ``This includes\ldots'' sentence which would fit better in parentheses.
 \begin{solution}
 
 \end{solution}
 
-\question Line 355, add a sentence explaining that in SymPy str == repr, because in Python repr is used to get an unambiguous valid Python code repre- sentation, while the return value of str is meant to be human-readable.
+\question Line 355, add a sentence explaining that in SymPy \texttt{str == repr}, because in Python \texttt{repr} is used to get an unambiguous valid Python code representation, while the return value of \texttt{str} is meant to be human-readable.
 \begin{solution}
 
 \end{solution}
 
-\question Lines 359 and 379: what is 2D text representation? It seems that “2D” shouldn’t be here.
+\question Lines 359 and 379: what is 2D text representation? It seems that ``2D'' shouldn't be here.
 \begin{solution}
 
 \end{solution}
 
-\question Line 427: every dictionary is a “dictionary of keys”. This should be a dictionary with coordinate tuples as keys associated with the appropriate values.
+\question Line 427: every dictionary is a ``dictionary of keys''. This should be a dictionary with coordinate tuples as keys associated with the appropriate values.
 \begin{solution}
 
 \end{solution}
 
-\question Section 4 would benefit from an introduction, and lines 440– should be- come a new subsection 4.1. (named “Float” or “Real numbers support” or similar).
+\question Section 4 would benefit from an introduction, and lines 440-- should become a new subsection 4.1. (named ``Float'' or ``Real numbers support'' or similar).
 \begin{solution}
 
 \end{solution}
 
-\question I suggest a better example for lines 459–460: a computation of (e100 +1)− e100 :
-\begin{solution}
+\question I suggest a better example for lines 459--460: a computation of $(e^{100} +1)− e^{100}$:
 
-\end{solution}
+\begin{verbatim}
    >>> (exp(100)+1).evalf() - exp(100).evalf()
    0
    >>> ((exp(100)+1) - exp(100)).evalf()
    1.00000000000000
    >>> (exp(100)+1) - exp(100)
    1
+\end{verbatim}
+
 or two different ways to compute the 100th Fibonacci number:
+
+\begin{verbatim}
    >>> phi = (1+sqrt(5))/2
    >>> psi = (1-sqrt(5))/2
    >>> ((phi**100-psi**100)/sqrt(5)).evalf()-fibonacci(100)
    65536.0000000000
    >>> ((phi**100-psi**100)/sqrt(5) - fibonacci(100)).evalf()
    0.e-104
-Obviously, like your own example, these are problematic because a part of the computation is relying on Python’s builtin floats. Please include a comment on whether symbolic computation (i.e., applying evalf() on the whole expression) always avoids these errors or not, possibly with an example when it doesn’t resolve this problem.
+\end{verbatim}
+
+Obviously, like your own example, these are problematic because a part of the computation is relying on Python's builtin floats. Please include a comment on whether symbolic computation (i.e., applying \texttt{evalf()} on the whole expression) always avoids these errors or not, possibly with an example when it doesn't resolve this problem.
+\begin{solution}
+
+\end{solution}
 
 \question The footnote from line 477 should be moved as a sentence in its own right to the introduction, with other technical specifications.
 \begin{solution}
 
 \end{solution}
 
-\question In line 495, the word “solving” seems more appropriate than “solutions”.
+\question In line 495, the word ``solving'' seems more appropriate than ``solutions''.
 \begin{solution}
 
 \end{solution}
 
-\question In line 504 “is” should be used instead of “are” (because “array” is singular).
+\question In line 504 ``is'' should be used instead of ``are'' (because ``array'' is singular).
 \begin{solution}
 
 \end{solution}
 
-\question In line 518, “produces” should become plural.
+\question In line 518, ``produces'' should become plural.
 \begin{solution}
 
 \end{solution}
 
-\question The title of section 5, “Domain specific submodules”, seems inappropriate because the section only covers Physics package (not “submodules”). It should either be expanded with a short introduction listing other domain specific packages, or it should be renamed to “Physics package”.
+\question The title of section 5, ``Domain specific submodules'', seems inappropriate because the section only covers Physics package (not ``submodules''). It should either be expanded with a short introduction listing other domain specific packages, or it should be renamed to ``Physics package''.
 \begin{solution}
 
 \end{solution}
 
-\question The word “symbolics” in line 528 should be removed (as almost everything in the paper deals with symbolic computation).
+\question The word ``symbolics'' in line 528 should be removed (as almost everything in the paper deals with symbolic computation).
 \begin{solution}
 
 \end{solution}
@@ -472,52 +491,52 @@ Obviously, like your own example, these are problematic because a part of the co
 
 \end{solution}
 
-\question It is unclear what “both of these objects” refer to in line 532. My guess is vectors and dyadic objects, but this should be reworded to make it more clear.
+\question It is unclear what ``both of these objects'' refer to in line 532. My guess is vectors and dyadic objects, but this should be reworded to make it more clear.
 \begin{solution}
 
 \end{solution}
 
-\question In lines 543 and 545, “rad” should be removed. Radians are assumed when no other measure (like degrees) is given.
+\question In lines 543 and 545, ``rad'' should be removed. Radians are assumed when no other measure (like degrees) is given.
 \begin{solution}
 
 \end{solution}
 
-\question In lines 567–568, “performing symbolic quantum mechanics” makes no sense. This should probably be “computations”, “solving problems related to”, etc.
+\question In lines 567--568, ``performing symbolic quantum mechanics'' makes no sense. This should probably be ``computations'', ``solving problems related to'', etc.
 \begin{solution}
 
 \end{solution}
 
-\question The sentence “SymPy expressions are immutable trees of Python objects.” doesn’t belong in the conclusion. This can be moved to the appropriate place when discussing SymPy’s architecture.
+\question The sentence ``SymPy expressions are immutable trees of Python objects.'' doesn't belong in the conclusion. This can be moved to the appropriate place when discussing SymPy's architecture.
 \begin{solution}
 
 \end{solution}
 
-\question All “submodules” should be replaced by “modules” (examples: lines 657, 662).
+\question All ``submodules'' should be replaced by ``modules'' (examples: lines 657, 662).
 \begin{solution}
 
 \end{solution}
 
-\question The sentences in lines 657–661 should swap places, because “areas of mathematics” are discrete mathematics, concrete mathematics, etc., while simplifying expressions, performing common calculus operations, pretty print- ing expressions, etc. belongs to common operations (“other areas” is also fine, albeit slightly wrong).
+\question The sentences in lines 657--661 should swap places, because ``areas of mathematics'' are discrete mathematics, concrete mathematics, etc., while simplifying expressions, performing common calculus operations, pretty print- ing expressions, etc.\ belongs to common operations (``other areas'' is also fine, albeit slightly wrong).
 \begin{solution}
 
 \end{solution}
 
-\question In line 662 “classical mechanics and quantum mechanics” are listed as the only example of the support for specific domains, as in section 5, which leaves the impression that physics the only one. Either more domains should be listed, or it should be reworded to recognize the fact that there are no others.
+\question In line 662 ``classical mechanics and quantum mechanics'' are listed as the only example of the support for specific domains, as in section 5, which leaves the impression that physics the only one. Either more domains should be listed, or it should be reworded to recognize the fact that there are no others.
 \begin{solution}
 
 \end{solution}
 
-\question Lines 670–678 contain explanations what some of the authors’ institu- tions are. It is customary to use acknowledgements to thank people and institutions, while institutions’ details should be provided in the authors’ footnotes in the documents’ head.
+\question Lines 670--678 contain explanations what some of the authors' institutions are. It is customary to use acknowledgements to thank people and institutions, while institutions' details should be provided in the authors' footnotes in the documents' head.
 \begin{solution}
 
 \end{solution}
 
-\question The citation [5] in line 691 is missing identification data, probably a URL.
+\question The citation [5] in line 691 is missing identification data, probably a URL\@.
 \begin{solution}
 
 \end{solution}
 
-\question The citation [21] in line 728 should have “2D” instead of “2d”. More specific comments and correction suggestions for the supplement fol- low.
+\question The citation [21] in line 728 should have ``2D'' instead of ``2d''. More specific comments and correction suggestions for the supplement fol- low.
 \begin{solution}
 
 \end{solution}
@@ -528,13 +547,13 @@ Obviously, like your own example, these are problematic because a part of the co
 \end{solution}
 
 \question Since the Guntz algorithm is covered in depth, it would be good to
-include how an interested reader can see SymPy’s steps of computation:
+include how an interested reader can see SymPy's steps of computation:
 
 \begin{verbatim}
      >>> import os
      >>> os.environ['SYMPY_DEBUG'] = 'True'
      >>> from sympy import *
-     >>> x = symbols(’x’)
+     >>> x = symbols('x')
      >>> limit(sin(x)/x, x, 0)
      DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
      DEBUG: returned None
@@ -572,7 +591,7 @@ include how an interested reader can see SymPy’s steps of computation:
      |   | +-mrv_leadterm(_w, _w) = (1, -1)
      |   | | +-mrv(_w, _w) = ({_w: _Dummy_18}, {}, _Dummy_18)
      |   | | +-rewrite(_Dummy_18, {exp(_w): _Dummy_18}, {}, _w, _w) = (1/_w, -_w)
-| |||+-sign(_w,_w)=1
+     |   | | | +-sign(_w,_w)=1
      |   | | | +-limitinf(1, _w) = 1
      |   | | +-calculate_series(1/_w, _w) = 1/_w
      |   | +-sign(-1, _w) = -1
@@ -589,14 +608,13 @@ Emphasize that the environment variable \texttt{SYMPY\_DEBUG} must be set before
 
 \end{solution}
 
-\question In line 183, syntax symbols(a:d) is used without being previously defined or explained.
+\question In line 183, syntax \texttt{symbols(\textquotesingle{}a:d\textquotesingle{})} is used without being previously defined or explained.
 \begin{solution}
 
 \end{solution}
 
-\question Figure 2 should not be a screenshot, but rather proper code with LATEX-
-w rendered results and explanations, as was done in the rest of the paper. A
- shortened link to SymPy Gamma for the example’s expression can be included
+\question Figure 2 should not be a screenshot, but rather proper code with \LaTeX-rendered results and explanations, as was done in the rest of the paper. A
+ shortened link to SymPy Gamma for the example's expression can be included
  for the user to try this for themselves.
 \begin{solution}
 
