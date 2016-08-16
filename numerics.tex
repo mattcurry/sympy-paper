@@ -48,6 +48,7 @@ the sole purpose is to mitigate loss of accuracy that typically occurs
 when converting symbolic expressions to numerical values.
 
 \subsection{The mpmath library}
+\label{sec:mpmath}
 
 The implementation of arbitrary-precision floating-point arithmetic is
 supplied by the mpmath library~\cite{mpmath}. Originally, it was developed as a SymPy
@@ -55,7 +56,7 @@ module but has subsequently been moved to a standalone pure-Python package.
 The basic datatypes in mpmath are \texttt{mpf} and \texttt{mpc}, which
 respectively act as multiprecision substitutes for Python's \texttt{float} and
 \texttt{complex}. The floating-point precision is controlled by a global
-context:\footnote{All examples in this section use mpmath version 0.19.}
+context:
 
 % doctest printer doesn't display "mpf"
 % no-doctest
