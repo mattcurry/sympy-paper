@@ -31,13 +31,37 @@ overlooked by readers. I suggest moving that section into the main paper, as
 it provides a great way to play along with the examples while reading the
 paper.
 \begin{solution}
-  % TODO
+This sentence was added to the introduction:
+\begin{quote}
+All examples could be tested on the \href{http://live.sympy.org}{SymPy
+Live} instance, that is an online Python shell, which uses the Google
+App Engine to execute SymPy code.
+\end{quote}
 \end{solution}
 \question The Basic Usage section omits what I think is an important point:
 how does one distinguish between evaluating exp(1) in Python and exp(1) in
 SymPy? In other words, how are symbolic constants specified?
 \begin{solution}
-  % TODO. I'm unclear what the editor is asking here.
+It's unclear what you are asking for.  Both Python standard library
+and SymPy have exp callable, so it depends which symbols are
+imported in your global namespace: exp function from the math
+library or exp class from the SymPy.  In later case a special
+symbolic constant will be produced.
+
+We have added a sentence to the section 2.2, that shows symbolic
+constants as an example of leaf nodes:
+\begin{quote}
+Symbols or symbolic constants, like $e$ or $\pi$ are another examples of
+leaf nodes.
+\begin{verbatim}
+>>> exp(1)
+E
+>>> exp(1).args
+()
+>>> x.args
+()
+\end{verbatim}
+\end{quote}
 \end{solution}
 \question The first
 thing I tried after seeing Table 2 (simplication functions) did not work:
@@ -58,7 +82,8 @@ sin. Am I expecting too much?
 \question Section 3.6: are eigenvalues and singular
 values included? If not, why not?
 \begin{solution}
-  % TODO
+Yes, included.  Second example in that section address computation of
+eigenvalues.  Let us know if we should expand this.
 \end{solution}
 \question Like one of the referees, I expected to
 see MPFR mentioned in Section 4.1, at least to mention the pros and cons and
@@ -69,7 +94,11 @@ say why it isn't used.
 \question Section 4.1: please state whether the syntax for
 functions in mpmath is identical, or not, to that in Sympy.
 \begin{solution}
-  % TODO
+The mpmath library is not a SymPy submodule, but a separate library,
+that should be clear for a reader from the text.  From that, we believe,
+it should obvious that in general syntax (i.e. names for special
+functions, order of their arguments, etc) will be different, just
+as for any other external library.
 \end{solution}
 \question Unless I have
 missed something, a weakness of the paper is that speed is mentioned only
@@ -81,8 +110,7 @@ the conclusions.
 \end{solution}
 \question Editors are needed for [20].
 \begin{solution}
-  % TODO: I do not know how to make bibtex (with apalike) show the editor
-  % here.
+We have done this.
 \end{solution}
 \end{questions}
 
@@ -206,16 +234,20 @@ It might, however, encourage bad practice. It may also lead to a poor user exper
 For example, say I had the following code
 
 \begin{verbatim}
-𝔬mνmpyimportsin,arraytest=array(123)sin(test)
+from numpy import sin, array
+test=array(123)
+sin(test)
 \end{verbatim}
-[sic]
 
 I decide that I want to use sympy for something and, following your example, do
 
 \begin{verbatim}
-𝔬mνmpyimportsin,array𝔬msympyimport⋅test=array(123)sin(test)x,y,z=symbols(′xyz′)
+from numpy import sin, array
+from sympy import *
+x,y,z=symbols(′xyz′)
+test=array(123)
+sin(test)
 \end{verbatim}
-[sic]
 
 The code will break because sympy has it's own sin that gets imported that doesn't work on numpy arrays. As a newbie, I might not know this.
 I tested using Sympy 1.0 and Python 3.
@@ -227,7 +259,6 @@ We have used \verb|import *| on purpose, as we felt that explicitly importing
 names would unnecessarily distract from the content of the paper, but the
 reviewer is absolutely right that this is bad practice for actual code. We
 have added a footnote:
-
 \begin{quote}\texttt{import *} has been used here to aid the
   readability of the paper, but is best to avoid such wildcard import
   statements in production code, as they make it unclear which names are
@@ -302,10 +333,10 @@ We have added a citation for mpmath.
 
 \question Explaining what Python is (lines 70--72) should go before talking about SymPy as a ``CAS written in Python''. Further, the paper assumes a moderate familiarity with Python (for example, Python's console, OOP, and exceptions), and this should be specified. There should be a short note on the used Python console (\texttt{>>>} is the prompt, with the results of computation following immediately in the lines after it). The citation [25] from line 65 should be moved next to ``Python'' in line 70.
 \begin{solution}
-  % TODO: It seems better to start the paper with "SymPy is" rather than
-  % "Python is". The reviewer perhaps wants us to not mention Python until the
-  % second paragraph, but Python is important enough to SymPy's design that it
-  % warrants mentioning in the first sentence, in my opinion. --Aaron
+Citation was moved and footnote for Python interactive prompt was
+added where it was used first time.
+We believe that the paper assumes minimal familiarity with Python and
+that should be covered either with citation [25] or with the Python tutorial.
 \end{solution}
 
 \question Line 73 has outdated information. Sage was renamed to SageMath and it no longer aims only at pure mathematics but also at algebra, numerical analysis, etc. The reference [40] should be replaced by a more up-to-date one.
@@ -370,7 +401,7 @@ reviewer 3, point~\ref{rev1point1}).
 
 \question Line 119 should be removed, as it is basically a copy of the previous line.
 \begin{solution}
-Line 119 is the output of line 118, so now showing it would
+Line 119 is the output of line 118, so not showing it would
 be incorrect.
 
 The aim here was simply to show that the input expression remains unevaluated.
@@ -381,32 +412,37 @@ addition, subtraction, multiplication, division, and exponentiation.
 
 \question In line 121 the word ``stored'' should be replaced by ``used as keys''.
 \begin{solution}
-We have made the suggested change.
+See next answer.
 \end{solution}
 
 \question What do the authors mean by ``thereby permitting features such as caching'' in line 122? Caching can be done for mutable types as well, just not through hashing.
 \begin{solution}
-
+This paragraph was replaced by:
+\begin{quote}
+Importantly, SymPy expressions are immutable. This simplifies the design of
+SymPy by allowing expression interning. It also enables expressions to be
+hashed, that is used to implement caching in SymPy.
+\end{quote}
 \end{solution}
 
 \question There is no need to repeat ``(CAS)'' in line 124, as it was already given in line 64.
 \begin{solution}
-
+That was removed.
 \end{solution}
 
 \question In the same line, the word ``represents'' should be replaced by ``stores''.
 \begin{solution}
-  % I don't personally agree with this, but it's a minor point. --Aaron
+Done.
 \end{solution}
 
 \question In line 184, ``symbols are'' should be replaced by ``\texttt{t} is'' (the general rule is already given in line 179).
 \begin{solution}
-
+Done.
 \end{solution}
 
 \question The code in line 210 should be made into its own line (like a displaymath formula), for typesetting reasons and better readability.
 \begin{solution}
-
+Now we use verbatim environment here.
 \end{solution}
 
 \question The footnote 4 should be moved from line 221 to line 222, right after ``Basic''.
@@ -417,12 +453,24 @@ We have made the suggested change.
 
 \question The part ``which defines some basic methods for symbolic expression trees'' should be removed from line 222, as it was already given in line 130.
 \begin{solution}
-
+This part was removed and footnote moved to the mentioned
+text in the section 2.2, "The Core".
 \end{solution}
 
 \question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
 \begin{solution}
-
+This paragraph now looks as:
+\begin{quote}
+The typical way to create a custom SymPy object is to subclass an existing
+SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
+\texttt{Function}. As it was stated before, almost all SymPy classes used for
+expression trees should be subclasses of the base class \texttt{Basic}.
+\texttt{Expr} is the subclass for mathematical expressions (including \texttt{Symbol}) that can be
+added and multiplied together. Instances of \texttt{Expr} typically represent
+complex numbers, but may also include other ``rings'' like matrix expressions.
+Not all SymPy classes are subclasses of \texttt{Expr}. For instance, logic expressions such
+as \verb|And(x, y)| are subclasses of \texttt{Basic} but not of \texttt{Expr}.
+\end{quote}
 \end{solution}
 
 \question The title ``Features'' in line 276 is ambiguous, as a ``feature''
@@ -436,7 +484,7 @@ example, the caption of Table 1.\ and line 495). It would be very useful to also
 
 \question The sets support listing is unnaturally split in two by the ``This includes\ldots'' sentence which would fit better in parentheses.
 \begin{solution}
-
+This suggestion was implemented.
 \end{solution}
 
 \question Line 355, add a sentence explaining that in SymPy \texttt{str == repr}, because in Python \texttt{repr} is used to get an unambiguous valid Python code representation, while the return value of \texttt{str} is meant to be human-readable.
@@ -451,7 +499,7 @@ example, the caption of Table 1.\ and line 495). It would be very useful to also
 
 \question Line 427: every dictionary is a ``dictionary of keys''. This should be a dictionary with coordinate tuples as keys associated with the appropriate values.
 \begin{solution}
-
+This sentence was omitted, just as for \texttt{polys} module.
 \end{solution}
 
 \question Section 4 would benefit from an introduction, and lines 440-- should become a new subsection 4.1. (named ``Float'' or ``Real numbers support'' or similar).
@@ -483,27 +531,36 @@ or two different ways to compute the 100th Fibonacci number:
 
 Obviously, like your own example, these are problematic because a part of the computation is relying on Python's builtin floats. Please include a comment on whether symbolic computation (i.e., applying \texttt{evalf()} on the whole expression) always avoids these errors or not, possibly with an example when it doesn't resolve this problem.
 \begin{solution}
+First your example, unfortunately, doesn't work due to automatic
+simplification (see last input line --- \texttt{exp(100)} cancel).
+Second example is good, but our looks to be more simple.
 
+Applying \texttt{evalf()} has nothing related to \emph{symbolic} computation,
+that method is for numerical evaluation, that should be clear from
+the sentence below ``The evalf method converts a constant symbolic expression
+to a Float\dots''.  Numerical evaluation of the whole expression should
+always solve cancellation problem, as it was stated in the sentence
+``Applying the evalf method to the whole expression solves this problem.''
 \end{solution}
 
 \question The footnote from line 477 should be moved as a sentence in its own right to the introduction, with other technical specifications.
 \begin{solution}
-
+Mpmath version now mentioned in the introduction.
 \end{solution}
 
 \question In line 495, the word ``solving'' seems more appropriate than ``solutions''.
 \begin{solution}
-
+This was replaced with ``solving ODE''.
 \end{solution}
 
 \question In line 504 ``is'' should be used instead of ``are'' (because ``array'' is singular).
 \begin{solution}
-
+This was fixed.
 \end{solution}
 
 \question In line 518, ``produces'' should become plural.
 \begin{solution}
-
+This was fixed.
 \end{solution}
 
 \question The title of section 5, ``Domain specific submodules'', seems inappropriate because the section only covers Physics package (not ``submodules''). It should either be expanded with a short introduction listing other domain specific packages, or it should be renamed to ``Physics package''.
@@ -513,12 +570,12 @@ Obviously, like your own example, these are problematic because a part of the co
 
 \question The word ``symbolics'' in line 528 should be removed (as almost everything in the paper deals with symbolic computation).
 \begin{solution}
-
+Done.
 \end{solution}
 
 \question In line 530, sympy.physics.vector is a module, not a package.
 \begin{solution}
-
+Word ``package'' replaced with ``submodule''.
 \end{solution}
 
 \question It is unclear what ``both of these objects'' refer to in line 532. My guess is vectors and dyadic objects, but this should be reworded to make it more clear.
@@ -528,7 +585,7 @@ Obviously, like your own example, these are problematic because a part of the co
 
 \question In lines 543 and 545, ``rad'' should be removed. Radians are assumed when no other measure (like degrees) is given.
 \begin{solution}
-
+These units were removed.
 \end{solution}
 
 \question In lines 567--568, ``performing symbolic quantum mechanics'' makes no sense. This should probably be ``computations'', ``solving problems related to'', etc.
@@ -538,12 +595,12 @@ Obviously, like your own example, these are problematic because a part of the co
 
 \question The sentence ``SymPy expressions are immutable trees of Python objects.'' doesn't belong in the conclusion. This can be moved to the appropriate place when discussing SymPy's architecture.
 \begin{solution}
-
+This sentence was removed.
 \end{solution}
 
 \question All ``submodules'' should be replaced by ``modules'' (examples: lines 657, 662).
 \begin{solution}
-
+This was done.
 \end{solution}
 
 \question The sentences in lines 657--661 should swap places, because ``areas of mathematics'' are discrete mathematics, concrete mathematics, etc., while simplifying expressions, performing common calculus operations, pretty print- ing expressions, etc.\ belongs to common operations (``other areas'' is also fine, albeit slightly wrong).
@@ -558,18 +615,20 @@ Obviously, like your own example, these are problematic because a part of the co
 
 \question Lines 670--678 contain explanations what some of the authors' institutions are. It is customary to use acknowledgements to thank people and institutions, while institutions' details should be provided in the authors' footnotes in the documents' head.
 \begin{solution}
-
+These details were removed.
 \end{solution}
 
 \question The citation [5] in line 691 is missing identification data, probably a URL\@.
 \begin{solution}
-
+This is fixed now.
 \end{solution}
 
-\question The citation [21] in line 728 should have ``2D'' instead of ``2d''. More specific comments and correction suggestions for the supplement fol- low.
+\question The citation [21] in line 728 should have ``2D'' instead of ``2d''.
 \begin{solution}
-
+This is fixed.
 \end{solution}
+
+More specific comments and correction suggestions for the supplement follow.
 
 \question The supplement should have an introduction, explaining what is being covered in it in general and in each section.
 \begin{solution}
@@ -580,57 +639,58 @@ Obviously, like your own example, these are problematic because a part of the co
 include how an interested reader can see SymPy's steps of computation:
 
 \begin{verbatim}
-     >>> import os
-     >>> os.environ['SYMPY_DEBUG'] = 'True'
-     >>> from sympy import *
-     >>> x = symbols('x')
-     >>> limit(sin(x)/x, x, 0)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w
-     DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
-     DEBUG: parsing of expression [(1, 1, None, None)] with symbol _w
-     DEBUG: returned None
-     limitinf(x*sin(1/x), x) = 1
-     +-mrv_leadterm(_p*sin(1/_p), _p) = (1, 0)
-     | +-mrv(_p*sin(1/_p), _p) = ({_p: _Dummy_14}, {}, _Dummy_14*sin(1/_Dummy_14))
-     | | +-mrv(_p, _p) = ({_p: _Dummy_14}, {}, _Dummy_14)
-     | | +-mrv(sin(1/_p), _p) = ({_p: _Dummy_15}, {}, sin(1/_Dummy_15))
-     | |   +-mrv(1/_p, _p) = ({_p: _Dummy_15}, {}, 1/_Dummy_15)
-     | |     +-mrv(_p, _p) = ({_p: _Dummy_15}, {}, _Dummy_15)
-     | +-rewrite(_Dummy_14*sin(1/_Dummy_14), {exp(_p): _Dummy_14}, {}, _p, _w)
-             = (sin(_w)/_w, -_p)
-     | | +-sign(_p, _p) = 1
-     | | +-limitinf(1, _p) = 1
-     | +-calculate_series(sin(_w)/_w, _w) = 1
-     |   +-limitinf(_w, _w) = oo
-     |   | +-mrv_leadterm(_w, _w) = (1, -1)
-     |   | | +-mrv(_w, _w) = ({_w: _Dummy_18}, {}, _Dummy_18)
-     |   | | +-rewrite(_Dummy_18, {exp(_w): _Dummy_18}, {}, _w, _w) = (1/_w, -_w)
-     |   | | | +-sign(_w,_w)=1
-     |   | | | +-limitinf(1, _w) = 1
-     |   | | +-calculate_series(1/_w, _w) = 1/_w
-     |   | +-sign(-1, _w) = -1
-     |   | +-sign(1, _w) = 1
-     |   +-limitinf(_w, _w) = oo
-     |   +-limitinf(_w, _w) = oo
-     |   +-limitinf(_w, _w) = oo
-     +-sign(0, _p) = 0
-     +-limitinf(1, _p) = 1
+>>> import os
+>>> os.environ['SYMPY_DEBUG'] = 'True'
+>>> from sympy import *
+sympy/external/importtools.py:145: UserWarning: gmpy2 module is not installed
+  warnings.warn("%s module is not installed" % module, UserWarning)
+>>> x = symbols('x')
+>>> limit(sin(x)/x, x, 0)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(0, 1, None, None)] with symbol _w 
+DEBUG: returned None
+DEBUG: parsing of expression [(_w, 1, None, None)] with symbol _w 
+DEBUG: returned ([], [(_w, 1, None, None)], 1, False)
+DEBUG: parsing of expression [(1, 1, None, None)] with symbol _w 
+DEBUG: returned None
+limitinf(x*sin(1/x), x) = 1
++-mrv_leadterm(_p*sin(1/_p), _p) = (1, 0)
+| +-mrv(_p*sin(1/_p), _p) = ({_p: _Dummy_19}, {}, _Dummy_19*sin(1/_Dummy_19))
+| | +-mrv(_p, _p) = ({_p: _Dummy_19}, {}, _Dummy_19)
+| | +-mrv(sin(1/_p), _p) = ({_p: _Dummy_20}, {}, sin(1/_Dummy_20))
+| |   +-mrv(1/_p, _p) = ({_p: _Dummy_20}, {}, 1/_Dummy_20)
+| |     +-mrv(_p, _p) = ({_p: _Dummy_20}, {}, _Dummy_20)
+| +-rewrite(_Dummy_19*sin(1/_Dummy_19), {exp(_p): _Dummy_19}, {}, _p, _w) = (sin(_w)/_w, -_p)
+| | +-sign(_p, _p) = 1
+| | +-limitinf(1, _p) = 1
+| +-calculate_series(sin(_w)/_w, _w) = 1
+|   +-limitinf(_w, _w) = oo
+|   | +-mrv_leadterm(_w, _w) = (1, -1)
+|   | | +-mrv(_w, _w) = ({_w: _Dummy_23}, {}, _Dummy_23)
+|   | | +-rewrite(_Dummy_23, {exp(_w): _Dummy_23}, {}, _w, _w) = (1/_w, -_w)
+|   | | | +-sign(_w, _w) = 1
+|   | | | +-limitinf(1, _w) = 1
+|   | | +-calculate_series(1/_w, _w) = 1/_w
+|   | +-sign(-1, _w) = -1
+|   | +-sign(1, _w) = 1
+|   +-limitinf(_w, _w) = oo
+|   +-limitinf(_w, _w) = oo
++-sign(0, _p) = 0
++-limitinf(1, _p) = 1
+1
 \end{verbatim}
 
 Emphasize that the environment variable \texttt{SYMPY\_DEBUG} must be set before importing SymPy for the first time.
@@ -640,7 +700,7 @@ Emphasize that the environment variable \texttt{SYMPY\_DEBUG} must be set before
 
 \question In line 183, syntax \texttt{symbols(\textquotesingle{}a:d\textquotesingle{})} is used without being previously defined or explained.
 \begin{solution}
-
+Now we use \texttt{symbols('a b c d')}, like in other places.
 \end{solution}
 
 \question Figure 2 should not be a screenshot, but rather proper code with \LaTeX-rendered results and explanations, as was done in the rest of the paper. A

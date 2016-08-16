@@ -9,24 +9,6 @@ user-facing code as appropriate.
 
 % symbols, various ways to declare them
 
-The following statement imports all SymPy functions into the global Python
-namespace.\footnote{\texttt{import *} has been used here to aid the
-  readability of the paper, but is best to avoid such wildcard import
-  statements in production code, as they make it unclear which names are
-  present in the namespace. Furthermore, imported names could clash with
-  already existing imports from another package. For example, SymPy, the
-  standard Python \texttt{math} library, and the popular numeric library
-  NumPy~\cite{van2011numpy} all define the \texttt{exp} function, but only the
-  SymPy one will work with SymPy symbolic expressions.} From here on, all
-examples in this paper assume that this statement has been executed. All
-examples in this paper use SymPy version 1.0, and should work with Python
-versions 2.7, 3.2, 3.3, 3.4, or 3.5 in any operating system that supports
-Python.
-
-\begin{verbatim}
->>> from sympy import *
-\end{verbatim}
-
 Symbolic variables, called symbols, must be defined and assigned to
 Python variables before they can be used. This is typically done through the
 \texttt{symbols} function, which may create multiple symbols in a single
@@ -55,12 +37,11 @@ Note that the expression remains unevaluated: it is represented symbolically.
 
 Importantly, SymPy expressions are immutable. This simplifies the design of
 SymPy by allowing expression interning. It also enables expressions to be
-hashed and used as keys in Python dictionaries, thereby permitting features
-such as caching.
+hashed, that is used to implement caching in SymPy.
 
 \subsection{The Core}
 
-A computer algebra system (CAS) represents mathematical expressions as data
+A computer algebra system stores mathematical expressions as data
 structures.  For example, the mathematical expression $x + y$ is represented as
 a tree with three nodes, $+$, $x$, and $y$, where $x$ and $y$ are ordered
 children of $+$.  As users manipulate
@@ -70,8 +51,10 @@ computations such as integration, simplification, etc.\ are all functions that
 consume and produce expression trees.
 
 In SymPy every symbolic expression is an instance of a Python \texttt{Basic}
-class, a superclass of all SymPy types providing common methods to all SymPy
-tree-elements, such as traversals.  The children of a node in the
+class\footnote{Some
+  internal classes, such as those used in the polynomial module, do not follow
+  this rule for efficiency reasons.}, a superclass of all SymPy types providing
+common methods to all SymPy tree-elements, such as traversals.  The children of a node in the
 tree are held in the \texttt{args} attribute.  A terminal or leaf node in the
 expression tree has empty \texttt{args}.
 
@@ -99,6 +82,16 @@ tuple, indicating that it is a leaf node.
 >>> type(expr.args[0])
 <class 'sympy.core.numbers.Integer'>
 >>> expr.args[0].args
+()
+\end{verbatim}
+Symbols or symbolic constants, like $e$ or $\pi$ are another examples of
+leaf nodes.
+\begin{verbatim}
+>>> exp(1)
+E
+>>> exp(1).args
+()
+>>> x.args
 ()
 \end{verbatim}
 
@@ -165,7 +158,7 @@ in full generality.
 sqrt(t**2)
 \end{verbatim}
 
-By assuming the most general case, that symbols are complex by default, SymPy
+By assuming the most general case, that \texttt{t} is complex by default, SymPy
 avoids performing mathematically invalid operations. However, in many cases
 users will wish to simplify expressions containing terms like $\sqrt{t^2}$.
 
@@ -212,8 +205,13 @@ is an open problem in mathematics~\cite{lang1966introduction}.
 
 Basic implications between the facts are used to deduce assumptions. For
 instance, the assumptions system knows that being an integer implies being
-rational, so \texttt{Symbol(\textquotesingle{}x\textquotesingle{}, integer=True).is\_rational} returns
-\texttt{True}. Furthermore, expressions compute the assumptions on themselves
+rational.
+\begin{verbatim}
+>>> i = Symbol('i', integer=True)
+>>> i.is_rational
+True
+\end{verbatim}
+Furthermore, expressions compute the assumptions on themselves
 based on the assumptions of their arguments. For instance, if \texttt{x} and
 \texttt{y} are both created with \texttt{positive=True}, then
 \texttt{(x + y).is\_positive} will be \texttt{True} whereas
@@ -235,11 +233,9 @@ SymPy user to SymPy developer.
 
 The typical way to create a custom SymPy object is to subclass an existing
 SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
-\texttt{Function}. All SymPy classes used for expression trees should be subclasses of the base class
-\texttt{Basic}\footnote{Some
-  internal classes, such as those used in the polynomial module, do not follow
-  this rule for efficiency reasons.}, which defines some basic methods for symbolic expression
-trees. \texttt{Expr} is the subclass for mathematical expressions that can be
+\texttt{Function}. As it was stated before, almost all SymPy classes used for
+expression trees should be subclasses of the base class \texttt{Basic}.
+\texttt{Expr} is the subclass for mathematical expressions (including \texttt{Symbol}) that can be
 added and multiplied together. Instances of \texttt{Expr} typically represent
 complex numbers, but may also include other ``rings'' like matrix expressions.
 Not all SymPy classes are subclasses of \texttt{Expr}. For instance, logic expressions such

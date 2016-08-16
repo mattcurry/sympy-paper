@@ -1,5 +1,6 @@
-SymPy is a full featured computer algebra system (CAS) written in the Python
-programming language~\cite{lutz2013learning}.
+SymPy is a full featured computer algebra system (CAS) written in the
+Python~\cite{lutz2013learning}
+programming language.
 It is free and open source software, licensed under the 3-clause BSD
 license~\cite{rosen2005open}.
 The SymPy project was started by Ond\v{r}ej \v{C}ert\'{\i}k in 2005, and it has
@@ -25,7 +26,7 @@ itself is used both for the internal implementation and end user
 interaction. By using the operator overloading functionality of Python, SymPy follows the embedded domain specific language paradigm proposed by Hudak~\cite{dsl-little-languages}.  The exclusive usage of a single programming language makes it easier
 for people already familiar with that language to use or develop SymPy.
 Simultaneously, it enables developers to focus on mathematics, rather than
-language design.
+language design.  SymPy officially supports Python 2.6, 2.7 and 3.2--3.5.
 
 SymPy is designed with a strong focus on usability as a library.
 Extensibility is important in its application program interface
@@ -33,7 +34,6 @@ Extensibility is important in its application program interface
 the Python language itself. The goal is for users of SymPy to be able to
 include SymPy alongside other Python libraries in their workflow, whether that
 be in an interactive environment or as a programmatic part in a larger system.
-
 
 As a library, SymPy does not have a built-in graphical user interface (GUI).
 However, SymPy exposes a rich interactive display system, and supports
@@ -49,4 +49,26 @@ looks at the numerical features of SymPy and its dependency library, mpmath.
 Section~\ref{sec:domain_specific} looks at the domain specific physics
 submodules for performing symbolic and numerical calculations in classical mechanics
 and quantum mechanics. Conclusions and future directions for SymPy are given
-in section~\ref{sec:conclusion}.
+in section~\ref{sec:conclusion}.  All examples in this paper use SymPy
+version 1.0, examples in section~\ref{sec:mpmath} use mpmath
+version 0.19.
+
+The following statement imports all SymPy functions into the global Python
+namespace.\footnote{\texttt{import *} has been used here to aid the
+  readability of the paper, but is best to avoid such wildcard import
+  statements in production code, as they make it unclear which names are
+  present in the namespace. Furthermore, imported names could clash with
+  already existing imports from another package. For example, SymPy, the
+  standard Python \texttt{math} library, and NumPy all define the \texttt{exp}
+  function, but only the SymPy one will work with SymPy symbolic expressions.}
+From here on, all examples in this paper assume that this statement has been
+executed\footnote{Three greater-than signs denote standard
+Python prompt for interactive session.}:
+
+\begin{verbatim}
+>>> from sympy import *
+\end{verbatim}
+
+All examples could be tested on the \href{http://live.sympy.org}{SymPy
+Live} instance, that is an online Python shell, which uses the Google
+App Engine to execute SymPy code.
