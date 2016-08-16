@@ -418,7 +418,7 @@ Done.
 
 \question The code in line 210 should be made into its own line (like a displaymath formula), for typesetting reasons and better readability.
 \begin{solution}
-
+Now we use verbatim environment here.
 \end{solution}
 
 \question The footnote 4 should be moved from line 221 to line 222, right after ``Basic''.
@@ -429,12 +429,24 @@ We have made the suggested change.
 
 \question The part ``which defines some basic methods for symbolic expression trees'' should be removed from line 222, as it was already given in line 130.
 \begin{solution}
-
+This part was removed and footnote moved to the mentioned
+text in the section 2.2, "The Core".
 \end{solution}
 
 \question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
 \begin{solution}
-
+This paragraph now looks as:
+\begin{quote}
+The typical way to create a custom SymPy object is to subclass an existing
+SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
+\texttt{Function}. As it was stated before, almost all SymPy classes used for
+expression trees should be subclasses of the base class \texttt{Basic}.
+\texttt{Expr} is the subclass for mathematical expressions (including \texttt{Symbol}) that can be
+added and multiplied together. Instances of \texttt{Expr} typically represent
+complex numbers, but may also include other ``rings'' like matrix expressions.
+Not all SymPy classes are subclasses of \texttt{Expr}. For instance, logic expressions such
+as \verb|And(x, y)| are subclasses of \texttt{Basic} but not of \texttt{Expr}.
+\end{quote}
 \end{solution}
 
 \question The title ``Features'' in line 276 is ambiguous, as a ``feature''
