@@ -1,12 +1,12 @@
 all: authors.tex pprint.pdf paper.pdf supplement.pdf rebuttal.pdf
 
-paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex numerics.tex domain_specific.tex conclusion_and_future_work.tex acknowledgements.tex siamart0216_uppercase_fix.tex pprint.pdf pprint.tex printers.tex calculus.tex
+paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex numerics.tex domain_specific.tex conclusion_and_future_work.tex acknowledgements.tex siamart0216_uppercase_fix.tex pprint.pdf pprint.tex printers.tex calculus.tex paper.bib
 	pdflatex -shell-escape --halt-on-error paper.tex
 	bibtex paper.aux
 	pdflatex -shell-escape --halt-on-error paper.tex
 	pdflatex -shell-escape --halt-on-error paper.tex
 
-supplement.tex: categories.tex comparison_with_mma.tex diophantine.tex examples.tex gamma.tex gruntz.tex live.tex logic.tex matrices.tex nsimplify.tex other_projects_that_use_sympy.tex polys.tex series.tex sets.tex simplification.tex solvers.tex stats.tex supplement.tex tensors.tex
+supplement.tex: categories.tex comparison_with_mma.tex diophantine.tex examples.tex gamma.tex gruntz.tex live.tex logic.tex matrices.tex nsimplify.tex other_projects_that_use_sympy.tex polys.tex series.tex sets.tex simplification.tex solvers.tex stats.tex supplement.tex tensors.tex paper.bib
 	pdflatex -shell-escape --halt-on-error supplement.tex
 	bibtex supplement
 	pdflatex -shell-escape --halt-on-error supplement.tex
