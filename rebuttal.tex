@@ -201,6 +201,7 @@ Sympy is a superb package and I am happy to see that there is now a paper that d
 It is generally frowned upon to import all symbols from a Python module in this manner.
 I understand why you are doing it in this paper, it makes subsequent sympy commands less verbose.
 It might, however, encourage bad practice. It may also lead to a poor user experience for newbies.
+\label{rev1point1}
 
 For example, say I had the following code
 
@@ -359,7 +360,12 @@ and 3 should be included as well. Further, emphasise that wildcard imports,
 ``\texttt{import *}'', should almost never be used in programs (see PEP 8, the
 item ``wildcard imports''). The same goes for the \texttt{import} mentioned in lines 484--487.
 \begin{solution}
+We have moved the footnote inline, and have noted that the examples should
+work with Python 2.7, 3.2, 3.3, 3.4, or 3.5, with any operating system that
+supports Python.
 
+We have added a footnote discussing the concerns with \texttt{import *} (see
+reviewer 3, point~\ref{rev1point1}).
 \end{solution}
 
 \question Line 119 should be removed, as it is basically a copy of the previous line.

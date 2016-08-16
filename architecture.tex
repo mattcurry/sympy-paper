@@ -15,10 +15,13 @@ namespace.\footnote{\texttt{import *} has been used here to aid the
   statements in production code, as they make it unclear which names are
   present in the namespace. Furthermore, imported names could clash with
   already existing imports from another package. For example, SymPy, the
-  standard Python \texttt{math} library, and NumPy all define the \texttt{exp}
-  function, but only the SymPy one will work with SymPy symbolic expressions.}
-From here on, all examples in this paper assume that this statement has been
-executed.\footnote{All examples in this paper use SymPy version 1.0.}
+  standard Python \texttt{math} library, and the popular numeric library
+  NumPy~\cite{van2011numpy} all define the \texttt{exp} function, but only the
+  SymPy one will work with SymPy symbolic expressions.} From here on, all
+examples in this paper assume that this statement has been executed. All
+examples in this paper use SymPy version 1.0, and should work with Python
+versions 2.7, 3.2, 3.3, 3.4, or 3.5 in any operating system that supports
+Python.
 
 \begin{verbatim}
 >>> from sympy import *
