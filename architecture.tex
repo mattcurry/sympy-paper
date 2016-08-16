@@ -236,10 +236,10 @@ SymPy user to SymPy developer.
 
 The typical way to create a custom SymPy object is to subclass an existing
 SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
-\texttt{Function}. All SymPy classes\footnote{Some
+\texttt{Function}. All SymPy classes used for expression trees should be subclasses of the base class
+\texttt{Basic}\footnote{Some
   internal classes, such as those used in the polynomial module, do not follow
-  this rule for efficiency reasons.} used for expression trees should be subclasses of the base class
-\texttt{Basic}, which defines some basic methods for symbolic expression
+  this rule for efficiency reasons.}, which defines some basic methods for symbolic expression
 trees. \texttt{Expr} is the subclass for mathematical expressions that can be
 added and multiplied together. Instances of \texttt{Expr} typically represent
 complex numbers, but may also include other ``rings'' like matrix expressions.
