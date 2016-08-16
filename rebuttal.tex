@@ -219,13 +219,13 @@ I decide that I want to use sympy for something and, following your example, do
 The code will break because sympy has it's own sin that gets imported that doesn't work on numpy arrays. As a newbie, I might not know this.
 I tested using Sympy 1.0 and Python 3.
 
+Later in the text, a similar assertion is made by you (line 485) in reference to a different package that may break sympy.
+
 \begin{solution}
 We have used \verb|import *| on purpose, as we felt that explicitly importing
 names would unnecessarily distract from the content of the paper, but the
 reviewer is absolutely right that this is bad practice for actual code. We
 have added a footnote:
-
-Later in the text, a similar assertion is made by you (line 485) in reference to a different package that may break sympy.
 
 \begin{quote}\texttt{import *} has been used here to aid the
   readability of the paper, but is best to avoid such wildcard import
