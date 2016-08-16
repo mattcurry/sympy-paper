@@ -197,8 +197,13 @@ is an open problem in mathematics~\cite{lang1966introduction}.
 
 Basic implications between the facts are used to deduce assumptions. For
 instance, the assumptions system knows that being an integer implies being
-rational, so \texttt{Symbol(\textquotesingle{}x\textquotesingle{}, integer=True).is\_rational} returns
-\texttt{True}. Furthermore, expressions compute the assumptions on themselves
+rational.
+\begin{verbatim}
+>>> i = Symbol('i', integer=True)
+>>> i.is_rational
+True
+\end{verbatim}
+Furthermore, expressions compute the assumptions on themselves
 based on the assumptions of their arguments. For instance, if \texttt{x} and
 \texttt{y} are both created with \texttt{positive=True}, then
 \texttt{(x + y).is\_positive} will be \texttt{True} whereas
