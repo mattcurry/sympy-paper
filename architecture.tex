@@ -45,7 +45,7 @@ hashed, that is used to implement caching in SymPy.
 
 \subsection{The Core}
 
-A computer algebra system represents mathematical expressions as data
+A computer algebra system stores mathematical expressions as data
 structures.  For example, the mathematical expression $x + y$ is represented as
 a tree with three nodes, $+$, $x$, and $y$, where $x$ and $y$ are ordered
 children of $+$.  As users manipulate
@@ -150,7 +150,7 @@ in full generality.
 sqrt(t**2)
 \end{verbatim}
 
-By assuming the most general case, that symbols are complex by default, SymPy
+By assuming the most general case, that \texttt{t} is complex by default, SymPy
 avoids performing mathematically invalid operations. However, in many cases
 users will wish to simplify expressions containing terms like $\sqrt{t^2}$.
 
