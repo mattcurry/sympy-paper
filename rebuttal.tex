@@ -388,12 +388,17 @@ addition, subtraction, multiplication, division, and exponentiation.
 
 \question In line 121 the word ``stored'' should be replaced by ``used as keys''.
 \begin{solution}
-We have made the suggested change.
+See next answer.
 \end{solution}
 
 \question What do the authors mean by ``thereby permitting features such as caching'' in line 122? Caching can be done for mutable types as well, just not through hashing.
 \begin{solution}
-
+This paragraph was replaced by:
+\begin{quote}
+Importantly, SymPy expressions are immutable. This simplifies the design of
+SymPy by allowing expression interning. It also enables expressions to be
+hashed, that is used to implement caching in SymPy.
+\end{quote}
 \end{solution}
 
 \question There is no need to repeat ``(CAS)'' in line 124, as it was already given in line 64.
