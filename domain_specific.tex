@@ -12,7 +12,7 @@ vector algebra symbolics and mechanics.
 \subsubsection{Vector Algebra}
 % TODO This section requires some citations.
 
-The \verb|sympy.physics.vector| package provides reference frame-, time-, and
+The \verb|sympy.physics.vector| submodule provides reference frame-, time-, and
 space-aware vector and dyadic objects that allow for three-di\-men\-sional
 operations such as addition, subtraction, scalar multiplication, inner and
 outer products, and cross products. Both of these objects can be written in
@@ -31,9 +31,9 @@ the orthogonal unit vectors of three reference frames that are oriented with
 respect to each other, and the result of expressing the vector in the $A$
 frame. The $B$ frame is oriented with respect to the $A$ frame using Z-X-Z
 Euler Angles of magnitude $\pi$, $\frac{\pi}{2}$, and
-$\frac{\pi}{3}$\si{\radian}, respectively, whereas the $C$ frame is oriented
+$\frac{\pi}{3}$, respectively, whereas the $C$ frame is oriented
 with respect to the $B$ frame through a simple rotation about the $B$ frame's
-$X$ unit vector through $\frac{\pi}{2}$\si{\radian}.
+$X$ unit vector through $\frac{\pi}{2}$.
 
 \begin{verbatim}
 >>> from sympy.physics.vector import ReferenceFrame
