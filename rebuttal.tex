@@ -42,7 +42,26 @@ App Engine to execute SymPy code.
 how does one distinguish between evaluating exp(1) in Python and exp(1) in
 SymPy? In other words, how are symbolic constants specified?
 \begin{solution}
-  % TODO. I'm unclear what the editor is asking here.
+It's unclear what you are asking for.  Both Python standard library
+and SymPy have exp callable, so it depends which symbols are
+imported in your global namespace: exp function from the math
+library or exp class from the SymPy.  In later case a special
+symbolic constant will be produced.
+
+We have added a sentence to the section 2.2, that shows symbolic
+constants as an example of leaf nodes:
+\begin{quote}
+Symbols or symbolic constants, like $e$ or $\pi$ are another examples of
+leaf nodes.
+\begin{verbatim}
+>>> exp(1)
+E
+>>> exp(1).args
+()
+>>> x.args
+()
+\end{verbatim}
+\end{quote}
 \end{solution}
 \question The first
 thing I tried after seeing Table 2 (simplication functions) did not work:

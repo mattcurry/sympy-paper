@@ -88,6 +88,16 @@ tuple, indicating that it is a leaf node.
 >>> expr.args[0].args
 ()
 \end{verbatim}
+Symbols or symbolic constants, like $e$ or $\pi$ are another examples of
+leaf nodes.
+\begin{verbatim}
+>>> exp(1)
+E
+>>> exp(1).args
+()
+>>> x.args
+()
+\end{verbatim}
 
 A useful way to view an expression tree is using the \texttt{srepr} function, which
 returns a string representation of an expression as valid Python code\footnote{
