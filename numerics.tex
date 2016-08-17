@@ -116,13 +116,13 @@ of precision when $x = 10000$), giving correct values:
 % no-doctest
 \begin{verbatim}
 >>> mpmath.mp.dps = 15
->>> mpmath.meijerg([[],[0]],[[-0.5,-1,-1.5],[]],10000)
+>>> mpmath.meijerg([[],[0]], [[-0.5,-1,-1.5],[]], 10000)
 mpf('2.4392576907199564e-94')
 \end{verbatim}
 
 Equivalently, with SymPy's interface this function can be evaluated as:
 \begin{verbatim}
->>> meijerg([[],[0]],[[-S(1)/2,-1,-S(3)/2],[]],10000).evalf()
+>>> meijerg([[],[0]], [[-S(1)/2,-1,-S(3)/2],[]], 10000).evalf()
 2.43925769071996e-94
 \end{verbatim}
 
