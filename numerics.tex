@@ -78,6 +78,12 @@ If GMPY~\cite{GMPY} is installed, mpmath automatically uses
 the \texttt{gmpy.mpz} type for~$x$, and GMPY methods
 for rounding-related operations, improving performance.
 
+Most mpmath and SymPy functions use the same naming scheme, although this is
+not true in every case. For example, the symbolic SymPy summation expression
+\texttt{Sum(f(x), (x, a, b))} representing $\sum_{x=a}^b f(x)$ is represented
+in mpmath as \texttt{nsum(f, (a, b))}, where \texttt{f} is a numeric Python
+function.
+
 The mpmath library supports
 special functions, root-finding, linear algebra, polynomial approximation,
 and numerical computation of limits, derivatives, integrals, infinite
