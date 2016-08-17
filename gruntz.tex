@@ -95,7 +95,10 @@ f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
 In this example the result ($2+{1\over x}$) still depends on $x$, so the above procedure is
 repeated until just a value independent of $x$ is obtained. This is the final
 limit. In the above case the limit is $2$, as can be
-verified by SymPy:
+verified by SymPy\footnote{To see intermediate steps, discussed above, interested
+reader can switch on debugging output by setting
+\texttt{SYMPY\_DEBUG} environment variable, before importing anything from
+the SymPy namespace.}:
 
 \begin{verbatim}
 >>> limit(exp(x+2*exp(-x))-exp(x) + 1/x, x, oo)
