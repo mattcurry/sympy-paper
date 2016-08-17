@@ -42,11 +42,11 @@ App Engine to execute SymPy code.
 how does one distinguish between evaluating exp(1) in Python and exp(1) in
 SymPy? In other words, how are symbolic constants specified?
 \begin{solution}
-It's unclear what you are asking for.  Both Python standard library
-and SymPy have exp callable, so it depends which symbols are
-imported in your global namespace: the \texttt{exp} function from the \texttt{math}
-module or the \texttt{exp} class from SymPy.  In the later case a special
-symbolic constant will be produced.
+  It's unclear what you are asking for. Both Python standard library and SymPy
+  have exp callable, so it depends which symbols are imported in your global
+  namespace: the \texttt{exp} function from the \texttt{math} module or the
+  \texttt{exp} class from SymPy. In the later case a special symbolic constant
+  will be produced.
 
 We have added a sentence to the section 2.2, that shows symbolic
 constants as an example of leaf nodes:
@@ -82,8 +82,12 @@ sin. Am I expecting too much?
 \question Section 3.6: are eigenvalues and singular
 values included? If not, why not?
 \begin{solution}
-Yes, included.  Second example in that section address computation of
-eigenvalues.  Let us know if we should expand this.
+Yes, they are included.  The second example in that section addresses the computation of
+eigenvalues.  Singular values can be computed with
+\texttt{A.singular\_values()}. We have not included this example, as the
+singular value expressions for our example matrix \texttt{A} are quite large,
+but we have added ``singular values'' to the list of features in the second
+paragraph of the section.
 \end{solution}
 \question Like one of the referees, I expected to
 see MPFR mentioned in Section 4.1, at least to mention the pros and cons and
