@@ -504,7 +504,12 @@ This suggestion was implemented.
 
 \question Line 427: every dictionary is a ``dictionary of keys''. This should be a dictionary with coordinate tuples as keys associated with the appropriate values.
 \begin{solution}
-This sentence was omitted, just as for \texttt{polys} module.
+``Dictionary of Keys'' (DOK) refers specifically to a sparse matrix
+representation where entries are stored as \texttt{(row, column)} pairs
+mapping to the elements. See for instance \texttt{scipy.sparse.dok\_sparse}. We
+have fixed the capitalization of ``Dictionary of Keys'' and added the
+abbreviation (DOK), and stated explicitly what is meant by this. We have also
+made a similar note about List of Lists (LIL) earlier in the section.
 \end{solution}
 
 \question Section 4 would benefit from an introduction, and lines 440-- should become a new subsection 4.1. (named ``Float'' or ``Real numbers support'' or similar).
