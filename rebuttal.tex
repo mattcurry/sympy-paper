@@ -462,17 +462,19 @@ text in the section 2.2, ``The Core''.
 
 \question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
 \begin{solution}
-This paragraph now looks as:
+This paragraph now reads:
 \begin{quote}
 The typical way to create a custom SymPy object is to subclass an existing
-SymPy class, usually  \texttt{Basic}, \texttt{Expr}, or
-\texttt{Function}. As it was stated before, almost all SymPy classes used for
-expression trees should be subclasses of the base class \texttt{Basic}.
-\texttt{Expr} is the subclass for mathematical expressions (including \texttt{Symbol}) that can be
-added and multiplied together. Instances of \texttt{Expr} typically represent
-complex numbers, but may also include other ``rings'' like matrix expressions.
-Not all SymPy classes are subclasses of \texttt{Expr}. For instance, logic expressions such
-as \verb|And(x, y)| are subclasses of \texttt{Basic} but not of \texttt{Expr}.
+SymPy class, usually \texttt{Basic}, \texttt{Expr}, or \texttt{Function}. As
+it was stated before, all SymPy classes used for expression trees should be
+subclasses of the base class \texttt{Basic}. \texttt{Expr} is the
+\texttt{Basic} subclass for mathematical that can be added and multiplied
+together. The most commonly seen classes in SymPy are subclasses of
+\texttt{Expr}, including \texttt{Add}, \texttt{Mul}, and \texttt{Symbol}.
+Instances of \texttt{Expr} typically represent complex numbers, but may also
+include other ``rings'', like matrix expressions. Not all SymPy classes are
+subclasses of \texttt{Expr}. For instance, logic expressions, such as
+\verb|And(x, y)|, are subclasses of \texttt{Basic} but not of \texttt{Expr}.
 \end{quote}
 \end{solution}
 
