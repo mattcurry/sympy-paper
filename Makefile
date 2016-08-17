@@ -29,3 +29,4 @@ test:
 .PHONY: clean
 clean:
 	(rm -rf *.ps *.log *.dvi *.aux *.*% *.lof *.lop *.lot *.toc *.idx *.ilg *.ind *.bbl *.blg *.cpt)
+	(rm -rf authors.tex pprint.pdf paper.pdf supplement.pdf rebuttal.pdf)
