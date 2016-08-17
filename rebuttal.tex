@@ -541,9 +541,10 @@ or two different ways to compute the 100th Fibonacci number:
 
 Obviously, like your own example, these are problematic because a part of the computation is relying on Python's builtin floats. Please include a comment on whether symbolic computation (i.e., applying \texttt{evalf()} on the whole expression) always avoids these errors or not, possibly with an example when it doesn't resolve this problem.
 \begin{solution}
-First your example, unfortunately, doesn't work due to automatic
-simplification (see last input line --- \texttt{exp(100)} cancel).
-Second example is good, but our looks to be more simple.
+  Your first example, unfortunately, doesn't work due to automatic
+  simplification (see the last input line above:  \texttt{exp(100)} cancels
+  automatically, before any numeric evaluation happens). Your second example
+  doesn't have this issue, but our example is simpler.
 
 Applying \texttt{evalf()} has nothing related to \emph{symbolic} computation,
 that method is for numerical evaluation, that should be clear from
