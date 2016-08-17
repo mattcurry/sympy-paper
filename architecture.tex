@@ -51,9 +51,9 @@ computations such as integration, simplification, etc.\ are all functions that
 consume and produce expression trees.
 
 In SymPy every symbolic expression is an instance of a Python \texttt{Basic}
-class\footnote{Some
+class,\footnote{Some
   internal classes, such as those used in the polynomial module, do not follow
-  this rule for efficiency reasons.}, a superclass of all SymPy types providing
+  this rule for efficiency reasons.} a superclass of all SymPy types providing
 common methods to all SymPy tree-elements, such as traversals.  The children of a node in the
 tree are held in the \texttt{args} attribute.  A terminal or leaf node in the
 expression tree has empty \texttt{args}.
@@ -173,11 +173,11 @@ t
 
 Some of the common assumptions that SymPy allows are \texttt{positive},
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
-\texttt{prime} and \texttt{commutative}\footnote{SymPy assumes that two
+\texttt{prime} and \texttt{commutative}.\footnote{SymPy assumes that two
   expressions $A$ and $B$ commute with each other multiplicatively, that is,
   $A\cdot B=B\cdot A$, unless they both have \texttt{commutative=False}. Many
   algorithms in SymPy require special consideration to work correctly with
-  noncommutative products.}. Assumptions on any object can be checked with the
+  noncommutative products.} Assumptions on any object can be checked with the
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
