@@ -28,7 +28,7 @@ then solving it using polynomial routines.
 Internally these matrices store the elements as Lists of Lists (LIL), meaning
 the matrix is stored as a list of lists of entries (effectively, the
 input format used to create the matrix \texttt{A} above), making it a
-dense representation.\footnote{Similar to the polynomials module, dense here
+dense representation.\footnote{Similar to the polynomials submodule, dense here
   means that all entries are stored in memory, contrasted with a sparse
   representation where only nonzero entries are stored.} For storing sparse
 matrices, the \verb|SparseMatrix| class can be used. Sparse matrices store
@@ -45,7 +45,7 @@ be any matrix expression, including explicit matrices, matrix symbols, and
 other block matrices. All functionalities of matrix expressions are also
 present in \verb|BlockMatrix|.
 
-When symbolic matrices are combined with the assumptions module for logical
+When symbolic matrices are combined with the assumptions submodule for logical
 inference, they provide powerful reasoning over invertibility,
 semi-definiteness, orthogonality, etc., which are valuable in the construction
 of numerical linear algebra systems.
