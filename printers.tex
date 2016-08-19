@@ -1,13 +1,15 @@
-SymPy has a rich collection of expression printers.
-By default, an interactive Python session will render the
-\verb|str| form of an expression, which has been used in all the examples in
-this paper so far. The \verb|str| form of an expression is valid
-Python\footnote{In SymPy, \texttt{str(expr) == repr(expr)}.  In other words,
-string representation of an expression designed to be both compact,
-human-readable and a valid Python code, that could be used to
-recreate one.  As it was noted before, use \texttt{srepr} function to
-see the exact form of an expression.} and
-roughly matches what a user would type to enter the expression.
+SymPy has a rich collection of expression printers. By default, an interactive
+Python session will render the \verb|str| form of an expression, which has
+been used in all the examples in this paper so far. The \verb|str| form of an
+expression is valid Python and roughly matches what a user would type to enter
+the expression.\footnote{Many Python libraries distinguish the \texttt{str}
+  form of an object, which is meant to be human-readable, and the
+  \texttt{repr} form, which is mean to be valid Python that recreates the
+  object. In SymPy, \texttt{str(expr) == repr(expr)}. In other words, the
+  string representation of an expression is designed to be compact,
+  human-readable, and valid Python code that could be used to recreate the
+  expression. As it was noted in section~\ref{sec:core}, the \texttt{srepr}
+  function prints the exact, verbose form of an expression.}
 
 \begin{verbatim}
 >>> phi0 = Symbol('phi0')

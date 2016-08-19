@@ -496,11 +496,13 @@ This suggestion was implemented.
 \begin{solution}
 This footnote was added:
 \begin{quote}
-In SymPy, \texttt{str(expr) == repr(expr)}.  In other words,
-string representation of an expression designed to be both compact,
-human-readable and a valid Python code, that could be used to
-recreate one.  As it was noted before, use \texttt{srepr} function to
-see the exact form of an expression.
+  Many Python libraries distinguish the \texttt{str} form of an object, which
+  is meant to be human-readable, and the \texttt{repr} form, which is mean to
+  be valid Python that recreates the object. In SymPy, \texttt{str(expr) ==
+    repr(expr)}. In other words, the string representation of an expression is
+  designed to be compact, human-readable, and valid Python code that could be
+  used to recreate the expression. As it was noted in section~\ref{sec:core},
+  the \texttt{srepr} function prints the exact, verbose form of an expression.
 \end{quote}
 \end{solution}
 
