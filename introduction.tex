@@ -11,7 +11,8 @@ open community model allow SymPy to rapidly respond to the needs of
 users and developers.
 
 Python is a dynamically typed programming language that has a focus on
-ease of use and readability. Due in part to this focus, it has become a popular
+ease of use and readability.\footnote{This paper assumes a moderate
+  familiarity with the Python programming language.} Due in part to this focus, it has become a popular
 language for scientific
 computing and data science, with a broad ecosystem of
 libraries~\cite{oliphant2007python}. SymPy is itself used by many libraries
@@ -61,8 +62,9 @@ namespace.\footnote{\texttt{import *} has been used here to aid the
   standard Python \texttt{math} library, and NumPy all define the \texttt{exp}
   function, but only the SymPy one will work with SymPy symbolic expressions.}
 From here on, all examples in this paper assume that this statement has been
-executed:\footnote{Three greater-than signs denote standard
-Python prompt for interactive session.}
+executed:\footnote{The three greater-than signs denote the user input for the
+  Python interactive session, with the result, if there is one, shown on the
+  next line.}
 
 \begin{verbatim}
 >>> from sympy import *
