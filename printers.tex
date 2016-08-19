@@ -1,7 +1,12 @@
 SymPy has a rich collection of expression printers.
 By default, an interactive Python session will render the
 \verb|str| form of an expression, which has been used in all the examples in
-this paper so far. The \verb|str| form of an expression is valid Python and
+this paper so far. The \verb|str| form of an expression is valid
+Python\footnote{In SymPy, \texttt{str(expr) == repr(expr)}.  In other words,
+string representation of an expression designed to be both compact,
+human-readable and a valid Python code, that could be used to
+recreate one.  As it was noted before, use \texttt{srepr} function to
+see the exact form of an expression.} and
 roughly matches what a user would type to enter the expression.
 
 \begin{verbatim}
@@ -10,7 +15,8 @@ roughly matches what a user would type to enter the expression.
 'Integral(sqrt(phi0), phi0)'
 \end{verbatim}
 
-Expressions can be printed in 2D with monospace fonts via \verb|pprint|.
+Two-dimensional (2D) textual representation of the expression can
+be printed with monospace fonts via \verb|pprint|.
 Unicode characters are used for rendering mathematical symbols such as integral signs,
 square roots, and parentheses. Greek letters and subscripts in symbol names
 that have Unicode code points associated
