@@ -1,10 +1,10 @@
 %% Stats
-The \verb|sympy.stats| module provides random variable types and methods for
+The \verb|sympy.stats| submodule provides random variable types and methods for
 computing of statistical properties of expressions involving random
 variables, which can be either continuous or discrete, the latter ones being
 further divided into finite and infinite. The variables are associated
 with probability densities on corresponding domains and internally defined
-in terms of probability spaces. 
+in terms of probability spaces.
 Apart from the possibility of defining the random variables from user supplied
 density distribution, SymPy provides definitions of most common
 distributions, including \texttt{Uniform}, \texttt{Poisson}, \texttt{Normal},
@@ -34,8 +34,8 @@ The conditions can also be supplied as a second parameter to \texttt{E},
 5/3
 \end{verbatim}
 
-Using the facilities of the \texttt{sympy.stats} module, one can, for
-example, calculate 
+Using the facilities of the \texttt{sympy.stats} submodule, one can, for
+example, calculate
 %Using the above-mentioned features, it is easy to calculate, for example
 the well known properties of maxwellian velocity distribution
 \begin{verbatim}
@@ -53,5 +53,5 @@ Integral(sqrt(2)*m**(3/2)*v**3*exp(-m*v**2/(2*kT))/(sqrt(pi)*kT**(3/2)),
 sqrt(2)*sqrt(kT)/sqrt(m)
 \end{verbatim}
 
-More information on the \texttt{sympy.stats} module can be found in
+More information on the \texttt{sympy.stats} submodule can be found in
 \cite{StatsMRocklin}.

@@ -1,5 +1,5 @@
-SymPy includes several packages that allow users to solve domain specific
-problems. For example, a comprehensive physics package is included that is
+SymPy includes several submodules that allow users to solve domain specific
+problems. For example, a comprehensive physics submodule is included that is
 useful for solving problems in mechanics, optics, and quantum
 mechanics along with support for manipulating physical quantities with units.
 
@@ -51,13 +51,13 @@ A.x + 5*sqrt(3)/2*A.y + 5/2*A.z
 
 \subsubsection{Mechanics}
 
-The \verb|sympy.physics.mechanics| package utilizes the \texttt{sympy.\allowbreak{}physics.\allowbreak{}vector} package
+The \verb|sympy.physics.mechanics| submodule utilizes the \texttt{sympy.\allowbreak{}physics.\allowbreak{}vector} submodule
 to populate time-aware particle and rigid-body objects to fully describe the
 kinematics and kinetics of a rigid multi-body system. These objects store all
 of the information needed to derive the ordinary differential or differential
 algebraic equations that govern the motion of the system, i.e., the equations
 of motion. These equations of motion abide by Newton's laws of motion and can
-handle arbitrary kinematic constraints or complex loads. The package
+handle arbitrary kinematic constraints or complex loads. The submodule
 offers two automated methods for formulating the equations of motion based on
 Lagrangian Dynamics~\cite{Lagrange1811} and Kane's Method~\cite{Kane1985}.
 Lastly, there are automated linearization routines for constrained dynamical
@@ -65,7 +65,7 @@ systems~\cite{Peterson2014}.
 
 \subsection{Quantum Mechanics}
 
-The \verb|sympy.physics.quantum| package has extensive capabilities for
+The \verb|sympy.physics.quantum| submodule has extensive capabilities for
 performing symbolic quantum mechanics, using Python objects to represent the
 different mathematical objects relevant in quantum theory~\cite{Sakurai2010}:
 states (bras and kets), operators (unitary, Hermitian, etc.), and basis sets, as

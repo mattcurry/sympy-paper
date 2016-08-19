@@ -52,7 +52,7 @@ consume and produce expression trees.
 
 In SymPy every symbolic expression is an instance of a Python \texttt{Basic}
 class,\footnote{Some
-  internal classes, such as those used in the polynomial module, do not follow
+  internal classes, such as those used in the polynomial submodule, do not follow
   this rule for efficiency reasons.} a superclass of all SymPy types providing
 common methods to all SymPy tree-elements, such as traversals.  The children of a node in the
 tree are held in the \texttt{args} attribute.  A terminal or leaf node in the
@@ -97,7 +97,7 @@ E
 
 A useful way to view an expression tree is using the \texttt{srepr} function, which
 returns a string representation of an expression as valid Python code\footnote{
-The \texttt{dotprint} function from the \texttt{sympy.printing.dot} package
+The \texttt{dotprint} function from the \texttt{sympy.printing.dot} submodule
 prints output to dot format, which can be rendered with Graphviz to
 visualize expression trees graphically.}
 with all the nested class constructor calls to create the given expression.

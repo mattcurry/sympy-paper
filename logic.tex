@@ -1,9 +1,9 @@
 
 SymPy supports construction and manipulation of boolean expressions
-through the \texttt{sympy.logic} module. SymPy symbols can be used as
+through the \texttt{sympy.logic} submodule. SymPy symbols can be used as
 propositional variables and subsequently be replaced with \texttt{True}
 or \texttt{False} values. Many functions for manipulating boolean
-expressions have been implemented in the \texttt{logic} module.
+expressions have been implemented in the \texttt{sympy.logic} submodule.
 
 \subsection{Constructing boolean expressions}
 
@@ -45,7 +45,7 @@ True
 
 \subsection{Simplification and Equivalence}
 
-The \texttt{sympy.logic} module supports simplification of given boolean expression by making
+The \texttt{sympy.logic} submodule supports simplification of given boolean expression by making
 deductions from the expression. Equivalence of two logical expressions can also
 be checked. In the case of equivalence, the function \texttt{bool\_map}
 can be used to show which variables of the first expression correspond
@@ -64,7 +64,7 @@ And(Not(b), a)
 
 \subsection{SAT solving}
 
-The module also supports satisfiability (SAT) checking of a given boolean
+The submodule also supports satisfiability (SAT) checking of a given boolean
 expression. If an expression is satisfiable, it is possible to return
 a variable assignment which satisfies it. The API also supports
 listing all possible assignments.

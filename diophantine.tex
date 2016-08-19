@@ -5,7 +5,7 @@ integers $a_1, a_2, \dotsc, a_n$ such that $x_1 = a_1, x_2 = a_2, \dotsc, x_n =
 a_n$ satisfies the above equation, the equation is said to be solvable.
 
 Currently, the following five types of Diophantine equations can be solved using
-SymPy's Diophantine module ($a_1, \ldots, a_{n+1}$, $a$, $b$, $c$, $d$, $e$,
+SymPy's Diophantine submodule ($a_1, \ldots, a_{n+1}$, $a$, $b$, $c$, $d$, $e$,
 $f$, and $k$ are explicitly given rational constants):
 
 \begin{itemize}
@@ -20,7 +20,7 @@ The \verb|diophantine| function factors the equation it is given (if
 possible), solves each factor separately, and combines the results to give
 a final solution set.
 The following examples illustrate some of the
-basic functionalities of the Diophantine module.
+basic functionalities of the Diophantine submodule.
 
 \begin{verbatim}
 >>> from sympy.solvers.diophantine import *
