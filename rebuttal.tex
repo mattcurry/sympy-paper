@@ -93,7 +93,11 @@ paragraph of the section.
 see MPFR mentioned in Section 4.1, at least to mention the pros and cons and
 say why it isn't used.
 \begin{solution}
-  % TODO
+Major advantage is that mpmath is a pure Python library.  It's slow c.f.
+MPFR, but not too much to evaluate any reasonably complicated single
+expression at interactive speed, which covers most use cases in SymPy.
+
+We mention this at the beginning of the section.
 \end{solution}
 \question Section 4.1: please state whether the syntax for
 functions in mpmath is identical, or not, to that in Sympy.
