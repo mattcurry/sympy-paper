@@ -9,100 +9,100 @@ topics and application domains that SymPy services. Unless stated otherwise,
 all features noted in Table~\ref{features-table} are symbolic in nature.
 Numeric features are discussed in Section~\ref{sec:numerics}.
 
-\begin{longtable}[htbc]{p{0.20\linewidth}p{0.73\linewidth}}
+\begin{longtable}[htbc]{p{0.3\linewidth}p{0.7\linewidth}}
 \caption{SymPy Features and Descriptions\label{features-table}}\\
 \toprule
-\textbf{Feature} & \textbf{Description} \\
+\textbf{Feature(submodules)} & \textbf{Description} \\
 \midrule
-Calculus & Algorithms for computing derivatives, integrals, and limits.\\
+Calculus (core, series, integrals) & Algorithms for computing derivatives, integrals, and limits.\\
 
-Category Theory & Representation of objects, morphisms, and diagrams. Tools
+Category Theory (categories) & Representation of objects, morphisms, and diagrams. Tools
 for drawing diagrams with Xy-pic.\\
 
-Code Generation & Generation of compilable and executable code in a
+Code Generation (printing, codegen) & Generation of compilable and executable code in a
 variety of different programming languages from expressions directly. Target
 languages include C, Fortran, Julia, JavaScript,
 Mathematica, MATLAB and Octave, Python, and Theano.\\
 
-Combinatorics \& Group Theory & Permutations, combinations,
+Combinatorics \& Group Theory (combinatorics) & Permutations, combinations,
 partitions, subsets, various permutation groups (such as polyhedral, Rubik,
 symmetric, and others), Gray codes~\cite{Nijenhuis1978combinatorial},
 and Prufer sequences~\cite{biggs1976graph}.\\
 
-Concrete Math & Summation, products, tools for determining whether summation
+Concrete Math (concrete) & Summation, products, tools for determining whether summation
 and product expressions are convergent, absolutely convergent, hypergeometric,
 and for determining other properties; computation of Gosper's normal form~\cite{petkovvsek1996bak} for two univariate polynomials.\\
 
-Cryptography & Block and stream ciphers, including shift, Affine,
+Cryptography (crypto) & Block and stream ciphers, including shift, Affine,
 substitution, Vigen\`{e}re's, Hill's, bifid, RSA, Kid RSA,
 linear-feedback shift registers, and Elgamal encryption.\\
 
-Differential Geometry & Representations of manifolds, metrics, tensor
+Differential Geometry (diffgeom) & Representations of manifolds, metrics, tensor
 products, and coordinate systems in Riemannian and pseudo-Riemannian
 geometries~\cite{FunctionalDifferentialGeometry}.\\
 % TODO: Someone verify that this is a good summary of the diffgeom module
 
-Geometry & Representations of 2D geometrical entities, such as lines and
+Geometry (geometry) & Representations of 2D geometrical entities, such as lines and
 circles. Enables queries on these entities, such as asking the area of an
 ellipse, checking for collinearity of a set of
 points, or finding the intersection between objects.\\
 
-Lie Algebras & Representations of Lie algebras and root systems.\\
+Lie Algebras (liealgebras) & Representations of Lie algebras and root systems.\\
 
-Logic & Boolean expressions, equivalence testing, satisfiability, and normal
+Logic (logic) & Boolean expressions, equivalence testing, satisfiability, and normal
 forms.\\
 
-Matrices & Tools for creating matrices of symbols and expressions.
+Matrices (matrices) & Tools for creating matrices of symbols and expressions.
 Both sparse and dense representations, as well as symbolic linear
 algebraic operations (e.g., inversion and factorization), are
 supported.\\
 
-Matrix Expressions & Matrices with symbolic dimensions (unspecified entries).
+Matrix Expressions (matrices.expressions) & Matrices with symbolic dimensions (unspecified entries).
 Block matrices.\\
 
-Number Theory & Prime number generation, primality testing, integer
+Number Theory (ntheory) & Prime number generation, primality testing, integer
 factorization, continued fractions, Egyptian fractions, modular arithmetic,
 quadratic residues, partitions, binomial and multinomial coefficients,
 prime number tools, hexidecimal digits of $\pi$, and integer factorization. \\
 
-Plotting & Hooks for visualizing expressions via matplotlib~\cite{Hunter:2007}
+Plotting (plotting) & Hooks for visualizing expressions via matplotlib~\cite{Hunter:2007}
 or as text drawings when lacking a graphical back-end. 2D function plotting,
 3D function
 plotting, and 2D implicit function plotting are supported.\\
 
-Polynomials & Polynomial algebras over various coefficient domains.
+Polynomials (polys) & Polynomial algebras over various coefficient domains.
 Functionality ranges from simple operations (e.g., polynomial division) to
 advanced computations (e.g., Gr\"obner bases~\cite{adams1994introduction} and multivariate
 factorization over algebraic number domains).\\
 
-Printing & Functions for printing SymPy expressions in the terminal with ASCII
+Printing (printing) & Functions for printing SymPy expressions in the terminal with ASCII
 or Unicode characters and converting SymPy expressions to \LaTeX{} and
 MathML.\\
 
-Quantum Mechanics & Quantum states, bra--ket notation, operators, basis sets,
+Quantum Mechanics (physics.quantum) & Quantum states, bra--ket notation, operators, basis sets,
 representations, tensor products, inner products, outer products, commutators,
 anticommutators, and specific quantum system implementations.\\
 
-Series & Series expansion, sequences, and limits of sequences.
+Series (series) & Series expansion, sequences, and limits of sequences.
 This includes Taylor, Laurent, and Puiseux series as well as special series, such
 as Fourier and formal power series.\\
 
-Sets & Representations of empty, finite, and infinite sets (including
+Sets (sets) & Representations of empty, finite, and infinite sets (including
 special sets such as the natural, integer, and complex numbers). Operations
 on sets such as union, intersection, Cartesian product, and building sets from
 other sets are supported.\\
 
-Simplification & Functions for manipulating and simplifying expressions.
+Simplification (simplify) & Functions for manipulating and simplifying expressions.
 Includes algorithms for simplifying hypergeometric functions, trigonometric
 expressions, rational functions, combinatorial functions, square root
 denesting, and common subexpression elimination.\\
 
-Solvers & Functions for symbolically solving equations, systems
+Solvers (solvers) & Functions for symbolically solving equations, systems
 of equations, both linear and non-linear, inequalities, ordinary differential
 equations, partial differential equations, Diophantine equations, and
 recurrence relations.\\
 
-Special Functions & Implementations of a number of well known special functions,
+Special Functions (functions) & Implementations of a number of well known special functions,
 including Dirac delta, Gamma, Beta, Gauss error functions, Fresnel integrals,
 Exponential integrals, Logarithmic integrals, Trigonometric integrals, Bessel,
 Hankel, Airy, B-spline, Riemann Zeta, Dirichlet eta, polylogarithm, Lerch
@@ -111,13 +111,13 @@ Gegenbauer polynomial, Chebyshev polynomial, Legendre polynomial, Hermite
 polynomial, Laguerre polynomial, and
 spherical harmonic functions.\\
 
-Statistics & Support for a random variable type as well as the ability to
+Statistics (stats) & Support for a random variable type as well as the ability to
 declare this variable from prebuilt distribution functions such as
 Normal, Exponential, Coin, Die, and other custom distributions~\cite{StatsMRocklin}.\\
 
-Tensors & Symbolic manipulation of indexed objects.\\
+Tensors (tensor) & Symbolic manipulation of indexed objects.\\
 
-Vectors & Basic operations on vectors and differential calculus with respect
+Vectors (vector) & Basic operations on vectors and differential calculus with respect
 to 3D Cartesian coordinate systems.\\
 \bottomrule
 
