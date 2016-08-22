@@ -69,9 +69,13 @@ mpf('0.100000000000000000000192874984794')
 0.100000000000000000000192874985
 \end{verbatim}
 
-Like SymPy, mpmath is a pure Python library.  This is it's major advantage
-over the GNU MPFR~\cite{Fousse:2007:MMB:1236463.1236468},
-which is much more feature-rich and fast.  Internally, mpmath represents
+Like SymPy, mpmath is a pure Python library.  A design decision of SymPy is to
+keep it and its required dependencies pure Python. This is a primary advantage
+ of mpmath over other multiple precision libraries such as GNU MPFR~\cite{Fousse:2007:MMB:1236463.1236468},
+which is much more feature-rich and fast.  Like SymPy, mpmath is also BSD
+licensed (GNU MPFR is licensed under the GNU Lesser General Public License~\cite{rosen2005open}).
+
+Internally, mpmath represents
 a floating-point number ${(-1)}^s x \cdot 2^y$ by a tuple $(s, x, y, b)$ where
 $x$ and $y$ are arbitrary-size Python integers
 and the redundant integer $b$ stores the bit length of $x$ for quick access.
