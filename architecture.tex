@@ -311,3 +311,22 @@ class gamma(Function)
 \end{lstlisting}
 The gamma function implemented in SymPy has many more capabilities than the
 above listing, such as evaluation at rational points and series expansion.
+
+
+\subsection{Speed}
+
+Due to being written in pure Python, SymPy's speed is generally slower compared
+with its commercial competitors. For many applications and uses of SymPy, that
+is not a problem, as SymPy is able to return the answer quickly enough, but for
+some applications that require handling of very long expressions and/or lots of
+small expressions, the speed becomes a problem.
+
+For this reason, a new library called SymEngine~\cite{SymEngine} was started.
+It is a pure C++ library with thin wrappers to other languages (Python, Ruby,
+Julia, ...) whose aim is to be the fastest manipulation library.  Preliminary
+benchmarks suggest that SymEngine is as fast or faster than the commercial or
+open source competitors.
+
+SymPy recently started to use SymEngine as an optional backend, initially in
+\texttt{sympy.mechanics} only. The plan is to allow more algorithms in SymPy to
+take advantage of the speed of SymEngine.
