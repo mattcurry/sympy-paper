@@ -45,7 +45,7 @@
 
 - [x] Move SymPy Gamma/Live stuff to supplement.
 
-- [x] Either flesh out CAS comparison section with other CASs or move to
+- [x] Either flesh out CAS comparison section with other CASes or move to
   supplement.
 
 - [ ] Address all inline TODOs in the .tex files.
