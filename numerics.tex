@@ -1,3 +1,13 @@
+While SymPy primarily focuses on symbolics, it is impossible to have a
+complete symbolic system without the ability to numerically evaluate
+expressions. Many operations directly use numerical evaluation, such as
+plotting a function, or solving an equation numerically. Beyond this, certain
+purely symbolic operations require numerical evaluation to effectively
+compute. For instance, determining the truth value of $e + 1 > \pi$ is most
+conveniently done by numerically evaluating both sides of the inequality and
+checking which is larger.
+
+\subsection{Floating-Point Numbers}
 Floating-point numbers in SymPy are implemented by the \texttt{Float} class,
 which represents an arbitrary-precision binary floating-point number by
 storing its value and precision (in bits). This representation is distinct
