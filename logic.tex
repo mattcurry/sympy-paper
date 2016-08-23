@@ -5,7 +5,7 @@ propositional variables and subsequently be replaced with \texttt{True}
 or \texttt{False} values. Many functions for manipulating boolean
 expressions have been implemented in the \texttt{sympy.logic} submodule.
 
-\subsection{Constructing boolean expressions}
+\subsection{Constructing Boolean Expressions}
 
 A boolean variable can be declared as a SymPy \verb|Symbol|. Python operators
 \texttt{\&}, \texttt{\textbar{}} and \texttt{\textasciitilde{}} are overridden
@@ -62,7 +62,7 @@ And(Not(b), a)
 (And(Or(b, c), a), {a: x, b: y, c: z})
 \end{verbatim}
 
-\subsection{SAT solving}
+\subsection{SAT Solving}
 
 The submodule also supports satisfiability (SAT) checking of a given boolean
 expression. If an expression is satisfiable, it is possible to return
