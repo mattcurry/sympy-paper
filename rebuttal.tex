@@ -299,11 +299,14 @@ which outputs expressions in the dot format that can be rendered with Graphviz.
 Is there a way of the user listing all available assumptions?
 
 \begin{solution}
-There is no simple way to access this in code (the simplest way is
-\texttt{sys.\allowbreak{}modules[\allowbreak{}\textquotesingle{}sympy.core.assumptions\textquotesingle{}].\allowbreak{}\_assume\_defined}, which works
-around some technical issues with Python's import system, and uses a
-private method). The recommended list is in the SymPy documentation, at
-\url{http://docs.sympy.org/latest/modules/core.html#module-sympy.core.assumptions}.
+  To access this in code, the only way is
+\begin{verbatim}
+from sympy.core.assumptions import _assume_defined
+\end{verbatim}
+  but as this is a private variable (it begins with an underscore), it is not
+  considered part of the public API, so we do not wish to recommend it in the
+  paper. The recommended list is in the SymPy documentation, at
+  \url{http://docs.sympy.org/latest/modules/core.html#module-sympy.core.assumptions}.
 \end{solution}
 \question Section 2.4
 Line 216: This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.
