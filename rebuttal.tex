@@ -121,7 +121,7 @@ twice, on lines 496 and 666. My assumption is that SymPy is slow compared with
 its commercial competitors. Please comment on the speed issue, and not just in
 the conclusions.
 \begin{solution}
-A new paragraph titled "Speed" was added to the manuscript, which discusses the
+A new paragraph titled ``Speed'' was added to the manuscript, which discusses the
 speed issue and lays out a path forward. The conclusion was simplified.
 \end{solution}
 \question Editors are needed for [20].
@@ -133,9 +133,9 @@ We have done this.
 \section{Reviewer 1}
 \subsection{Basic reporting}
 \begin{questions}
-\question Generally good. A part that confused me is the assertion (footnote 3) that "If
+\question Generally good. A part that confused me is the assertion (footnote 3) that ``If
 A and B are Symbols created with commutative=False then SymPy will keep A·B
-and B·A distinct." Does that mean that BOTH of them must be created this way,
+and B·A distinct.'' Does that mean that BOTH of them must be created this way,
 and that A and x (if x is created normally) will commute? Is there any way to
 declare commutators? How does one guarantee that other pieces of code, e.g.
 Gaussian elimination, respect non-commutativity?
@@ -171,13 +171,13 @@ definition of simplification.
 
 \subsection{Experimental design}
 \begin{questions}
-\question The referee is asked to comment whether the research is withinthe scope of the
-journal, defined as "PeerJ is an Open Access, peer-reviewed, scholarly
+\question The referee is asked to comment whether the research is within the scope of the
+journal, defined as ``PeerJ is an Open Access, peer-reviewed, scholarly
 journal. It considers articles in the Biological Sciences, Medical Sciences,
 and Health Sciences. PeerJ does not publish in the Physical Sciences, the
 Mathematical Sciences, the Social Sciences, or the Humanities (except where
 articles in those areas have clear applicability to the core areas of
-Biological, Medical or Health sciences)."
+Biological, Medical or Health sciences).''
 
 Hence I fear a software description on the maths/cmputing boundary with no
 cited applications is out of scope.
@@ -329,12 +329,14 @@ by reviewer 3, point~\ref{rev3point16}.
 \question Page 8: Footnote 5
 The line reads
 
+\begin{quote}
 The measure parameter of the simplify function lets specify the Python function used to determine how
+\end{quote}
 
-should this be..
-
+should this be
+\begin{quote}
 The measure parameter of the simplify function lets the user specify the Python function used to determine how
-
+\end{quote}
 \begin{solution}
 We have changed the sentence as suggested.
 \end{solution}
