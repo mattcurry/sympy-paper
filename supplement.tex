@@ -71,33 +71,58 @@ has been run:
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
 
-\section{Limits: The Gruntz Algorithm}
+Section \ref{suppsec:Gruntz} discusses the Gruntz algorithm, used to
+calculate limits in the SymPy.  Sections \ref{suppsec:Series}--\ref{suppsec:Ten}
+discuss in depth some selected submodules.  Section \ref{suppsec:numsimpl}
+discusses numerical simplification.  Section \ref{suppsec:examples} provides
+additional examples for topics, discussed in the main paper.  In sections
+\ref{sympy-gamma} and \ref{sympy-live} introduced the SymPy Gamma
+and the SymPy Live projects.  Finally, section \ref{comp-mma} do
+brief comparison of the SymPy with the Wolfram Mathematica and the
+section \ref{other-proj} lists some projects that depend on SymPy.
 
+\section{Limits: The Gruntz Algorithm}
+\label{suppsec:Gruntz}
 \input{gruntz.tex}
 
 % Series module (Formal Power Series, Fourier Series)
 \section{Series}
-
+\label{suppsec:Series}
 \input{series.tex}
 
 % Logic module
 \section{Logic}
-
+\label{suppsec:Logic}
 \input{logic}
 
 \section{Diophantine Equations}
-
+\label{suppsec:Dioph}
 \input{diophantine}
 
 % Sets
 \section{Sets}
+\label{suppsec:Sets}
 \input{sets}
 
 \section{Statistics}
+\label{suppsec:Stats}
 \input{stats}
 
 \section{Category Theory}
+\label{suppsec:Cat}
 \input{categories}
+
+\section{Tensors}
+\label{suppsec:Ten}
+\input{tensors}
+
+\section{Numerical Simplification}
+\label{suppsec:numsimpl}
+\input{nsimplify}
+
+\section{Examples}
+\label{suppsec:examples}
+\input{examples}
 
 \section{SymPy Gamma}\label{sympy-gamma}
 
@@ -108,28 +133,12 @@ has been run:
 \input{live}
 
 \section{Comparison with Mathematica}
-
+\label{comp-mma}
 \input{comparison_with_mma}
 
 \section{Other Projects that Use SymPy}
-
+\label{other-proj}
 \input{other_projects_that_use_sympy}
-
-
-\section{Tensors}
-
-\input{tensors}
-
-
-\section{Numerical Simplification}
-
-\input{nsimplify}
-
-\section{Examples}
-
-\input{examples}
-
-\section{References}
 
 \bibliography{paper}
 
