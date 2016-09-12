@@ -49,8 +49,11 @@ a part of their functionality. Some of them are listed below:
   \href{http://yt-project.org/}{\textbf{yt}}: Python package for
   analyzing and visualizing volumetric data (\texttt{yt.units} uses SymPy).
 \item
-  \href{http://sfepy.org/}{\textbf{SfePy}}: Simple finite elements in
-  Python, see section~\ref{sfepy}.
+  \href{http://sfepy.org/}{\textbf{SfePy}} (Simple finite elements in Python),
+  cf.~\cite{cimrman2014sfepy}, is a Python package for solving partial
+  differential equations (PDEs) in 1D, 2D and 3D by the finite element (FE)
+  method~\cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
+  code generation and testing.
 \item
   \href{http://quameon.sourceforge.net/}{\textbf{Quameon}}: Quantum
   Monte Carlo in Python.
@@ -69,33 +72,4 @@ a part of their functionality. Some of them are listed below:
   \href{https://www.researchgate.net/publication/260585491_Symbolic_Statistics_with_SymPy/}{\textbf{Symbolic
   statistical modeling}}: Adding statistical operations to complex
   physical models.
-\end{itemize}
-
-\subsection{SfePy}\label{sfepy}
-
-\href{http://sfepy.org/}{\textbf{SfePy}} (Simple finite elements in Python),
-cf.~\cite{cimrman2014sfepy}, is a Python package for solving partial
-differential equations (PDEs) in 1D, 2D and 3D by the finite element (FE)
-method~\cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
-code generation and testing, namely:
-
-\begin{itemize}
-\item generation of the hierarchical FE basis module, involving generation and
-  symbolic differentiation of 1D Legendre and Lobatto polynomials, constructing
-  the FE basis polynomials~\cite{Solin2003hpfem} and generating the C code;
-\item generation of symbolic conversion formulas for various groups of elastic
-  constants~\cite{Fung1993contmech}:  provide any two of the Young's modulus,
-  Poisson's ratio, bulk modulus, Lam\'{e}'s first parameter, shear modulus
-  (Lam\'{e}'s second parameter) or longitudinal wave modulus and get the other
-  ones;
-\item simple physical unit conversions, generation of consistent unit sets;
-\item testing FE solutions using method of manufactured (analytical)
-  solutions:  the differential operator of a PDE is symbolically applied and a symbolic
-  right-hand side is created, evaluated in quadrature points, and subsequently
-  used to obtain a numerical solution that is then compared to the analytical
-  one;
-\item testing accuracy of 1D, 2D and 3D numerical quadrature formulas
-  (cf.~\cite{Abramowitz1964handbook}) by generating polynomials of suitable
-  orders, integrating them, and comparing the results with those obtained by
-  the numerical quadrature.
 \end{itemize}
