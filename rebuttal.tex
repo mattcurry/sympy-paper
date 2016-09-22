@@ -395,6 +395,44 @@ without an equal comparison to other principle computer algebra systems, such
 as Maple, SageMath, and Maxima. Unfortunately, our authorship is inexpert in
 these systems, so a complete and fair comparison is impossible.
 
+We are unclear why the reviewer has called out specific sections over others
+for his suggested reorganization. We deep all the sections in section 3 (now
+section 2) to be important core components of the library. Regarding the supplement
+sections (previously) 5, 7, and 9---``Sets'', ``Category Theory'', and ``SymPy
+Live'', respesctively---only set sets module is potentially applicable to the
+wider audience of the main paper. However, in SymPy 1.0, the sets module is
+still in a relatively infant stage. It is mentioned already in conjunction
+with the \texttt{solveset} function. We have added some additional text to the
+solvers subsection regarding \texttt{sympy.sets}. The category theory module
+in SymPy is very domain specific, and independent of other SymPy modules. We
+consider the module too niche to warrant expanding upon in the main
+manuscript. SymPy Live, as has been discussed above, is not a SymPy submodule.
+It is a separate project from the SymPy library. It would be inappropriate to
+list it alongside the features of SymPy.
+
+We also consider the supplement sections (previously) 2, 3, 4, and
+6---''Series'', ``Logic'', ``Diophantine Equations'', and ``Statistics'',
+respectively---to be in depth beyond the goals of the main manuscript. The
+``Series'' section discusses relatively advanced series expansion methods. We
+have added a paragraph detailing basic series expansion to the ``Calculus''
+subsection, with a reference to the more detailed section in the supplement.
+The ``Logic'' section is alluded to in the ``Assumptions'' subsection, but is
+not discussed in depth in the main manuscript. While the logic submodule is
+indeed important for certain parts of SymPy, particularly the assumptions, we
+do not consider it to be of interest to the general reader. Furthermore, on a
+technical note, the assumptions discussed in the manuscript are the so-called
+``old assumptions'', and do not use the logic module discussed in the
+supplement. The so-called ``new assumptions'', mentioned briefly in the future
+work section, does use it, but we have opted to not discuss this module in
+depth, as it is still in development and not fully usable.
+
+The ``Solvers'' subsection already mentions that SymPy can solve Diophantine
+equations. We consider this specific application to be niche enough to keep
+the discussion in the supplement. We have added a reference to the supplement
+to the ``Solvers'' subsection. The ``Statistics'' module is an independent
+submodule (no other SymPy submodules depend on it). We do not consider it to
+be a core module of SymPy.
+
 \end{solution}
 \end{questions}
 
