@@ -357,21 +357,23 @@ We have added a citation for mpmath.
 \item The current conclusion works fine as the finishing section of the paper.
 \end{enumerate}
 \begin{solution}
-  FIXME.
+  We have made the following changes to the paper
+
   \begin{enumerate}
-    \item I believe we shouldn't move ``Other Projects'' section to the
-      main paper content.  It either should stay in the supplement or we
-      should do a moderate cleanup for this section.  E.g. list only few
-      projects here and put other in the supplement.  Or/And show here
-      only project names.
-
-    \item Logical place for above section - at the end of the
-      paper, right before the "conclusion" section.
-
-    \item We should either drop the Mathematica section or discuss
-      other CAS too, which make this stuff suitable only as part
-      of the suppliment.  I prefer the first variant.
+  \item We have renamed the ``Features'' section to ``Overview of
+    Capabilities''.
+    \item We have renamed the ``Domain Specific Submodules'' section to
+      ``Physics Submodule'' (see point~\ref{rev3point30}).
+  \item We have moved the ``Architecture'' section to the end, after the
+    ``Phusics Submodule'' section.
+  \item We have moved the ``Basic Usage'' subsection to the beginning of the
+    ``Overview of Capabilities'' section, and added an intro paragraph to the
+    ``Overview of Capabilities'' section.
+  \item We have moved the ``Assumptions'' subsection to the ``Overview of
+    Capabilities'' subsection, after the features table.
   \end{enumerate}
+
+We disagree with the reviewer on a few points
 \end{solution}
 \end{questions}
 
@@ -649,6 +651,7 @@ This was fixed.
 
 \question The title of section 5, ``Domain specific submodules'', seems inappropriate because the section only covers Physics package (not ``submodules''). It should either be expanded with a short introduction listing other domain specific packages, or it should be renamed to ``Physics package''.
 \begin{solution}
+\label{rev3point30}
 This section was renamed to "Physics submodule".  (See also the
 discussion at~\ref{rev1point37} about module vs package).
 \end{solution}
