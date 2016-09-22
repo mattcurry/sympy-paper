@@ -214,6 +214,9 @@ No Comments
 
 The final cell is
 
+% This depends on matplotlib. We want to make sure the rest of the paper
+% doesn't depend on it, so skip.
+% no-doctest
 \begin{verbatim}
 >>> circuit_plot(fourier, nqubits=3);
 plt.savefig('./images/circuitplot-qft.pdf', format='pdf')
