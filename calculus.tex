@@ -56,6 +56,13 @@ are computed with \verb|product| function via a suite of heuristics.
 n*factorial(n) + factorial(n) - 1
 \end{verbatim}
 
+Series expansions are computed with the \verb|series| function. This example computes the power series of $\sin(x)$ around $x=0$ up to $x^6$.
+\begin{verbatim}
+>>> series(sin(x), x, 0, 6)
+x - x**3/6 + x**5/120 + O(x**6)
+\end{verbatim}
+The supplementary material discusses series expansions methods in more depth.
+
 Integrals, derivatives, summations, products, and limits that cannot be
 computed return unevaluated objects. These can also be created directly if the
 user chooses.
