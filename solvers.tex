@@ -16,7 +16,9 @@ The function signatures of \texttt{solve} and \texttt{solveset} are
 solve(f, *symbols, **flags)
 solveset(f, symbol, domain=S.Complexes)
 \end{verbatim}
-The \texttt{domain} parameter is typically either \texttt{S.Complexes} (the
+The \texttt{domain} parameter can be any set from the \texttt{sympy.sets}
+module (see the supplementary material for details on \texttt{sympy.sets}),
+but is typically either \texttt{S.Complexes} (the
 default) or \texttt{S.Reals}; the latter causes \texttt{solveset} to only return real solutions.
 
 An important difference between the two functions is that the output API of \texttt{solve}
