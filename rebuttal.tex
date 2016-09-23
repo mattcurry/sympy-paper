@@ -424,11 +424,14 @@ the features of SymPy.
 
 We also consider the supplement sections (previously) 2, 3, 4, and
 6---``Series'', ``Logic'', ``Diophantine Equations'', and ``Statistics'',
-respectively---to be in depth beyond the goals of the main manuscript. The
-``Series'' section discusses relatively advanced series expansion methods. We
+respectively---to be in depth beyond the goals of the main manuscript.
+
+\begin{itemize}
+\item The ``Series'' section discusses relatively advanced series expansion methods. We
 have added a paragraph detailing basic series expansion to the ``Calculus''
 subsection, with a reference to the more detailed section in the supplement.
-The ``Logic'' section is alluded to in the ``Assumptions'' subsection, but is
+
+\item The ``Logic'' section is alluded to in the ``Assumptions'' subsection, but is
 not discussed in depth in the main manuscript. While the logic submodule is
 indeed important for certain parts of SymPy, particularly the assumptions, we
 do not consider it to be of interest to the general reader. Furthermore, on a
@@ -438,12 +441,15 @@ supplement. The so-called ``new assumptions'', mentioned briefly in the future
 work section, does use it, but we have opted to not discuss this module in
 depth, as it is still in development and not fully usable.
 
-The ``Solvers'' subsection already mentions that SymPy can solve Diophantine
+\item The ``Solvers'' subsection already mentions that SymPy can solve Diophantine
 equations. We consider this specific application to be niche enough to keep
 the discussion in the supplement. We have added a reference to the supplement
-to the ``Solvers'' subsection. The ``Statistics'' module is an independent
+to the ``Solvers'' subsection.
+
+\item The ``Statistics'' module is an independent
 submodule (no other SymPy submodules depend on it). We do not consider it to
 be a core module of SymPy.
+\end{itemize}
 
 We feel the architecture is one of the most important parts of the paper. The
 goal of the paper is to discuss the architecture core features of SymPy. We
