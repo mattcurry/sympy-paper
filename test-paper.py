@@ -34,7 +34,7 @@ files = [
     "examples.tex",
     "gamma.tex",
     "comparison_with_mma.tex",
-        ]
+    ]
 
 output_file = "test_full_paper.py"
 
