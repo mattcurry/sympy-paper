@@ -51,15 +51,14 @@ is returned if the SymPy object doesn't or can't have the assumption.
 For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
 \texttt{False} for the imaginary unit \texttt{I}.
 
-\texttt{None} represents the
-``unknown'' case. This could mean that given assumptions do not unambiguously
-specify the truth of an attribute. For instance,
-\texttt{Symbol(\textquotesingle{}x\textquotesingle{}, real=True).is\_positive}
-will give \texttt{None} because a real symbol might be positive or negative.
-The \texttt{None} could also mean that not enough is known or implemented to
-compute the given fact. For instance, \texttt{(pi + E).is\_irrational} gives
-\texttt{None}---indeed, determining whether $\pi + e$ is rational or irrational
-is an open problem in mathematics~\cite{lang1966introduction}.
+\texttt{None} represents the ``unknown'' case. This could mean that given
+assumptions do not unambiguously specify the truth of an attribute. For
+instance, \texttt{Symbol(\textquotesingle{}x\textquotesingle{},
+  real=True).is\_positive} will give \texttt{None} because a real symbol might
+be positive or negative. The \texttt{None} could also mean that not enough is
+known or implemented to compute the given fact. For instance, \texttt{(pi +
+  E).is\_irrational} gives \texttt{None}---indeed, the rationality of
+$\pi + e$ is an open problem in mathematics~\cite{lang1966introduction}.
 
 Basic implications between the facts are used to deduce assumptions. For
 instance, the assumptions system knows that being an integer implies being
