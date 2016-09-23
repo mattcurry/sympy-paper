@@ -26,7 +26,7 @@ files = ["introduction.tex",
          "gamma.tex",
          "live.tex",
          "comparison_with_mma.tex",
-         "other_projects_that_use_sympy.tex",
+         "projects_that_depend_on_sympy.tex",
          "tensors.tex",
          "polys.tex"
         ]
