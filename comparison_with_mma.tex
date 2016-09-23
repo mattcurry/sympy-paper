@@ -118,7 +118,8 @@ the sublists have the same length, matrices in SymPy are a type in their own
 right, allowing ordinary operators and functions (like multiplication and
 exponentiation) to be used as they traditionally are in mathematics.
 \begin{verbatim}
->>> exp(Matrix([[1, 1],[0, 2]])) * Matrix([a, b])
+>>> a, b = symbols('a b')
+>>> exp(Matrix([[1, 1], [0, 2]])) * Matrix([a, b])
 Matrix([
 [E*a + b*(-E + exp(2))],
 [             b*exp(2)]])
