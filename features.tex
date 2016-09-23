@@ -6,38 +6,7 @@ depth. Many other features are discussed in depth in the supplementary
 material.
 
 \subsection{Basic Usage}
-
-% symbols, various ways to declare them
-
-Symbolic variables, called symbols, must be defined and assigned to
-Python variables before they can be used. This is typically done through the
-\texttt{symbols} function, which may create multiple symbols in a single
-function call. For instance,
-\begin{verbatim}
->>> x, y, z = symbols('x y z')
-\end{verbatim}
-creates three symbols representing variables named $x$, $y$, and $z$. In this
-particular instance, these symbols are all assigned to Python variables of the
-same name. However, the user is free to assign them to different
-Python variables, while representing the same symbol, such as
-\texttt{a, b, c = symbols(\textquotesingle{}x y z\textquotesingle{})}.
-In order to minimize potential confusion, though, all examples in this paper will
-assume that
-the symbols \verb|x|, \verb|y|, and \verb|z| have been assigned to Python variables
-identical to their symbolic names.
-
-Expressions are created from symbols using Python's mathematical syntax.  For
-instance, the following Python code creates the expression $(x^2 - 2x + 3)/y$.
-Note that the expression remains unevaluated: it is represented symbolically.
-
-\begin{verbatim}
->>> (x**2 - 2*x + 3)/y
-(x**2 - 2*x + 3)/y
-\end{verbatim}
-
-Importantly, SymPy expressions are immutable. This simplifies the design of
-SymPy by allowing expression interning. It also enables expressions to be
-hashed, that is used to implement caching in SymPy.
+\input{basic_usage.tex}
 
 \subsection{List of Features}
 
@@ -167,82 +136,7 @@ to 3D Cartesian coordinate systems.\\
 %% Assumptions
 \subsection{Assumptions}
 \label{sec:assumptions}
-
-SymPy performs logical inference through its assumptions system. The
-assumptions system allows users to specify that symbols have certain common
-mathematical properties, such as being positive, imaginary, or integral. SymPy
-is careful to never perform simplifications on an expression unless the
-assumptions allow them. For instance, the identity $\sqrt{t^2} = t$ holds if
-$t$ is nonnegative ($t\ge 0$). However, for general complex $t$, no
-such identity holds.
-
-By default, SymPy performs all calculations assuming that symbols are
-complex valued. This assumption makes it easier to treat mathematical problems
-in full generality.
-\begin{verbatim}
->>> t = Symbol('t')
->>> sqrt(t**2)
-sqrt(t**2)
-\end{verbatim}
-
-By assuming the most general case, that \texttt{t} is complex by default, SymPy
-avoids performing mathematically invalid operations. However, in many cases
-users will wish to simplify expressions containing terms like $\sqrt{t^2}$.
-
-Assumptions are set on \texttt{Symbol} objects when they are created. For
-instance \texttt{Symbol(\textquotesingle{}t\textquotesingle{}, positive=True)} will create a symbol named
-\texttt{t} that is assumed to be positive.
-\begin{verbatim}
->>> t = Symbol('t', positive=True)
->>> sqrt(t**2)
-t
-\end{verbatim}
-
-Some of the common assumptions that SymPy allows are \texttt{positive},
-\texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
-\texttt{prime} and \texttt{commutative}.\footnote{SymPy assumes that two
-  expressions $A$ and $B$ commute with each other multiplicatively, that is,
-  $A\cdot B=B\cdot A$, unless they both have \texttt{commutative=False}. Many
-  algorithms in SymPy require special consideration to work correctly with
-  noncommutative products.} Assumptions on any object can be checked with the
-\verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
-
-Assumptions are only needed to restrict a domain so that certain
-simplifications can be performed. They are not required to make the domain match
-the input of a function. For instance, one can create the object
-$\sum_{n=0}^m f(n)$ as \verb|Sum(f(n), (n, 0, m))| without setting
-\texttt{integer=True} when creating the Symbol object \texttt{n}.
-
-The assumptions system additionally has deductive capabilities. The
-assumptions use a three-valued logic using the Python built in objects
-\texttt{True}, \texttt{False}, and \texttt{None}. Note that \texttt{False}
-is returned if the SymPy object doesn't or can't have the assumption.
-For example, both \texttt{I.is\_real} and \texttt{I.is\_prime} return
-\texttt{False} for the imaginary unit \texttt{I}.
-
-\texttt{None} represents the
-``unknown'' case. This could mean that given assumptions do not unambiguously
-specify the truth of an attribute. For instance,
-\texttt{Symbol(\textquotesingle{}x\textquotesingle{}, real=True).is\_positive}
-will give \texttt{None} because a real symbol might be positive or negative.
-The \texttt{None} could also mean that not enough is known or implemented to
-compute the given fact. For instance, \texttt{(pi + E).is\_irrational} gives
-\texttt{None}---indeed, determining whether $\pi + e$ is rational or irrational
-is an open problem in mathematics~\cite{lang1966introduction}.
-
-Basic implications between the facts are used to deduce assumptions. For
-instance, the assumptions system knows that being an integer implies being
-rational.
-\begin{verbatim}
->>> i = Symbol('i', integer=True)
->>> i.is_rational
-True
-\end{verbatim}
-Furthermore, expressions compute the assumptions on themselves
-based on the assumptions of their arguments. For instance, if \texttt{x} and
-\texttt{y} are both created with \texttt{positive=True}, then
-\texttt{(x + y).is\_positive} will be \texttt{True} whereas
-\texttt{(x - y).is\_positive} will be \texttt{None}.
+\input{assumptions.tex}
 
 \subsection{Simplification}
 

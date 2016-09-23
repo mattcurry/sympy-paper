@@ -8,6 +8,8 @@ import sys
 files = [
     "introduction.tex",
     "features.tex",
+    "basic_usage.tex",
+    "assumptions.tex",
     "simplification.tex",
     "calculus.tex",
     "polys.tex",
