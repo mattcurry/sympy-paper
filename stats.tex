@@ -40,7 +40,7 @@ example, calculate
 the well known properties of maxwellian velocity distribution
 \begin{verbatim}
 >>> from sympy.stats import Maxwell, density
->>> kT, m, x = symbols("kT m x", positive=True)
+>>> kT, m, t = symbols("kT m t", positive=True)
 >>> v = Maxwell("v", sqrt(kT/m))
 >>> E(v)                                # mean velocity
 2*sqrt(2)*sqrt(kT)/(sqrt(pi)*sqrt(m))
@@ -49,7 +49,7 @@ Integral(sqrt(2)*m**(3/2)*v**3*exp(-m*v**2/(2*kT))/(sqrt(pi)*kT**(3/2)),
 (v, 0, oo))
 >>> E(m*v**2/2)                         # mean energy
 3*kT/2
->>> solve(density(v)(x).diff(x), x)[0]  # most probable velocity
+>>> solve(density(v)(t).diff(t), t)[0]  # most probable velocity
 sqrt(2)*sqrt(kT)/sqrt(m)
 \end{verbatim}
 
