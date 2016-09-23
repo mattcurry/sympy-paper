@@ -26,7 +26,7 @@ expression tree has empty \texttt{args}.
 
 For example, consider the expression $xy + 2$:
 \begin{verbatim}
->>> x, y = symbols('x, y')
+>>> x, y = symbols('x y')
 >>> expr = x*y + 2
 \end{verbatim}
 By order of operations, the parent of the expression tree for \texttt{expr} is
