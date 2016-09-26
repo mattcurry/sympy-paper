@@ -1,10 +1,8 @@
-
-SymPy performs logical inference through its assumptions system. The
-assumptions system allows users to specify that symbols have certain common
-mathematical properties, such as being positive, imaginary, or integral. SymPy
-is careful to never perform simplifications on an expression unless the
-assumptions allow them. For instance, the identity $\sqrt{t^2} = t$ holds if
-$t$ is nonnegative ($t\ge 0$). However, for general complex $t$, no
+The assumptions system allows users to specify that symbols have certain
+common mathematical properties, such as being positive, imaginary, or
+integral. SymPy is careful to never perform simplifications on an expression
+unless the assumptions allow them. For instance, the identity $\sqrt{t^2} = t$
+holds if $t$ is nonnegative ($t\ge 0$). However, for general complex $t$, no
 such identity holds.
 
 By default, SymPy performs all calculations assuming that symbols are
@@ -60,9 +58,15 @@ known or implemented to compute the given fact. For instance, \texttt{(pi +
   E).is\_irrational} gives \texttt{None}---indeed, the rationality of
 $\pi + e$ is an open problem in mathematics~\cite{lang1966introduction}.
 
-Basic implications between the facts are used to deduce assumptions. For
-instance, the assumptions system knows that being an integer implies being
-rational.
+Basic implications between the facts are used to deduce assumptions.
+Deductions are made using the Rete
+algorithm~\cite{doorenbos1995production}.\footnote{For historical reasons,
+  this algorithm is distinct from the \texttt{sympy.logic} submodule, which is
+  discussed in the supplementary material. SymPy has an experimental
+  assumptions system which stores facts separate from objects, and uses
+  \texttt{sympy.logic} and a SAT solver for deduction. We will not discuss
+  this system here.} For instance, the assumptions system knows that being an
+integer implies being rational.
 \begin{verbatim}
 >>> i = Symbol('i', integer=True)
 >>> i.is_rational

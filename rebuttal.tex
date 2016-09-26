@@ -445,18 +445,19 @@ respectively---to be in depth beyond the goals of the main manuscript.
 have added a paragraph detailing basic series expansion to the ``Calculus''
 subsection, with a reference to the more detailed section in the supplement.
 
-% TODO: Note that old assumptions do not use sympy.logic
-% TODO: Reference the RETE algorithm
-\item The ``Logic'' section is alluded to in the ``Assumptions'' subsection, but is
-not discussed in depth in the main manuscript. While the logic submodule is
-indeed important for certain parts of SymPy, particularly the assumptions, we
-do not consider it to be of interest to the general reader. Furthermore, on a
-technical note, the assumptions discussed in the manuscript are the so-called
-``old assumptions'', and do not use the \texttt{sympy.logic} submodule discussed in the
-supplement. The so-called ``new assumptions'', mentioned briefly in the
-``Conclusion and Future
-Work'' section, does use it, but we have opted to not discuss this module in
-depth, as it is still in development and not fully usable.
+\item The ``Logic'' section is alluded to in the ``Assumptions'' subsection,
+  but is not discussed in depth in the main manuscript. While the logic
+  submodule is indeed important for certain parts of SymPy, we do not consider
+  it to be of interest to the general reader. Furthermore, on a technical
+  note, the assumptions discussed in the manuscript are the so-called ``old
+  assumptions'', which do not use the \texttt{sympy.logic} submodule discussed
+  in the supplement (they use an implementation of the Rete algorithm, which
+  is separate from \texttt{sympy.logic}). The so-called ``new assumptions'',
+  mentioned briefly in the ``Conclusion and Future Work'' section, does use
+  it, but we have opted to not discuss this module in depth, as it is still in
+  development and not fully usable. We have added some text to the assumptions
+  section discussing this, and referencing the logic subsection of the
+  supplement.
 
 \item Regarding the ``Diophantine Solvers'' section, the ``Solvers''
   subsection already mentions that SymPy can solve Diophantine Equations. The
