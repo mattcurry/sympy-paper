@@ -1,69 +1,75 @@
 There are several projects that depend on SymPy as a library for implementing
-a part of their functionality. Some of them are listed below:
+a part of their functionality. A selection of these projects are listed below:
 
-\begin{itemize}
-\item \href{http://live.sympy.org/}{\textbf{SymPy Live}}: SymPy Live an online
+\begin{longtable}[htbc]{>{\raggedright}p{0.14\linewidth}p{0.14\linewidth}p{0.63\linewidth}}
+\caption{Selected projects that depend on SymPy.\label{projects-table}}\\
+\toprule
+\textbf{Project name} & \textbf{Domain} & \textbf{Description} \\
+\midrule
+\href{http://live.sympy.org/}{\textbf{SymPy Live}} &  & SymPy Live an online
   Python shell, which uses the Google App Engine to executes SymPy code. It is
   integrated in the SymPy documentation examples at
   \href{http://docs.sympy.org}{http://docs.sympy.org}. SymPy Live is
-  maintained by the SymPy community.
-\item \href{http://sympygamma.com/}{\textbf{SymPy Gamma}}: SymPy Gamma is a
+  maintained by the SymPy community. \\
+
+\href{http://sympygamma.com/}{\textbf{SymPy Gamma}} &  & SymPy Gamma is a
   web application that executes and displays results for SymPy expressions, in
   a fashon similar to that of Wolfram|Alpha. SymPy Gamma is maintained by the
   SymPy community. See the supplementary material for more information about
-  SymPy Gamma.
-\item
-  \href{http://cadabra.science/index.html}{\textbf{Cadabra}}~\cite{Peeters2007cadabra}:
+  SymPy Gamma. \\
+
+\href{http://cadabra.science/index.html}{\textbf{Cadabra}}~\cite{Peeters2007cadabra} &  &
   Cadabra is a CAS designed specifically for the resolution of problems
-  encountered in field theory.
-\item
-  \href{https://github.com/cbm755/octsympy}{\textbf{OctSymPy}}~\cite{OctSymPy}:
+  encountered in field theory. \\
+
+\href{https://github.com/cbm755/octsympy}{\textbf{OctSymPy}}~\cite{OctSymPy} &  &
   The OctSymPy package adds symbolic calculation features
   to GNU Octave. These include common CAS tools such
   as algebraic operations, calculus, equation solving, Fourier and
-  Laplace transforms, variable precision arithmetic, and other features.
-\item
-  \href{https://github.com/jverzani/SymPy.jl}{\textbf{SymPy.jl}}~\cite{SymPy.jl}:
-  Provides a Julia interface to SymPy using PyCall.
-\item
-  \href{https://mathics.github.io/}{\textbf{Mathics}}~\cite{Mathics}: Mathics is a
+  Laplace transforms, variable precision arithmetic, and other features. \\
+
+\href{https://github.com/jverzani/SymPy.jl}{\textbf{SymPy.jl}}~\cite{SymPy.jl} &  &
+  Provides a Julia interface to SymPy using PyCall. \\
+
+\href{https://mathics.github.io/}{\textbf{Mathics}}~\cite{Mathics} &  & Mathics is a
   free, general-purpose online CAS featuring Mathematica compatible
   syntax and functions. It is backed by highly extensible Python code,
-  relying on SymPy for most mathematical tasks.[<8;32;30m
-\item
-  \href{http://mathpix.com/}{\textbf{Mathpix}}~\cite{Mathpix}: An iOS App, that detects handwritten math as input, and uses
+  relying on SymPy for most mathematical tasks.[<8;32;30m \\
+
+\href{http://mathpix.com/}{\textbf{Mathpix}}~\cite{Mathpix} &  & An iOS App, that detects handwritten math as input, and uses
   SymPy Gamma to evaluate the math input and generate the relevant
-  steps to solve the problem.
-\item
-  \href{http://openrave.org/docs/latest_stable/openravepy/ikfast/}{\textbf{IKFast}}~\cite{diankov2010ikfast}:
+  steps to solve the problem. \\
+
+\href{http://openrave.org/docs/latest_stable/openravepy/ikfast/}{\textbf{IKFast}}~\cite{diankov2010ikfast} &  &
   IKFast is a robot kinematics compiler provided by
   \href{http://openrave.org/}{OpenRAVE}. It analytically solves robot inverse
   kinematics equations and generates optimized C++ files. It uses SymPy for
-  its internal symbolic mathematics.
-\item
-  \href{http://www.sagemath.org/}{\textbf{Sage}}~\cite{sagemath}: A CAS, visioned to be
+  its internal symbolic mathematics. \\
+
+\href{http://www.sagemath.org/}{\textbf{Sage}}~\cite{sagemath} &  & A CAS, visioned to be
   a viable free open source alternative to Magma, Maple, Mathematica and
   MATLAB\@. Sage includes many open source mathematical libraries, including
-  SymPy.
-\item
-  \href{http://www.pydy.org/}{\textbf{PyDy}}~\cite{gede2013constrained}: Multibody Dynamics with
-  Python.
-\item
-  \href{https://github.com/brombo/galgebra}{\textbf{galgebra}}~\cite{galgebra}:
-  A module for geometric algebra (previously \texttt{sympy.galgebra}).
-\item
-  \href{http://yt-project.org/}{\textbf{yt}}~\cite{2011ApJS..192....9T}: Python package for
-  analyzing and visualizing volumetric data (\texttt{yt.units} uses SymPy).
-\item
-  \href{http://sfepy.org/}{\textbf{SfePy}}~\cite{cimrman2014sfepy}: (Simple finite elements in Python),
+  SymPy. \\
+
+\href{http://www.pydy.org/}{\textbf{PyDy}}~\cite{gede2013constrained} &  & Multibody Dynamics with
+  Python. \\
+
+\href{https://github.com/brombo/galgebra}{\textbf{galgebra}}~\cite{galgebra} &  &
+  A module for geometric algebra (previously \texttt{sympy.galgebra}). \\
+
+\href{http://yt-project.org/}{\textbf{yt}}~\cite{2011ApJS..192....9T} &  & Python package for
+  analyzing and visualizing volumetric data (\texttt{yt.units} uses SymPy). \\
+
+\href{http://sfepy.org/}{\textbf{SfePy}}~\cite{cimrman2014sfepy} &  & (Simple finite elements in Python),
   cf.~\cite{cimrman2014sfepy}, is a Python package for solving partial
   differential equations (PDEs) in 1D, 2D and 3D by the finite element (FE)
   method~\cite{Zienkiewicz2013FEM}. SymPy is used within this package mostly for
-  code generation and testing.
-\item
-  \href{http://quameon.sourceforge.net/}{\textbf{Quameon}}~\cite{quameon}: Quantum
-  Monte Carlo in Python.
-\item
-  \href{http://lcapy.elec.canterbury.ac.nz/}{\textbf{Lcapy}}~\cite{lcapy}:
-  Experimental Python package for teaching linear circuit analysis.
-\end{itemize}
+  code generation and testing. \\
+
+\href{http://quameon.sourceforge.net/}{\textbf{Quameon}}~\cite{quameon} &  & Quantum
+  Monte Carlo in Python. \\
+
+\href{http://lcapy.elec.canterbury.ac.nz/}{\textbf{Lcapy}}~\cite{lcapy} &  &
+  Experimental Python package for teaching linear circuit analysis. \\
+\bottomrule
+\end{longtable}
