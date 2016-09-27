@@ -37,9 +37,7 @@ $X$ unit vector through $\frac{\pi}{2}$.
 
 \begin{verbatim}
 >>> from sympy.physics.vector import ReferenceFrame
->>> A = ReferenceFrame('A')
->>> B = ReferenceFrame('B')
->>> C = ReferenceFrame('C')
+>>> A, B, C = symbols('A B C', cls=ReferenceFrame)
 >>> B.orient(A, 'body', (pi, pi/3, pi/4), 'zxz')
 >>> C.orient(B, 'axis', (pi/2, B.x))
 >>> v = 1*A.x + 2*B.z + 3*C.y
@@ -80,10 +78,7 @@ a full range of operations with them.
 \begin{verbatim}
 >>> from sympy.physics.quantum import Commutator, Dagger, Operator
 >>> from sympy.physics.quantum import Ket, qapply
->>> A = Operator('A')
->>> B = Operator('B')
->>> C = Operator('C')
->>> D = Operator('D')
+>>> A, B, C, D = symbols('A B C D', cls=Operator)
 >>> a = Ket('a')
 >>> comm = Commutator(A, B)
 >>> comm
