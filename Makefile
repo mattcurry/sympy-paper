@@ -12,9 +12,13 @@ supplement.pdf: categories.tex comparison_with_mma.tex diophantine.tex examples.
 	pdflatex -shell-escape --halt-on-error supplement.tex
 	pdflatex -shell-escape --halt-on-error supplement.tex
 
-rebuttal.pdf: rebuttal.tex
+rebuttal.pdf: rebuttal.tex coverletter.pdf
 	pdflatex -shell-escape --halt-on-error rebuttal.tex
 	pdflatex -shell-escape --halt-on-error rebuttal.tex
+
+coverletter.pdf: coverletter.tex
+	pdflatex -shell-escape --halt-on-error coverletter.tex
+	pdflatex -shell-escape --halt-on-error coverletter.tex
 
 authors.tex: authors/list_latex.py authors/authors.json
 	cd authors; ./list_latex.py
