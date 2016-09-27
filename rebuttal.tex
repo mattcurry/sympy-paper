@@ -1,5 +1,10 @@
 \documentclass[answers,12pt]{exam}
 \usepackage{xcolor}
+
+\usepackage{xr-hyper}
+\usepackage{xr}
+\externaldocument[P-]{paper}
+
 \usepackage{hyperref}
 \usepackage{upquote}
 \usepackage{textcomp}
@@ -65,7 +70,7 @@ SymPy? In other words, how are symbolic constants specified?
   function from the \texttt{math} module or the \texttt{exp} class from SymPy.
   In the later case a special symbolic constant will be produced.
 
-We have added a sentence to the section 5.1, that shows symbolic
+We have added a sentence to the section~\ref{P-sec:core}, that shows symbolic
 constants as an example of leaf nodes:
 \begin{quote}
 Symbols or symbolic constants, like $e$ or $\pi$, are other examples of
@@ -160,7 +165,7 @@ Gaussian elimination, respect non-commutativity?
   and the ``noncommutative part'' is not reordered.
 
 Commutators are implemented in the \texttt{sympy.physics.quantum} module and
-are discussed in section 4.2.
+are discussed in section~\ref{P-sec:quantum}.
 
 Different algorithms do generally require special consideration for
 noncommutative expressions to be correct. If an algorithm implicitly assumes
@@ -305,7 +310,7 @@ We have also removed the reference to \texttt{from mpmath import *} from line 48
 Minor comment: srepr is a useful command. As someone who also uses Mathematica, I wonder if there is a sympy version of the TreeForm command which produces a visualisation of the expression tree, or maybe an output format that I could pass to a graph library for visualisation?
 
 \begin{solution}
-We have added a footnote about the \texttt{dotprint} function (footnote 12),
+We have added a footnote about the \texttt{dotprint} function (footnote~\ref{P-note:dotprint}),
 which outputs expressions in the dot format that can be rendered with Graphviz.
 \end{solution}
 
@@ -416,7 +421,7 @@ without an equal comparison to other principle computer algebra systems, such
 as Maple, SageMath, and Maxima. Unfortunately, our authorship is inexpert in
 these systems, so a complete and fair comparison is impossible.
 
-We deem all the sections in section 3 (now section 2) to be important core
+We deem all the sections in section 3 (now section~\ref{P-sec:features}) to be important core
 components of the library. Regarding the supplement sections (previously) 5,
 7, and 9---``Sets'', ``Category Theory'', and ``SymPy Live'',
 respectively:
@@ -484,7 +489,7 @@ of the paper, to make the paper easier to follow.
 
 \question Explaining what Python is (lines 70--72) should go before talking about SymPy as a ``CAS written in Python''. Further, the paper assumes a moderate familiarity with Python (for example, Python's console, OOP, and exceptions), and this should be specified. There should be a short note on the used Python console (\texttt{>>>} is the prompt, with the results of computation following immediately in the lines after it). The citation [25] from line 65 should be moved next to ``Python'' in line 70.
 \begin{solution}
-  The citation was moved and a footnote for the Python interactive prompt was
+The citation was moved and a footnote~\ref{P-note:prompt} for the Python interactive prompt was
   added where it was used first time. We have also added a footnote indicating
   a moderate familiarity with Python is assumed.
 \end{solution}
@@ -609,7 +614,7 @@ We have made the suggested change.
 \question The part ``which defines some basic methods for symbolic expression trees'' should be removed from line 222, as it was already given in line 130.
 \begin{solution}
 This part was removed and footnote moved to the mentioned
-text in the section 5.1, ``The Core''.
+text in the section~\ref{P-sec:core}, ``The Core''.
 \end{solution}
 
 \question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
@@ -657,7 +662,7 @@ This footnote was added:
   be valid Python that recreates the object. In SymPy, \texttt{str(expr) ==
     repr(expr)}. In other words, the string representation of an expression is
   designed to be compact, human-readable, and valid Python code that could be
-  used to recreate the expression. As it was noted in section~5.1,
+  used to recreate the expression. As it was noted in section~\ref{P-sec:core},
   the \texttt{srepr} function prints the exact, verbose form of an expression.
 \end{quote}
 \end{solution}
