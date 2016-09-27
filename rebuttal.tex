@@ -65,7 +65,7 @@ SymPy? In other words, how are symbolic constants specified?
   function from the \texttt{math} module or the \texttt{exp} class from SymPy.
   In the later case a special symbolic constant will be produced.
 
-We have added a sentence to the section 2.2, that shows symbolic
+We have added a sentence to the section 5.1, that shows symbolic
 constants as an example of leaf nodes:
 \begin{quote}
 Symbols or symbolic constants, like $e$ or $\pi$, are other examples of
@@ -160,7 +160,7 @@ Gaussian elimination, respect non-commutativity?
   and the ``noncommutative part'' is not reordered.
 
 Commutators are implemented in the \texttt{sympy.physics.quantum} module and
-are discussed in section 5.2.
+are discussed in section 4.2.
 
 Different algorithms do generally require special consideration for
 noncommutative expressions to be correct. If an algorithm implicitly assumes
@@ -176,7 +176,7 @@ definition of simplification.
 We agree that this is a bad reference, because we are not actually
 using their definition.  Yes, that article rigorously defines
 ``simplification'', but it's just one approach.  This citation
-was replaced with a better reference [28], that illustrates our point.
+was replaced with a better reference [32], that illustrates our point.
 \end{solution}
 \end{questions}
 
@@ -305,7 +305,7 @@ We have also removed the reference to \texttt{from mpmath import *} from line 48
 Minor comment: srepr is a useful command. As someone who also uses Mathematica, I wonder if there is a sympy version of the TreeForm command which produces a visualisation of the expression tree, or maybe an output format that I could pass to a graph library for visualisation?
 
 \begin{solution}
-We have added a footnote about the \texttt{dotprint} function (footnote 3),
+We have added a footnote about the \texttt{dotprint} function (footnote 12),
 which outputs expressions in the dot format that can be rendered with Graphviz.
 \end{solution}
 
@@ -609,7 +609,7 @@ We have made the suggested change.
 \question The part ``which defines some basic methods for symbolic expression trees'' should be removed from line 222, as it was already given in line 130.
 \begin{solution}
 This part was removed and footnote moved to the mentioned
-text in the section 2.2, ``The Core''.
+text in the section 5.1, ``The Core''.
 \end{solution}
 
 \question In line 225, the sentence ``Not all SymPy classes are subclasses of \texttt{Expr}.'' sounds confusing as a reader new to SymPy wouldn't expect, for example, symbols to inherit ``Expr''. It would be better to expand this, for example ``Most of the SymPy classes (including \texttt{Symbol}) are subclasses of \texttt{Expr}, but there are exceptions to this rule''.
