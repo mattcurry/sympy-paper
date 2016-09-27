@@ -153,7 +153,7 @@ without considering the chain rule.) The most common
 As an example of the notions presented in this section,
 Listing~\ref{fig:gamma-example} presents a minimal version of the gamma
 function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
-arguments, has the positive and real assumptions defined, can be rewritten in
+arguments, has the real assumption defined, can be rewritten in
 terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
 differentiated. \texttt{self.func} is used throughout
 instead of referencing \texttt{gamma} explicitly so that potential subclasses
@@ -171,13 +171,6 @@ class gamma(Function)
     def eval(cls, arg):
         if isinstance(arg, Integer) and arg.is_positive:
             return factorial(arg - 1)
-
-    def _eval_is_positive(self):
-        x = self.args[0]
-        if x.is_positive:
-            return True
-        elif x.is_noninteger:
-            return floor(x).is_even
 
     def _eval_is_real(self):
         x = self.args[0]
