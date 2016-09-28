@@ -193,20 +193,28 @@ The gamma function implemented in SymPy has many more capabilities than the
 above listing, such as evaluation at rational points and series expansion.
 
 
-\subsection{Speed}
+\subsection{Performance}
 
-Due to being written in pure Python, SymPy's speed is generally slower compared
-with its commercial competitors. For many applications and uses of SymPy, that
-is not a problem, as SymPy is able to return the answer quickly enough, but for
-some applications that require handling of very long expressions and/or lots of
-small expressions, the speed becomes a problem.
+Due to being written in pure Python without the use of extension modules,
+SymPy's performance characteristics are generally poorer than
+its commercial competitors. For many applications,
+the performance of SymPy, as measured by clock cycles, memory usage, and memory
+layout, is sufficient.
+However, the boundaries for when SymPy's pure Python strategy becomes
+insufficient are when the user requires handling of very long expressions or many
+small expressions. Where this boundray lies depends on the system at hand, but tends
+to be within the range of $O(10^4) - O(10^6)$ symbols for modern computers.
 
-For this reason, a new library called SymEngine~\cite{SymEngine} was started.
-It is a pure C++ library with thin wrappers to other languages (Python, Ruby,
-Julia, \ldots) whose aim is to be the fastest manipulation library.  Preliminary
-benchmarks suggest that SymEngine is as fast or faster than the commercial or
+For this reason, a new project called SymEngine~\cite{SymEngine} has been started.
+The aim of this poject is to develop a library with better performance
+characteristics for symbolic manipulation. SymEngine is a pure C++ library,
+which allows it fine grain control over the memory layout of expressions.
+SymEngine has thin wrappers to other languages (Python, Ruby,
+Julia, etc.) whose aim is to be the fastest manipulation library. Preliminary
+benchmarks suggest that SymEngine is as performant as its commercial and
 open source competitors.
 
-The development branch of SymPy recently started to use SymEngine as an
-optional backend, initially in \texttt{sympy.physics.mechanics} only. The plan is
-to allow more algorithms in SymPy to take advantage of the speed of SymEngine.
+SymPy has recently started to use SymEngine as an
+optional backend, initially in \texttt{sympy.physics.mechanics} only.
+Future work witll involve
+allowing more algorithms in SymPy to use SymEngine as a backend.
