@@ -1,15 +1,22 @@
 \documentclass[answers,12pt]{exam}
 \usepackage{xcolor}
 
-\usepackage{xr}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
 \externaldocument[P-]{paper}
 
-\usepackage{hyperref}
 \usepackage{upquote}
 \usepackage{textcomp}
 \usepackage[T1]{fontenc}
 
 \usepackage{pdfpages}
+
+\hypersetup{
+  colorlinks=true,
+  filecolor=black, % color of cross-file links. Black because they only work
+                   % if the paper sits alongside the rebuttal as "paper.pdf".
+  urlcolor=blue % color of external links
+}
 
 \unframedsolutions
 \shadedsolutions
@@ -29,7 +36,7 @@ it provides a great way to play along with the examples while reading the
 paper.
 \begin{solution}
 \label{editorpoint1}
-This sentence was added to the introduction:
+Section (previously) 9 from the supplement was edited and moved to the introduction:
 \begin{quote}
 All examples could be tested on the \href{http://live.sympy.org}{SymPy
 Live} instance, that is an online Python shell, which uses the Google
@@ -93,13 +100,12 @@ say why it isn't used.
 
   The major advantage is that mpmath is a pure Python library. It's slower
   than MPFR, but not too much to evaluate any reasonably complicated single
-  expression at interactive speed, which covers most use cases in SymPy.
+  expression at interactive speed, which covers most use cases in SymPy. We
+  have added a sentence about this to the numerics section.
 
 We mention this at the beginning of the section. Another advantage is that
 mpmath is BSD licensed, like SymPy, which is important for the scientific
 Python ecosystem (MPFR is licensed under the LGPL).
-
-It is also worth noting that none of the referee materials we received mention MPFR\@.
 \end{solution}
 \question Section 4.1: please state whether the syntax for
 functions in mpmath is identical, or not, to that in Sympy.
@@ -115,7 +121,7 @@ twice, on lines 496 and 666. My assumption is that SymPy is slow compared with
 its commercial competitors. Please comment on the speed issue, and not just in
 the conclusions.
 \begin{solution}
-A new paragraph titled ``Speed'' was added to the manuscript, which discusses the
+Section~\ref{P-sec:performance}, titled ``Performance'' was added to the manuscript, which discusses the
 speed issue and lays out a path forward. The conclusion was simplified.
 \end{solution}
 \question Editors are needed for [20].
@@ -128,9 +134,10 @@ We have done this.
 \subsection{Basic reporting}
 \begin{questions}
 \question Generally good. A part that confused me is the assertion (footnote 3) that ``If
-A and B are Symbols created with commutative=False then SymPy will keep A·B
-and B·A distinct.'' Does that mean that BOTH of them must be created this way,
-and that A and x (if x is created normally) will commute? Is there any way to
+$A$ and $B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
+$A\cdot B$
+and $B\cdot A$ distinct.'' Does that mean that BOTH of them must be created this way,
+and that $A$ and $x$ (if $x$ is created normally) will commute? Is there any way to
 declare commutators? How does one guarantee that other pieces of code, e.g.
 Gaussian elimination, respect non-commutativity?
 \begin{solution}
@@ -301,6 +308,8 @@ from sympy.core.assumptions import _assume_defined
   considered part of the public API, so we do not wish to recommend it in the
   paper. The recommended list is in the SymPy documentation, at
   \url{http://docs.sympy.org/latest/modules/core.html#module-sympy.core.assumptions}.
+  We have opened an \href{https://github.com/sympy/sympy/issues/11539}{issue}
+  about this in our issue tracker.
 \end{solution}
 \question Section 2.4
 Line 216: This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.
@@ -345,7 +354,31 @@ We have added a citation for mpmath.
 \section{Reviewer 3}
 
 \begin{questions}
-\question I suggest a major rewrite of the paper, to improve the structure and group differently approached subjects. It would probably be best to:
+\question The paper introduces SymPy, a well-known pure Python library for
+symbolic computation. It covers many aspects of the library: architecture,
+basic usage, overview of modules, a more detailed look into some of them, and
+physics application.
+
+The writing style is mostly clear and easy to understand. Some example code is
+provided to further explain the use of various module, classes, and functions.
+Unfortunately, the paper is very unconnected and disorganized, with some
+unnecessary repetition and some things left undefined. Further, parts of the
+supplement should be moved to the main paper and vice versa. All of this makes
+the paper look more like a collection of unconnected or, at best, very loosely
+connected parts, instead of a meaningful whole.
+
+Another big problem of the paper is the lack of aim. Some parts of SymPy are
+covered at informative level (short descriptions of the elements related to
+some subject), some at the beginners level (basic usage examples), while some
+go deep in internal SymPy implementation of certain features. This structure
+leaves the impression that different, yet mutually intermingled sections aim
+at different audiences.
+
+Moreover, these vastly differently approached elements come in no specific
+order, and with no obvious reason why each of them is picked to be covered at
+all and, specifically, at the chosen level of complexity in the approach.
+
+I suggest a major rewrite of the paper, to improve the structure and group differently approached subjects. It would probably be best to:
 \begin{enumerate}
 \item Create a new section (following the introduction of SymPy) on projects that use SymPy, and put in it the materials currently available in supplement's sections 8, 9, 11. The comparison with Mathematica (supplement's section 10) should be moved either to the introduction as a section, or right after the introduction as its own section, but it should not be in the middle of the description of SymPy-powered projects.
 \item  This should be followed by the list of SymPy packages and modules (currently section 3) and descriptions of selected modules (currently sections 3.1, 3.3, 3.5, supplement's sections 5, 7, and 9).
@@ -376,7 +409,7 @@ We have added a citation for mpmath.
   \end{enumerate}
 
 We disagree with the reviewer on a few points. We do not consider SymPy Live
-or SymPy Gamma to be key components of SymPy. The paper goal of the paper is
+or SymPy Gamma to be key components of SymPy. The goal of the paper is
 to be about the SymPy library. While SymPy Live and SymPy Gamma are
 maintained by the SymPy community, they are separate projects. A
 mention of SymPy Live has been added to the introduction (see editor
@@ -668,7 +701,8 @@ We have added an introduction and a subsection ``Floating-Point Numbers''
 numbers'').
 \end{solution}
 
-\question I suggest a better example for lines 459--460: a computation of $(e^{100} +1)− e^{100}$:
+\question I suggest a better example for lines 459--460: a computation of
+$(e^{100} +1) - e^{100}$:
 
 \begin{verbatim}
    >>> (exp(100)+1).evalf() - exp(100).evalf()
@@ -697,10 +731,7 @@ Obviously, like your own example, these are problematic because a part of the co
   automatically, before any numeric evaluation happens). Your second example
   doesn't have this issue, but our example is simpler.
 
-Applying \texttt{evalf()} has nothing related to \emph{symbolic} computation,
-that method is for numerical evaluation, that should be clear from
-the sentence below ``The evalf method converts a constant symbolic expression
-to a Float\dots''.  Numerical evaluation of the whole expression should
+Numerical evaluation of the whole expression should
 always solve cancellation problem, as it was stated in the sentence
 ``Applying the evalf method to the whole expression solves this problem.''
 \end{solution}
