@@ -25,7 +25,7 @@ then solving it using polynomial routines.
 {x - sqrt(y*(x + y)): 1, x + sqrt(y*(x + y)): 1}
 \end{verbatim}
 
-Internally these matrices store the elements as Lists of Lists (LIL), meaning
+Internally these matrices store the elements as Lists of Lists (LIL)~\cite{scipy}, meaning
 the matrix is stored as a list of lists of entries (effectively, the
 input format used to create the matrix \texttt{A} above), making it a
 dense representation.\footnote{Similar to the polynomials submodule, dense here
