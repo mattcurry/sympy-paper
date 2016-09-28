@@ -29,7 +29,7 @@ it provides a great way to play along with the examples while reading the
 paper.
 \begin{solution}
 \label{editorpoint1}
-This sentence was added to the introduction:
+Section (previously) 9 from the supplement was edited and moved to the introduction:
 \begin{quote}
 All examples could be tested on the \href{http://live.sympy.org}{SymPy
 Live} instance, that is an online Python shell, which uses the Google
@@ -93,13 +93,12 @@ say why it isn't used.
 
   The major advantage is that mpmath is a pure Python library. It's slower
   than MPFR, but not too much to evaluate any reasonably complicated single
-  expression at interactive speed, which covers most use cases in SymPy.
+  expression at interactive speed, which covers most use cases in SymPy. We
+  have added a sentence about this to the numerics section.
 
 We mention this at the beginning of the section. Another advantage is that
 mpmath is BSD licensed, like SymPy, which is important for the scientific
 Python ecosystem (MPFR is licensed under the LGPL).
-
-It is also worth noting that none of the referee materials we received mention MPFR\@.
 \end{solution}
 \question Section 4.1: please state whether the syntax for
 functions in mpmath is identical, or not, to that in Sympy.
@@ -128,9 +127,10 @@ We have done this.
 \subsection{Basic reporting}
 \begin{questions}
 \question Generally good. A part that confused me is the assertion (footnote 3) that ``If
-A and B are Symbols created with commutative=False then SymPy will keep A·B
-and B·A distinct.'' Does that mean that BOTH of them must be created this way,
-and that A and x (if x is created normally) will commute? Is there any way to
+$A$ and $B$ are Symbols created with \texttt{commutative=False} then SymPy will keep
+$A\cdot B$
+and $B\cdot A$ distinct.'' Does that mean that BOTH of them must be created this way,
+and that $A$ and $x$ (if $x$ is created normally) will commute? Is there any way to
 declare commutators? How does one guarantee that other pieces of code, e.g.
 Gaussian elimination, respect non-commutativity?
 \begin{solution}
