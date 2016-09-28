@@ -11,6 +11,13 @@
 
 \usepackage{pdfpages}
 
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black, % color of internal links. Black because the cross-document
+                   % links don't actually work.
+  urlcolor=blue % color of external links
+}
+
 \unframedsolutions
 \shadedsolutions
 \renewcommand{\solutiontitle}{}
@@ -114,7 +121,7 @@ twice, on lines 496 and 666. My assumption is that SymPy is slow compared with
 its commercial competitors. Please comment on the speed issue, and not just in
 the conclusions.
 \begin{solution}
-A section titled ``Performance'' was added to the manuscript, which discusses the
+Section~\ref{P-sec:performance}, titled ``Performance'' was added to the manuscript, which discusses the
 speed issue and lays out a path forward. The conclusion was simplified.
 \end{solution}
 \question Editors are needed for [20].
@@ -301,6 +308,8 @@ from sympy.core.assumptions import _assume_defined
   considered part of the public API, so we do not wish to recommend it in the
   paper. The recommended list is in the SymPy documentation, at
   \url{http://docs.sympy.org/latest/modules/core.html#module-sympy.core.assumptions}.
+  We have opened an \href{https://github.com/sympy/sympy/issues/11539}{issue}
+  about this in our issue tracker.
 \end{solution}
 \question Section 2.4
 Line 216: This is due in part because the same language, Python, is used both for the internal implementation and the external usage by users.

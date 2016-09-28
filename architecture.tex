@@ -194,6 +194,7 @@ above listing, such as evaluation at rational points and series expansion.
 
 
 \subsection{Performance}
+\label{sec:performance}
 
 Due to being written in pure Python without the use of extension modules,
 SymPy's performance characteristics are generally poorer than
@@ -210,11 +211,11 @@ The aim of this poject is to develop a library with better performance
 characteristics for symbolic manipulation. SymEngine is a pure C++ library,
 which allows it fine grain control over the memory layout of expressions.
 SymEngine has thin wrappers to other languages (Python, Ruby,
-Julia, etc.) whose aim is to be the fastest manipulation library. Preliminary
+Julia, etc.) whose aim is to be the fastest symbolic manipulation library. Preliminary
 benchmarks suggest that SymEngine is as performant as its commercial and
 open source competitors.
 
 SymPy has recently started to use SymEngine as an
 optional backend, initially in \texttt{sympy.\allowbreak{}physics.\allowbreak{}mechanics} only.
-Future work witll involve
+Future work will involve
 allowing more algorithms in SymPy to use SymEngine as a backend.
