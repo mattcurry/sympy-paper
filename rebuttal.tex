@@ -149,7 +149,7 @@ Gaussian elimination, respect non-commutativity?
   part'' of an expression is pulled out to the front and canonically ordered,
   and the ``noncommutative part'' is not reordered.
 
-Commutators are implemented in the \texttt{sympy.physics.quantum} module and
+Commutators are implemented in the \texttt{sympy.physics.quantum} submodule and
 are discussed in section~\ref{P-sec:quantum}.
 
 Different algorithms do generally require special consideration for
@@ -434,13 +434,13 @@ components of the library. Regarding the supplement sections (previously) 5,
 7, and 9---``Sets'', ``Category Theory'', and ``SymPy Live'',
 respectively:
 \begin{itemize}
-\item In SymPy 1.0, the sets module is still in
+\item In SymPy 1.0, the sets submodule is still in
 a relatively infant stage. It is mentioned already in conjunction with the
 \texttt{solveset} function. We have added some additional text to the solvers
 subsection regarding \texttt{sympy.sets}.
 
-\item The category theory module in SymPy
-is very domain specific, and independent of other SymPy modules. It is out of
+\item The category theory submodule in SymPy
+is very domain specific, and independent of other SymPy submodules. It is out of
 scope for an architecture paper.
 
 \item The SymPy Live section was short and would be mostly duplicated by the
@@ -458,7 +458,7 @@ have added a paragraph detailing basic series expansion to the ``Calculus''
 subsection, with a reference to the more detailed section in the supplement.
 
 \item The ``Logic'' section is alluded to in the ``Assumptions'' subsection,
-  and the module is briefly mentioned in the ``Extensibility'' section,
+  and the submodule is briefly mentioned in the ``Extensibility'' section,
   but is not discussed in depth in the main manuscript. While the logic
   submodule is indeed important for certain parts of SymPy, we do not consider
   it to be of interest to the general reader. Furthermore, on a technical
@@ -467,7 +467,7 @@ subsection, with a reference to the more detailed section in the supplement.
   in the supplement (they use an implementation of the Rete algorithm, which
   is separate from \texttt{sympy.logic}). The so-called ``new assumptions'',
   mentioned briefly in the ``Conclusion and Future Work'' section, does use
-  it, but we have opted to not discuss this module in depth, as it is still in
+  it, but we have opted to not discuss this submodule in depth, as it is still in
   development and not fully usable. We have added some text to the assumptions
   section discussing this and referencing the logic subsection of the
   supplement (see footnote~\ref{P-note:assumptions}).
@@ -813,7 +813,7 @@ To avoid confusion, and to be consistent with the definitions used by the
 official Python documentation, we have modified the manuscript to use
 ``submodule'' to refer to any module that is a dotted submodule of
 \texttt{sympy}, such as \texttt{sympy.physics.quantum}. This is to emphasize
-that these modules all live within the \texttt{sympy} namespace, as ``module''
+that these submodules all live within the \texttt{sympy} namespace, as ``module''
 can suggest a separate library.
 \end{solution}
 
