@@ -664,16 +664,7 @@ This suggestion was implemented.
 
 \question Line 355, add a sentence explaining that in SymPy \texttt{str == repr}, because in Python \texttt{repr} is used to get an unambiguous valid Python code representation, while the return value of \texttt{str} is meant to be human-readable.
 \begin{solution}
-This footnote was added:
-\begin{quote}
-  Many Python libraries distinguish the \texttt{str} form of an object, which
-  is meant to be human-readable, and the \texttt{repr} form, which is mean to
-  be valid Python that recreates the object. In SymPy, \texttt{str(expr) ==
-    repr(expr)}. In other words, the string representation of an expression is
-  designed to be compact, human-readable, and valid Python code that could be
-  used to recreate the expression. As it was noted in section~\ref{P-sec:core},
-  the \texttt{srepr} function prints the exact, verbose form of an expression.
-\end{quote}
+See the added footnote~\ref{P-note:repr}.
 \end{solution}
 
 \question Lines 359 and 379: what is 2D text representation? It seems that ``2D'' shouldn't be here.

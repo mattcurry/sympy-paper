@@ -2,7 +2,7 @@ SymPy has a rich collection of expression printers. By default, an interactive
 Python session will render the \verb|str| form of an expression, which has
 been used in all the examples in this paper so far. The \verb|str| form of an
 expression is valid Python and roughly matches what a user would type to enter
-the expression.\footnote{Many Python libraries distinguish the \texttt{str}
+the expression.\footnote{\label{note:repr}Many Python libraries distinguish the \texttt{str}
   form of an object, which is meant to be human-readable, and the
   \texttt{repr} form, which is mean to be valid Python that recreates the
   object. In SymPy, \texttt{str(expr) == repr(expr)}. In other words, the
