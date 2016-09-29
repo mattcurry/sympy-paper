@@ -25,7 +25,7 @@
   features section.
 
 - [ ] Mention all major algorithms that are implemented, even if they aren't
-  discussed in-depth.
+  discussed in depth.
 
 - [x] Write the Gruntz algorithm section as actual text.
 
