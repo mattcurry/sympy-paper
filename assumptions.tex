@@ -27,14 +27,13 @@ instance \texttt{Symbol(\textquotesingle{}t\textquotesingle{}, positive=True)} w
 t
 \end{verbatim}
 
-% TODO: What can we do about the overflowing text here?
-Some of the common assumptions that SymPy allows are \texttt{positive},
+Some of the common assumptions are
 \texttt{negative}, \texttt{real}, \texttt{nonpositive}, \texttt{integer},
 \texttt{prime} and \texttt{commutative}.\footnote{SymPy assumes that two
   expressions $A$ and $B$ commute with each other multiplicatively, that is,
   $A\cdot B=B\cdot A$, unless they both have \texttt{commutative=False}. Many
   algorithms in SymPy require special consideration to work correctly with
-  noncommutative products.} Assumptions on any object can be checked with the
+  noncommutative products.} Assumptions on any SymPy object can be checked with the
 \verb|is_|\texttt{\textit{assumption}} attributes, like \verb|t.is_positive|.
 
 Assumptions are only needed to restrict a domain so that certain
