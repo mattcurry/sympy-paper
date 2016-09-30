@@ -171,9 +171,9 @@ reuse the methods.
 }
 
 \begin{lstlisting}[caption={A minimal implementation of \texttt{sympy.gamma}.},label=fig:gamma-example]
-from sympy import floor, Function, Integer, factorial, polygamma
+from sympy import Function, Integer, factorial, polygamma
 
-class gamma(Function)
+class gamma(Function):
     @classmethod
     def eval(cls, arg):
         if isinstance(arg, Integer) and arg.is_positive:
