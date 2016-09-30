@@ -151,7 +151,7 @@ Classes define their behavior in such functions by defining a relevant
 to the \texttt{diff} function how to take the derivative of itself by defining
 the \verb|_eval_derivative(self, x)| method, which may in turn call
 \texttt{diff} on its \texttt{args}. (Subclasses of \texttt{Function} should
-implement \texttt{fdiff} method instead, it returns the derivative of the function
+implement the \texttt{fdiff} method instead; it returns the derivative of the function
 without considering the chain rule.) The most common
 \verb|_eval_|\texttt{\textit{*}} methods relate to the assumptions:
 \verb|_eval_is_|\texttt{\textit{assumption}} is used to deduce
