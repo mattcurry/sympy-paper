@@ -33,7 +33,7 @@ dense representation.\footnote{Similar to the polynomials submodule, dense here
   representation where only nonzero entries are stored.} For storing sparse
 matrices, the \verb|SparseMatrix| class can be used. Sparse matrices store
 their elements in Dictionary of Keys (DOK) format, meaning entries are stored
-as \texttt{(row, column)} pairs mapping to the elements.
+as a \texttt{dict} of \texttt{(row, column)} pairs mapping to the elements.
 
 SymPy also supports matrices with symbolic dimension values. \verb|MatrixSymbol|
 represents a matrix with dimensions $m\times n$, where $m$ and $n$ can be
