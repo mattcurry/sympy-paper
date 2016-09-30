@@ -94,7 +94,8 @@ object and the latter is an \verb|Add| object).
 
 Another important property of SymPy expressions is that they are immutable.
 This simplifies the design of SymPy by allowing expression interning. It also
-enables expressions to be hashed, which is used to implement caching in SymPy.
+enables expressions to be hashed, which allows expressions to be used as keys
+in Python dictionaries, and is used to implement caching in SymPy.
 
 Python allows classes to override mathematical operators. The Python
 interpreter translates the above \texttt{x*y + 2} to, roughly,
