@@ -14,7 +14,7 @@ As a more complex example, SymPy computes \[\lim\limits_{x\to 0}{\left(2 e^{\fra
   1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
       \right )}}} = e.\]
 \begin{verbatim}
->>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
+>>> limit((2*exp((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
 E
 \end{verbatim}
 
