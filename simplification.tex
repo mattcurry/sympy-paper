@@ -26,8 +26,10 @@ is guaranteed to
 produce a factorization into irreducible factors. Table~\ref{simplify-table}
 lists common simplification functions.
 
-\begin{longtable}[htbc]{lp{0.83\linewidth}}
-\caption{Some SymPy Simplification Functions\label{simplify-table}}\\
+\begin{center}
+\begin{table}[htbc]
+\caption{Some SymPy Simplification Functions}\label{simplify-table}
+\begin{tabular}{lp{0.83\linewidth}}
 \toprule
 \verb|expand| & expand the expression \\
 \verb|factor| & factor a polynomial into irreducibles \\
@@ -39,4 +41,6 @@ canceled \\
 \verb|trigsimp| & simplify trigonometric expressions~\cite{fu2006automated} \\
 \verb|hyperexpand| & expand hypergeometric functions~\cite{Roach1996hyper,roach1997meijerg} \\
 \bottomrule
-\end{longtable}
+\end{tabular}
+\end{table}
+\end{center}
