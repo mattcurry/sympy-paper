@@ -157,14 +157,14 @@ without considering the chain rule.) The most common
 \verb|_eval_is_|\texttt{\textit{assumption}} is used to deduce
 \textit{assumption} on the object.
 
-As an example of the notions presented in this section,
-Listing~\ref{fig:gamma-example} presents a minimal version of the gamma
-function $\Gamma(x)$ from SymPy, which evaluates itself on positive integer
-arguments, has the real assumption defined, can be rewritten in
-terms of factorial with \verb|gamma(x).rewrite(factorial)|, and can be
-differentiated. \texttt{self.func} is used throughout
-instead of referencing \texttt{gamma} explicitly so that potential subclasses
-of \texttt{gamma} can reuse the methods.
+Listing~\ref{fig:gamma-example} presents an example of extensibility in SymPy.
+It gives a minimal version of the gamma function $\Gamma(x)$ from SymPy, which
+evaluates itself on positive integer arguments, has the real assumption
+defined, can be rewritten in terms of factorial with
+\verb|gamma(x).rewrite(factorial)|, and can be differentiated.
+\texttt{self.func} is used throughout instead of referencing \texttt{gamma}
+explicitly so that potential subclasses of \texttt{gamma} can reuse the
+methods.
 
 \lstset{
   basicstyle=\ttfamily,
