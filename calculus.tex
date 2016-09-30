@@ -42,10 +42,11 @@ demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left 
 log(log(x) + 1) + 1/(exp(x**2) + 1)
 \end{verbatim}
 
-Summations are computed with \verb|summation|  using a combination of Gosper's
-algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer
-G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
-are computed with \verb|product| function via a suite of heuristics.
+Summations are computed with the \verb|summation| function, which uses a
+combination of Gosper's algorithm~\cite{gosper1978decision}, an algorithm that
+uses Meijer G-functions~\cite{Roach1996hyper,roach1997meijerg}, and
+heuristics. Products are computed with \verb|product| function via a suite of
+heuristics.
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
 \begin{verbatim}
