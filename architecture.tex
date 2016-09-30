@@ -132,7 +132,9 @@ multiplied together. The most commonly seen classes in SymPy are subclasses of
 Instances of \texttt{Expr} typically represent complex numbers, but may also
 include other ``rings'', like matrix expressions. Not all SymPy classes are
 subclasses of \texttt{Expr}. For instance, logic expressions, such as
-\verb|And(x, y)|, are subclasses of \texttt{Basic} but not of \texttt{Expr}.
+\verb|And(x, y)|, are subclasses of \texttt{Basic} but not of
+\texttt{Expr}.\footnote{See the supplement for more information on the
+  \texttt{sympy.logic} submodule.}
 
 The \texttt{Function} class is a subclass of \texttt{Expr} which makes it
 easier to define mathematical functions called with arguments. This includes
