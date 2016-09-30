@@ -15,13 +15,13 @@ syntax, the CAS manipulates the underlying data structures. Symbolic
 computations such as integration, simplification, etc.\ are all functions that
 consume and produce expression trees.
 
-In SymPy every symbolic expression is an instance of the class \texttt{Basic}
-class,\footnote{Some
-  internal classes, such as those used in the polynomial submodule, do not follow
-  this rule for efficiency reasons.} a superclass of all SymPy types providing
-common methods to all SymPy tree-elements, such as traversals.  The children of a node in the
-tree are held in the \texttt{args} attribute.  A terminal or leaf node in the
-expression tree has empty \texttt{args}.
+In SymPy every symbolic expression is an instance of the class
+\texttt{Basic},\footnote{Some internal classes, such as those used in the
+  polynomial submodule, do not follow this rule for efficiency reasons.} a
+superclass of all SymPy types providing common methods to all SymPy
+tree-elements, such as traversals. The children of a node in the tree are held
+in the \texttt{args} attribute. A terminal or leaf node in the expression tree
+has empty \texttt{args}.
 
 For example, consider the expression $xy + 2$:
 \begin{verbatim}
