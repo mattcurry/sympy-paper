@@ -93,6 +93,10 @@ False
 because they are different as expression trees (the former is a \verb|Pow|
 object and the latter is an \verb|Add| object).
 
+Importantly, SymPy expressions are immutable. This simplifies the design of
+SymPy by allowing expression interning. It also enables expressions to be
+hashed, which is used to implement caching in SymPy.
+
 Python allows classes to override mathematical operators. The Python
 interpreter translates the above \texttt{x*y + 2} to, roughly,
 \verb|(x.__mul__(y)).__add__(2)|. Both \texttt{x} and \texttt{y}, returned
