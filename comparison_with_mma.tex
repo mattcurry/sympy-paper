@@ -93,7 +93,7 @@ In SymPy, the operations constructing the addition node in the expression tree
 are Python class constructors
 and cannot be modified at runtime.\footnote{Python does support monkey
 patching, but it is a discouraged programming pattern.}
-The way SymPy deals with extending the missing runtime overloadability functionality
+The way SymPy deals with extending the missing runtime overloadability
 is by subclassing the node types: subclasses may redefine the class constructor
 to yield the proper extended functionality.
 
