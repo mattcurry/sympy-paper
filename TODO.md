@@ -25,7 +25,7 @@
   features section.
 
 - [ ] Mention all major algorithms that are implemented, even if they aren't
-  discussed in-depth.
+  discussed in depth.
 
 - [x] Write the Gruntz algorithm section as actual text.
 
@@ -45,7 +45,7 @@
 
 - [x] Move SymPy Gamma/Live stuff to supplement.
 
-- [x] Either flesh out CAS comparison section with other CASs or move to
+- [x] Either flesh out CAS comparison section with other CAS's or move to
   supplement.
 
 - [ ] Address all inline TODOs in the .tex files.

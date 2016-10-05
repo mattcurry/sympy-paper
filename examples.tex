@@ -1,3 +1,5 @@
+This section provides some additional examples for the features listed
+in the paper.
 
 \subsection{Simplification}
 \begin{itemize}
@@ -36,6 +38,13 @@ x + 3/(x + 1) + 2/(x - 1)
 >>> trigsimp(cos(x)**2*tan(x) - sin(2*x))
 -sin(2*x)/2
 \end{verbatim}
+
+\item \texttt{hyperexpand} (showing ${{}_{2}F_{1}\left(\begin{matrix} 1, 1 \\
+        2 \end{matrix}\middle| {- x} \right)} = \frac{\log{\left (x + 1 \right )}}{x}$):
+\begin{verbatim}
+>>> hyperexpand(hyper([1, 1], [2], -x))
+log(x + 1)/x
+\end{verbatim}
 \end{itemize}
 
 \subsection{Polynomials}
@@ -56,7 +65,7 @@ x + 3/(x + 1) + 2/(x - 1)
 
 \item Gr\"{o}bner bases:
 \begin{verbatim}
->>> x0, x1, x2 = symbols('x:3')
+>>> x0, x1, x2 = symbols('x0 x1 x2')
 >>> I = [x0 + 2*x1 + 2*x2 - 1,
 ...      x0**2 + 2*x1**2 + 2*x2**2 - x0,
 ...      2*x0*x1 + 2*x1*x2 - x1]

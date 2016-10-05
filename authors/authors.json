@@ -33,6 +33,7 @@
         "institution": "Los Alamos National Laboratory",
         "institution_address": "P.O. Box 1663, Los Alamos, New Mexico 87545, USA",
         "institution_address_siam": "Los Alamos, NM 87545",
+        "institution_explanation": "The Los Alamos National Laboratory is operated by Los Alamos National Security, LLC, for the National Nuclear Security Administration of the U.S. Department of Energy under Contract No. DE-AC52-06NA25396.",
         "name": "Ondřej Čertík",
         "sympy_commits": 1443
     },
@@ -123,6 +124,7 @@
         "institution": "Center for Computing Research, Sandia National Laboratories",
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
         "institution_address_siam": "Albuquerque, NM 87185",
+        "institution_explanation": "Sandia is a multiprogram laboratory operated by Sandia Corporation, a Lockheed Martin Company, for the United States Department of Energy's National Nuclear Security Administration under Contract DE-AC04-94AL85000.",
         "name": "Richard P. Muller",
         "sympy_commits": 158
     },

@@ -22,13 +22,13 @@ Attributes may define mathematical properties and behavior of the nodes
 associated to the atom.
 In SymPy, the usage of static class fields is roughly similar to Mathematica's
 attributes, though other programming patterns may also be used to achieve an
-equivalent behavior such as class inheritance.
+equivalent behavior such, as class inheritance.
 
 % Expression mutability
 
 Unlike SymPy, Mathematica's expressions are mutable:
-one can change parts of the expression tree without the need of
-creating a new object.
+one can change parts of the expression tree without the needing to
+create a new object.
 The mutability of Mathematica expressions allows for a lazy updating of any references
 to a given data structure.
 
@@ -48,7 +48,7 @@ on the expression type.
 % Associative expressions.
 
 Regarding associative expressions,
-SymPy handles associativity of sums and products by automatically flattening them,
+SymPy handles associativity of sums and products by automatically flattening them.
 Mathematica specifies the \texttt{Flat} attribute on the expression type.
 
 % One identity
@@ -91,9 +91,9 @@ illustrates the potential to define
 one's own immediate transformation rules.
 In SymPy, the operations constructing the addition node in the expression tree
 are Python class constructors
-and cannot be modified at runtime.\footnote{Nonetheless, Python supports monkey
-patching but it is a discouraged programming pattern.}
-The way SymPy deals with extending the missing runtime overloadability functionality
+and cannot be modified at runtime.\footnote{Python does support monkey
+patching, but it is a discouraged programming pattern.}
+The way SymPy deals with extending the missing runtime overloadability
 is by subclassing the node types: subclasses may redefine the class constructor
 to yield the proper extended functionality.
 
@@ -118,7 +118,8 @@ the sublists have the same length, matrices in SymPy are a type in their own
 right, allowing ordinary operators and functions (like multiplication and
 exponentiation) to be used as they traditionally are in mathematics.
 \begin{verbatim}
->>> exp(Matrix([[1, 1],[0, 2]])) * Matrix([a, b])
+>>> a, b = symbols('a b')
+>>> exp(Matrix([[1, 1], [0, 2]])) * Matrix([a, b])
 Matrix([
 [E*a + b*(-E + exp(2))],
 [             b*exp(2)]])
@@ -151,16 +152,14 @@ class.
 % * comparison with Mathematica: polynomial module.
 % * comparison with Mathematica: space is product, ** vs ^
 
-SymPy, in accordance with Python (and unlike the usual programming convention),
-uses \texttt{**} to express the power operator, while Mathematica uses the more
-common \verb|^|.
+SymPy uses \texttt{**} to express the power operator, while Mathematica uses \verb|^|.
 
 % * comparison with Mathematica: ( ) is Sequence, functions are generally uppercase.
 % * comparsion with Mathematica: table of comparison?
 % * comparison with Mathematica: Wolfram language has loads of operator overloading, functional paradigm.
 
 SymPy's use of floating-point numbers is similar to that of most
-other CASs, including Maple and Maxima.
+other CAS's, including Maple and Maxima.
 By contrast, Mathematica uses a form
 of significance arithmetic~\cite{Sofroniou2005precise} for approximate numbers.
 This offers further protection against numerical errors,

@@ -33,8 +33,8 @@ The Gruntz algorithm is now illustrated with the following example:
     \label{gruntz_example_fn}
 f(x) = e^{x+2e^{-x}} - e^x + {1\over x} \,.
 \end{equation}
-First, the set of most rapidly varying subexpressions is determined ---
-the so-called \textit{mrv set}. For~\eqref{gruntz_example_fn}, the mrv set
+First, the set of most rapidly varying subexpressions is determined---the
+so-called \textit{mrv set}. For~\eqref{gruntz_example_fn}, the mrv set
 $\{e^x, e^{-x}, e^{x+2e^{-x}}\}$ is obtained. These are all subexpressions of%
 ~\eqref{gruntz_example_fn} and they all belong to the same comparability
 class. This calculation can be done using SymPy as follows:
@@ -51,7 +51,7 @@ Next, an arbitrary item $\omega$ is taken from mrv set that converges to zero fo
 $x\to\infty$ and doesn't have subexpressions in the given mrv set.  If such a term is not
 present in the mrv set (i.e., all terms converge to infinity instead of zero),
 the relation $f(x)\sim {1\over f(x)}$ can be used.  In the
-considered case, only item $\omega=e^{-x}$ can be accepted.
+considered case, only the item $\omega=e^{-x}$ can be accepted.
 
 The next step is to rewrite the mrv set in terms of $\omega=g(x)$.  Every element
 $f(x)$ of the mrv set is rewritten as $A \omega^c$, where
@@ -76,7 +76,7 @@ In this example we obtain the rewritten mrv set: $\{{1\over\omega},
 1/x + exp(2*w)/w - 1/w
 \end{verbatim}
 Then the rewritten subexpressions are
-substituted back into $f(x)$ in~(\ref{gruntz_example_fn})
+substituted back into $f(x)$ in~\eqref{gruntz_example_fn}
 and the result is expanded with respect to~$\omega$:
 \begin{equation}
     \label{gruntz_example_fn2}
@@ -95,7 +95,10 @@ f(x) = {1\over x}-{1\over\omega}+{1\over\omega}e^{2\omega}
 In this example the result ($2+{1\over x}$) still depends on $x$, so the above procedure is
 repeated until just a value independent of $x$ is obtained. This is the final
 limit. In the above case the limit is $2$, as can be
-verified by SymPy:
+verified by SymPy:\footnote{\label{suppnote:gruntz}To see the intermediate steps discussed above, interested
+readers can switch on debugging output by setting
+the environment variable \texttt{SYMPY\_DEBUG=True}, before importing anything from
+the SymPy namespace.}
 
 \begin{verbatim}
 >>> limit(exp(x+2*exp(-x))-exp(x) + 1/x, x, oo)
@@ -114,6 +117,6 @@ f(x) = \underbrace{O\left({1\over \omega^3}\right)}_\infty
 The positive powers of $\omega$ are zero. If there are any negative powers of
 $\omega$, then the result of the limit is infinity, otherwise the limit is
 equal to $\lim\limits_{x\to\infty} C_0(x)$. The expression $C_0(x)$ is always
-simpler than original $f(x)$, same is true for limits, arising in the
-rewrite stage~(\ref{gruntz_rewrite}), so the algorithm converges. A proof of this and further
+simpler than original $f(x)$, and the same is true for limits arising in the
+rewrite stage~\eqref{gruntz_rewrite}, so the algorithm converges. A proof of this and further
 details on the algorithm are given in Gruntz's PhD thesis~\cite{Gruntz1996limits}.

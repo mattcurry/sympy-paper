@@ -27,10 +27,12 @@
 
 \usepackage{amsmath}
 \usepackage{url}
-\usepackage{hyperref}
 
-% this is required for all the \url{} commands in the bib file
-%\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  citecolor=black
+}
 
 % for nice units
 \usepackage{siunitx}
@@ -64,8 +66,8 @@
   interactive and programmatic applications. These characteristics have led
   SymPy to become a popular symbolic library for the scientific Python
   ecosystem. This paper presents the architecture of SymPy, a description of
-  its features, and a discussion of select domain specific submodules. The
-  supplementary materials provide additional examples and further outline
+  its features, and a discussion of select submodules. The
+  supplementary material provide additional examples and further outline
   details of the architecture and features of SymPy.
 \end{abstract}
 
@@ -79,18 +81,13 @@
 
 %% What sympy is, where to download etc.
 %%
-%% List other major CASs.
+%% List other major CAS's.
 %%
 %% Why SymPy.
 
 \input{introduction.tex}
 
-\section{Architecture}
-\label{sec:architecture}
-
-\input{architecture}
-
-\section{Features}
+\section{Overview of Capabilities}
 \label{sec:features}
 
 %% List of Features and how to use
@@ -101,7 +98,6 @@
 
 \input{features}
 
-
 \section{Numerics}
 \label{sec:numerics}
 
@@ -111,22 +107,26 @@
 
 \input{numerics}
 
-
-\section{Domain Specific Submodules}
+\section{Physics Submodule}
 \label{sec:domain_specific}
 
 \input{domain_specific}
 
-\section{Conclusion and future work}
+\section{Architecture}
+\label{sec:architecture}
+
+\input{architecture}
+
+\section{Projects that Depend on SymPy}
+\label{sec:other-proj}
+\input{projects_that_depend_on_sympy}
+
+\section{Conclusion and Future Work}
 \label{sec:conclusion}
 
 \input{conclusion_and_future_work}
 
-\section{Acknowledgements}
-\label{sec:acknowledgements}
-
-\input{acknowledgements}
-
+\phantomsection
 \bibliography{paper}
 
 \end{document}

@@ -1,6 +1,6 @@
-SymPy includes a module for dealing with categories---abstract mathematical
+SymPy includes a submodule for dealing with categories---abstract mathematical
 objects representing classes of structures as classes of objects (points) and
-morphisms (arrows) between the objects. The module was
+morphisms (arrows) between the objects. It was
 designed with the following two goals in mind:
 
 \begin{enumerate}
@@ -14,7 +14,7 @@ As of version 1.0, SymPy only implements the first goal, while a partially
 working draft of implementation of the second goal is available at
 \url{https://github.com/scolobb/sympy/tree/ct4-commutativity}.
 
-In order to achieve the two goals, the module \texttt{sympy.categories} defines
+In order to achieve the two goals, the submodule \texttt{sympy.categories} defines
 several classes representing some of the essential concepts: objects, morphisms,
 categories, and diagrams.  In category theory, the inner structure of objects is
 often discarded in the favor of studying the properties of morphisms, so the
@@ -38,7 +38,7 @@ collection of diagrams which are deemed commutative and which therefore define
 the properties of this category.
 
 Automatic typesetting of diagrams takes a \texttt{Diagram} and produces \LaTeX{}
-code using the \texttt{Xy-pic} package.  Typesetting is done in two stages:
+code using the \texttt{Xy-pic} package~\cite{rose1999xy}.  Typesetting is done in two stages:
 layout and generation of \texttt{Xy-pic} code.  The layout stage is taken care
 of by the class \texttt{DiagramGrid}, which takes a \texttt{Diagram} and lays out
 the objects in a grid, trying to reduce the average length of the arrows in the
@@ -51,7 +51,7 @@ the other objects.
 The second phase of diagram typesetting consists in actually drawing the picture
 and is carried out by the class \texttt{XypicDiagramDrawer}.  An example of a
 diagram automatically typeset by \texttt{DiagramgGrid} and
-\texttt{XypicDiagramDrawer} in given in Figure~\ref{fig:cat:loops}.
+\texttt{XypicDiagramDrawer} is given in Figure~\ref{fig:cat:loops}.
 \begin{figure}[h]
   \centerline{
     \xymatrix{
@@ -62,7 +62,7 @@ diagram automatically typeset by \texttt{DiagramgGrid} and
   \caption{An automatically typeset commutative diagram}\label{fig:cat:loops}
 \end{figure}
 
-As far as the second main goal of the module is concerned, the principal idea
+As far as the second main goal of \texttt{sympy.categories} is concerned, the principal idea
 consists in automatically deciding whether a diagram is commutative or not,
 given a collection of ``axioms'': diagrams known to be commutative. The
 implementation is based on graph embeddings (injective maps): whenever an

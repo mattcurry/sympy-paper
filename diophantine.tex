@@ -5,8 +5,9 @@ integers $a_1, a_2, \dotsc, a_n$ such that $x_1 = a_1, x_2 = a_2, \dotsc, x_n =
 a_n$ satisfies the above equation, the equation is said to be solvable.
 
 Currently, the following five types of Diophantine equations can be solved using
-SymPy's Diophantine module ($a_1, \ldots, a_{n+1}$, $a$, $b$, $c$, $d$, $e$,
-$f$, and $k$ are explicitly given rational constants):
+SymPy's Diophantine submodule ($a_1, \ldots, a_{n+1}$, $a$, $b$, $c$, $d$, $e$,
+$f$, and $k$ are explicitly given rational constants, $x_1, \ldots, x_{n+1}$,
+$x$, $y$, and $z$ are unknown variables):
 
 \begin{itemize}
     \item Linear Diophantine equations: $a_1x_1 + a_2x_2 + \dotsb{} + a_{n}x_{n} = b$
@@ -18,9 +19,10 @@ $f$, and $k$ are explicitly given rational constants):
 
 The \verb|diophantine| function factors the equation it is given (if
 possible), solves each factor separately, and combines the results to give
-a final solution set.
+a final solution set. Solutions may include parametrized variables (over the
+integers).
 The following examples illustrate some of the
-basic functionalities of the Diophantine module.
+basic functionalities of the Diophantine submodule.
 
 \begin{verbatim}
 >>> from sympy.solvers.diophantine import *
@@ -41,13 +43,13 @@ set([(-16*p**2 + 28*p*q + 20*q**2,
 3*p**2 + 38*p*q - 25*q**2,
 4*p**2 - 24*p*q + 68*q**2)])
 
->>> x1, x2, x3, x4, x5, x6 = symbols('x1, x2, x3, x4, x5, x6')
+>>> x1, x2, x3, x4, x5, x6 = symbols('x1 x2 x3 x4 x5 x6')
 >>> diophantine(9*x1**2 + 16*x2**2 + x3**2 + 49*x4**2 + 4*x5**2 - 25*x6**2)
 set([(70*t1**2 + 70*t2**2 + 70*t3**2 + 70*t4**2 - 70*t5**2, 105*t1*t5,
-420*t2*t5, 60*t3*t5, 210*t4*t5,
-42*t1**2 + 42*t2**2 + 42*t3**2 + 42*t4**2 + 42*t5**2)])
+420*t2*t5, 60*t3*t5, 210*t4*t5, 42*t1**2 + 42*t2**2 + 42*t3**2 + 42*t4**2 +
+42*t5**2)])
 
->>> a, b, c, d = symbols('a:d')
+>>> a, b, c, d = symbols('a b c d')
 >>> diophantine(a**2 + b**2 + c**2 + d**2 - 23)
 set([(2, 3, 3, 1)])
 \end{verbatim}

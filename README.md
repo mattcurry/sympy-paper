@@ -38,10 +38,22 @@ details.
 
 # LaTeX Build Instructions
 
-Install a full LaTeX suite on your preferred operating system including minted
-and pygments. To build the PDF type `make` in the source directory.
+Install a full LaTeX suite on your preferred operating system. To build the
+PDF type
+
+    make
+
+in the source directory. This will produce `paper.pdf`, the main paper, and
+`supplement.pdf`, the supplementary material.
+
 Alternatively, you can use docker, see the instructions in our
 [Dockerfile](https://github.com/sympy/sympy-paper/blob/master/Dockerfile).
+
+You can test all the examples in the paper with
+
+    make test
+
+This requires that SymPy 1.0 (exactly) is installed.
 
 # Authorship Criteria
 

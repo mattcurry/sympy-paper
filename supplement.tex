@@ -1,7 +1,7 @@
-%% Submissions for peer-review must enable line-numbering 
+%% Submissions for peer-review must enable line-numbering
 %% using the lineno option in the \documentclass command.
 %%
-%% Preprints and camera-ready submissions do not need 
+%% Preprints and camera-ready submissions do not need
 %% line numbers, and should have this option removed.
 %%
 %% Please note that the line numbering option requires
@@ -29,10 +29,12 @@
 
 \usepackage{amsmath}
 \usepackage{url}
-\usepackage{hyperref}
 
-% this is required for all the \url{} commands in the bib file
-%\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  citecolor=black
+}
 
 % for nice units
 \usepackage{siunitx}
@@ -64,6 +66,18 @@
 {\raggedright\sffamily\fontsize{12}{16}\selectfont  Supplementary material\par}
 \vskip25pt%
 
+The supplementary material take a deeper look at certain topics in SymPy for
+which there was not enough room to discuss in the paper.
+Section~\ref{suppsec:Gruntz} discusses the Gruntz algorithm, used to
+calculate limits in the SymPy.  Sections~\ref{suppsec:Series}--\ref{suppsec:Ten}
+discuss in depth some selected submodules.  Section~\ref{suppsec:numsimpl}
+discusses numerical simplification.  Section~\ref{suppsec:examples} provides
+additional examples for topics discussed in the main paper.  In section
+\ref{suppsec:sympy-gamma} the SymPy Gamma
+project is discussed.  Finally, section~\ref{suppsec:comp-mma}
+has a
+brief comparison of SymPy with Wolfram Mathematica.
+
 As in the paper, all examples in the supplement assume that the following
 has been run:
 \begin{verbatim}
@@ -71,66 +85,59 @@ has been run:
 >>> x, y, z = symbols('x y z')
 \end{verbatim}
 
-\section{Limits: The Gruntz Algorithm}
 
+\section{Limits: The Gruntz Algorithm}
+\label{suppsec:Gruntz}
 \input{gruntz.tex}
 
 % Series module (Formal Power Series, Fourier Series)
 \section{Series}
-
+\label{suppsec:Series}
 \input{series.tex}
 
 % Logic module
 \section{Logic}
-
+\label{suppsec:Logic}
 \input{logic}
 
 \section{Diophantine Equations}
-
+\label{suppsec:Dioph}
 \input{diophantine}
 
 % Sets
 \section{Sets}
+\label{suppsec:Sets}
 \input{sets}
 
 \section{Statistics}
+\label{suppsec:Stats}
 \input{stats}
 
 \section{Category Theory}
+\label{suppsec:Cat}
 \input{categories}
 
-\section{SymPy Gamma}\label{sympy-gamma}
-
-\input{gamma}
-
-\section{SymPy Live}\label{sympy-live}
-
-\input{live}
-
-\section{Comparison with Mathematica}
-
-\input{comparison_with_mma}
-
-\section{Other Projects that use SymPy}
-
-\input{other_projects_that_use_sympy}
-
-
 \section{Tensors}
-
+\label{suppsec:Ten}
 \input{tensors}
 
-
-\section{Numerical simplification}
-
+\section{Numerical Simplification}
+\label{suppsec:numsimpl}
 \input{nsimplify}
 
 \section{Examples}
-
+\label{suppsec:examples}
 \input{examples}
 
-\section{References}
+\section{SymPy Gamma}
+\label{suppsec:sympy-gamma}
+\input{gamma}
 
+\section{Comparison with Mathematica}
+\label{suppsec:comp-mma}
+\input{comparison_with_mma}
+
+\phantomsection
 \bibliography{paper}
 
 \end{document}

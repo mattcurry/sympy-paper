@@ -1,45 +1,43 @@
-SymPy includes several packages that allow users to solve domain specific
-problems. For example, a comprehensive physics package is included that is
-useful for solving problems in mechanics, optics, and quantum
+SymPy includes several submodules that allow users to solve domain specific
+physics problems. For example, a comprehensive physics submodule is included
+that is useful for solving problems in mechanics, optics, and quantum
 mechanics along with support for manipulating physical quantities with units.
 
 
 \subsection{Classical Mechanics}
 One of the core domains that SymPy suports is the physics of classical
 mechanics. This is in turn separated into two distinct components:
-vector algebra symbolics and mechanics.
+vector algebra and mechanics.
 
 \subsubsection{Vector Algebra}
 % TODO This section requires some citations.
 
-The \verb|sympy.physics.vector| package provides reference frame-, time-, and
-space-aware vector and dyadic objects that allow for three-di\-men\-sional
+The \verb|sympy.physics.vector| submodule provides reference frame-, time-,
+and space-aware vector and dyadic objects that allow for three-dimensional
 operations such as addition, subtraction, scalar multiplication, inner and
-outer products, and cross products. Both of these objects can be written in
-very compact notation that make it easy to express the vectors and dyadics in
-terms of multiple reference frames with arbitrarily defined relative
-orientations. The vectors are used to specify the positions, velocities, and
-accelerations of points; orientations, angular velocities, and angular
-accelerations of reference frames; and forces and torques. The dyadics are
-essentially reference frame-aware $3 \times 3$ tensors~\cite{tai1997generalized}.
-The vector and dyadic
-objects can be used for any one-, two-, or three-dimensional vector algebra, and
-they provide a strong framework for building physics and engineering tools.
+outer products, and cross products. The vector and dyadic objects both can be
+written in very compact notation that make it easy to express the vectors and
+dyadics in terms of multiple reference frames with arbitrarily defined
+relative orientations. The vectors are used to specify the positions,
+velocities, and accelerations of points; orientations, angular velocities, and
+angular accelerations of reference frames; and forces and torques. The dyadics
+are essentially reference frame-aware $3 \times 3$
+tensors~\cite{tai1997generalized}. The vector and dyadic objects can be used
+for any one-, two-, or three-dimensional vector algebra, and they provide a
+strong framework for building physics and engineering tools.
 
 The following Python code demonstrates how a vector is created using
 the orthogonal unit vectors of three reference frames that are oriented with
 respect to each other, and the result of expressing the vector in the $A$
 frame. The $B$ frame is oriented with respect to the $A$ frame using Z-X-Z
 Euler Angles of magnitude $\pi$, $\frac{\pi}{2}$, and
-$\frac{\pi}{3}$\si{\radian}, respectively, whereas the $C$ frame is oriented
+$\frac{\pi}{3}$, respectively, whereas the $C$ frame is oriented
 with respect to the $B$ frame through a simple rotation about the $B$ frame's
-$X$ unit vector through $\frac{\pi}{2}$\si{\radian}.
+$X$ unit vector through $\frac{\pi}{2}$.
 
 \begin{verbatim}
 >>> from sympy.physics.vector import ReferenceFrame
->>> A = ReferenceFrame('A')
->>> B = ReferenceFrame('B')
->>> C = ReferenceFrame('C')
+>>> A, B, C = symbols('A B C', cls=ReferenceFrame)
 >>> B.orient(A, 'body', (pi, pi/3, pi/4), 'zxz')
 >>> C.orient(B, 'axis', (pi/2, B.x))
 >>> v = 1*A.x + 2*B.z + 3*C.y
@@ -51,22 +49,23 @@ A.x + 5*sqrt(3)/2*A.y + 5/2*A.z
 
 \subsubsection{Mechanics}
 
-The \verb|sympy.physics.mechanics| package utilizes the \texttt{sympy.\allowbreak{}physics.\allowbreak{}vector} package
+The \verb|sympy.physics.mechanics| submodule utilizes the \texttt{sympy.\allowbreak{}physics.\allowbreak{}vector} submodule
 to populate time-aware particle and rigid-body objects to fully describe the
 kinematics and kinetics of a rigid multi-body system. These objects store all
 of the information needed to derive the ordinary differential or differential
 algebraic equations that govern the motion of the system, i.e., the equations
 of motion. These equations of motion abide by Newton's laws of motion and can
-handle arbitrary kinematic constraints or complex loads. The package
+handle arbitrary kinematic constraints or complex loads. The submodule
 offers two automated methods for formulating the equations of motion based on
 Lagrangian Dynamics~\cite{Lagrange1811} and Kane's Method~\cite{Kane1985}.
 Lastly, there are automated linearization routines for constrained dynamical
 systems~\cite{Peterson2014}.
 
 \subsection{Quantum Mechanics}
+\label{sec:quantum}
 
-The \verb|sympy.physics.quantum| package has extensive capabilities for
-performing symbolic quantum mechanics, using Python objects to represent the
+The \verb|sympy.physics.quantum| submodule has extensive capabilities to
+solve problems in quantum mechanics, using Python objects to represent the
 different mathematical objects relevant in quantum theory~\cite{Sakurai2010}:
 states (bras and kets), operators (unitary, Hermitian, etc.), and basis sets, as
 well as operations on these objects such as representations, tensor products,
@@ -80,10 +79,7 @@ a full range of operations with them.
 \begin{verbatim}
 >>> from sympy.physics.quantum import Commutator, Dagger, Operator
 >>> from sympy.physics.quantum import Ket, qapply
->>> A = Operator('A')
->>> B = Operator('B')
->>> C = Operator('C')
->>> D = Operator('D')
+>>> A, B, C, D = symbols('A B C D', cls=Operator)
 >>> a = Ket('a')
 >>> comm = Commutator(A, B)
 >>> comm
@@ -111,7 +107,7 @@ mechanics~\cite{FetterWalecka2003}.
 
 \item Quantum angular momentum~\cite{Zare1991}. Spin operators and their
 eigenstates can be represented in any basis and for any quantum numbers.
-A rotation operator representing the Wigner-D matrix, which may be defined
+A rotation operator representing the Wigner D-matrix, which may be defined
 symbolically or numerically, is also implemented to rotate spin eigenstates.
 Functionality for coupling and uncoupling of arbitrary spin eigenstates is
 provided, including symbolic representations of Clebsch-Gordon coefficients and
@@ -167,7 +163,7 @@ H(0)*H(1)*|00>
 \end{verbatim}
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[scale=0.65]{images/circuitplot-qft}
+\includegraphics[scale=0.65]{images/fig1-circuitplot-qft}
 \caption{The circuit diagram for a three-qubit quantum Fourier transform
 generated by SymPy.}
 \label{fig-circuitplot-qft}
@@ -176,6 +172,9 @@ generated by SymPy.}
 Lastly, the following example demonstrates creating a three-qubit quantum Fourier
 transform, decomposing it into one- and two-qubit gates, and then generating a
 circuit plot for the sequence of gates (see Figure~\ref{fig-circuitplot-qft}).
+% This depends on matplotlib. We want to make sure the rest of the paper
+% doesn't depend on it, so skip.
+% no-doctest
 \begin{verbatim}
 >>> from sympy.physics.quantum.qft import QFT
 >>> from sympy.physics.quantum.circuitplot import circuit_plot

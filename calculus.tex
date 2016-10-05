@@ -14,7 +14,7 @@ As a more complex example, SymPy computes \[\lim\limits_{x\to 0}{\left(2 e^{\fra
   1\right)}^{\frac{\sinh{\left (x \right )}}{\operatorname{atan}^{2}{\left (x
       \right )}}} = e.\]
 \begin{verbatim}
->>> limit((2*E**((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
+>>> limit((2*exp((1-cos(x))/sin(x))-1)**(sinh(x)/atan(x)**2), x, 0)
 E
 \end{verbatim}
 
@@ -42,10 +42,11 @@ demonstrated below by the computation of \[\int_{0}^{\infty} e^{-s t}\log{\left 
 log(log(x) + 1) + 1/(exp(x**2) + 1)
 \end{verbatim}
 
-Summations are computed with \verb|summation|  using a combination of Gosper's
-algorithm~\cite{gosper1978decision}, an algorithm that uses Meijer
-G-functions~\cite{Roach1996hyper,roach1997meijerg}, and heuristics. Products
-are computed with \verb|product| function via a suite of heuristics.
+Summations are computed with the \verb|summation| function, which uses a
+combination of Gosper's algorithm~\cite{gosper1978decision}, an algorithm that
+uses Meijer G-functions~\cite{Roach1996hyper,roach1997meijerg}, and
+heuristics. Products are computed with \verb|product| function via a suite of
+heuristics.
 % TODO: Are there other summation algorithms implemented?
 % TODO: A good summation example or two
 \begin{verbatim}
@@ -55,6 +56,13 @@ are computed with \verb|product| function via a suite of heuristics.
 >>> summation(i*factorial(i), (i, 1, n))
 n*factorial(n) + factorial(n) - 1
 \end{verbatim}
+
+Series expansions are computed with the \verb|series| function. This example computes the power series of $\sin(x)$ around $x=0$ up to $x^6$.
+\begin{verbatim}
+>>> series(sin(x), x, 0, 6)
+x - x**3/6 + x**5/120 + O(x**6)
+\end{verbatim}
+The supplementary material discusses series expansions methods in more depth.
 
 Integrals, derivatives, summations, products, and limits that cannot be
 computed return unevaluated objects. These can also be created directly if the

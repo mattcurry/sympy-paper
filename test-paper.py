@@ -5,31 +5,36 @@ from sympy import pprint_use_unicode, init_printing
 import __future__
 import sys
 
-files = ["introduction.tex",
-         "architecture.tex",
-         "numerics.tex",
-         "features.tex",
-         "simplification.tex",
-         "calculus.tex",
-         "printers.tex",
-         "solvers.tex",
-         "matrices.tex",
-         "domain_specific.tex",
+files = [
+    "introduction.tex",
+    "features.tex",
+    "basic_usage.tex",
+    "assumptions.tex",
+    "simplification.tex",
+    "calculus.tex",
+    "polys.tex",
+    "printers.tex",
+    "solvers.tex",
+    "matrices.tex",
+    "numerics.tex",
+    "domain_specific.tex",
+    "architecture.tex",
+    "projects_that_depend_on_sympy.tex",
 
-         "supplement.tex",
-         "gruntz.tex",
-         "series.tex",
-         "logic.tex",
-         "diophantine.tex",
-         "sets.tex",
-         "stats.tex",
-         "gamma.tex",
-         "live.tex",
-         "comparison_with_mma.tex",
-         "other_projects_that_use_sympy.tex",
-         "tensors.tex",
-         "polys.tex"
-        ]
+    "supplement.tex",
+    "gruntz.tex",
+    "series.tex",
+    "logic.tex",
+    "diophantine.tex",
+    "sets.tex",
+    "stats.tex",
+    "categories.tex",
+    "tensors.tex",
+    "nsimplify.tex",
+    "examples.tex",
+    "gamma.tex",
+    "comparison_with_mma.tex",
+    ]
 
 output_file = "test_full_paper.py"
 
