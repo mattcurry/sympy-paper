@@ -1,4 +1,5 @@
 #!/usr/bin/env xonsh
+# -*- mode: python -*-
 """Diffs the latex file and builds the pdf."""
 import os
 import sys
