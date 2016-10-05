@@ -31,6 +31,20 @@ def difftex(old):
 
     cp authors.tex authors-diff.tex
 
+    rm -rf /tmp/paper-diff
+    git clone . /tmp/paper-diff
+
+    cwd = os.path.abspath('.')
+    cd /tmp/paper-diff
+    git checkout @(old)
+    make
+    cp /tmp/paper-diff/paper.bbl @(cwd + 'paper-' + old + '.bbl')
+    cp /tmp/paper-diff/supplement.bbl @(cwd + 'supplement-' + old + '.bbl')
+    cd @(cwd)
+
+    latexdiff @(cwd + 'paper-' + old + '.bbl') paper.bbl > paper-diff.bbl
+    latexdiff @(cwd + 'supplement-' + old + '.bbl') supplement.bbl > supplement-diff.bbl
+
 def main(args=None):
     parser = ArgumentParser('diff')
     parser.add_argument('old', help='Tree to compare against.')

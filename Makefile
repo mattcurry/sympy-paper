@@ -14,13 +14,11 @@ paper-diff.tex: supplement.pdf paper.pdf diff.xsh
 
 supplement-diff.pdf: paper-diff.tex
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
-	bibtex supplement
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
 
 paper-diff.pdf: paper-diff.tex
 	pdflatex -shell-escape --halt-on-error paper-diff.tex
-	bibtex supplement
 	pdflatex -shell-escape --halt-on-error paper-diff.tex
 	pdflatex -shell-escape --halt-on-error paper-diff.tex
 
