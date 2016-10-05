@@ -6,6 +6,9 @@ paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex 
 	pdflatex -shell-escape --halt-on-error paper.tex
 	pdflatex -shell-escape --halt-on-error paper.tex
 
+.PHONY: diff
+diff: paper-diff.pdf supplement-diff.pdf
+
 paper-diff.tex: supplement.pdf paper.pdf
 	./diff.xsh PeerJ-version-3
 
