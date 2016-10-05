@@ -18,7 +18,8 @@ def replace_inputs(diffname, files):
 
 def difftex(old):
     files = set(`.*?\.tex`) - set(`.*?-diff\.tex`)
-    files.remove('authors.tex')
+    if 'authors.tex' in files:
+        files.remove('authors.tex')
     for f in files:
         print('diffing ' + f)
         fbase, fext = os.path.splitext(f)
