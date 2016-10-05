@@ -50,8 +50,8 @@ def difftex(old):
     cp /tmp/paper-diff/supplement.bbl @(os.path.join(cwd, 'supplement-' + old + '.bbl'))
     cd @(cwd)
 
-    latexdiff @(cwd + 'paper-' + old + '.bbl') paper.bbl > paper-diff.bbl
-    latexdiff @(cwd + 'supplement-' + old + '.bbl') supplement.bbl > supplement-diff.bbl
+    latexdiff @(os.path.join(cwd, 'paper-' + old + '.bbl')) paper.bbl > paper-diff.bbl
+    latexdiff @(os.path.join(cwd, 'supplement-' + old + '.bbl')) supplement.bbl > supplement-diff.bbl
 
 def fixes():
     with open('comparison_with_mma-diff.tex') as f:
