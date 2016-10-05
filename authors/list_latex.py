@@ -26,4 +26,4 @@ with open(authors_tex, "w", encoding='utf-8') as f:
         f.write((u"\\author[%s]{%s}%%\n" % (', '.join(address_n), author["name"])))
 
     for n, address in enumerate(all_addresses):
-        f.write(u"\\affil[%d]{%s.}%%\n" % (n+1, address))
+        f.write(u"\\affil[%d]{%s}%%\n" % (n+1, address))
