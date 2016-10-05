@@ -6,6 +6,21 @@ paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex 
 	pdflatex -shell-escape --halt-on-error paper.tex
 	pdflatex -shell-escape --halt-on-error paper.tex
 
+paper-diff.tex: supplement.pdf paper.pdf
+	./diff.xsh PeerJ-version-3
+
+supplement-diff.pdf: paper-diff.tex
+	pdflatex -shell-escape --halt-on-error supplement-diff.tex
+	bibtex supplement
+	pdflatex -shell-escape --halt-on-error supplement-diff.tex
+	pdflatex -shell-escape --halt-on-error supplement-diff.tex
+
+paper-diff.pdf: paper-diff.tex
+	pdflatex -shell-escape --halt-on-error paper-diff.tex
+	bibtex supplement
+	pdflatex -shell-escape --halt-on-error paper-diff.tex
+	pdflatex -shell-escape --halt-on-error paper-diff.tex
+
 supplement.pdf: categories.tex comparison_with_mma.tex diophantine.tex examples.tex gamma.tex gruntz.tex logic.tex nsimplify.tex polys.tex series.tex sets.tex stats.tex supplement.tex tensors.tex paper.bib images/supp-fig2-integral_steps.png
 	pdflatex -shell-escape --halt-on-error supplement.tex
 	bibtex supplement
@@ -32,5 +47,5 @@ test:
 
 .PHONY: clean
 clean:
-	(rm -rf *.ps *.log *.dvi *.aux *.*% *.lof *.lop *.lot *.toc *.idx *.ilg *.ind *.bbl *.blg *.cpt)
-	(rm -rf authors.tex pprint.pdf paper.pdf supplement.pdf rebuttal.pdf)
+	(rm -rf *.ps *.log *.dvi *.aux *.*% *.lof *.lop *.lot *.toc *.idx *.ilg *.ind *.bbl *.blg *.cpt *-diff.tex)
+	(rm -rf authors.tex pprint.pdf paper.pdf supplement.pdf rebuttal.pdf coverletter.pdf)

@@ -17,6 +17,7 @@ def replace_inputs(diffname, files):
 
 def difftex(old):
     files = set(`.*?\.tex`) - set(`.*?-diff\.tex`)
+    files.remove('authors.tex')
     for f in files:
         print('diffing ' + f)
         fbase, fext = os.path.splitext(f)
@@ -27,17 +28,17 @@ def difftex(old):
         latexdiff @(oldname) @(f) > @(diffname)
         replace_inputs(diffname, files)
 
+    cp authors.tex authors-diff.tex
 
 def main(args=None):
     parser = ArgumentParser('diff')
     parser.add_argument('old', help='Tree to compare against.')
-    parser.add_argument('--manuscript', help='Diffed manuscript name', 
-                        default='paper-diff', dest='manuscript')
+    parser.add_argument('--manuscript', help='Diffed manuscript name',
+                        default='paper-diff.pdf', dest='manuscript')
     ns = parser.parse_args(args=args or $ARGS[1:])
 
     difftex(ns.old)
-    make @('manuscript=' + ns.manuscript)
-    
+
 
 if __name__ == '__main__':
     main()
