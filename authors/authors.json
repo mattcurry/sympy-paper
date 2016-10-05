@@ -5,7 +5,9 @@
         "github_id": "asmeurer",
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC 29201",
-        "institution_address_peerj": ["Department of Mechanical Engineering, University of South Carolina, Columbia, South Carolina, United States"],
+        "institution_address_peerj": [
+            "Department of Mechanical Engineering, University of South Carolina, Columbia, South Carolina, United States"
+        ],
         "institution_address_siam": "Columbia, SC 29201",
         "name": "Aaron Meurer",
         "sympy_commits": 2639
@@ -15,7 +17,9 @@
         "github_id": "smichr",
         "institution": "Polar Semiconductor, Inc.",
         "institution_address": "2800 E. Old Shakopee Rd., Bloomington, MN 55425",
-        "institution_address_peerj": ["Polar Semiconductor, Inc., Bloomington, Minnesota, United States"],
+        "institution_address_peerj": [
+            "Polar Semiconductor, Inc., Bloomington, Minnesota, United States"
+        ],
         "institution_address_siam": "Bloomington, MN 55425",
         "name": "Christopher P. Smith",
         "sympy_commits": 4011
@@ -25,7 +29,9 @@
         "github_id": "mattpap",
         "institution": "Continuum Analytics, Inc.",
         "institution_address": "221 W. 6th St. #1550, Austin, TX 78701 USA",
-        "institution_address_peerj": ["Continuum Analytics, Inc., Austin, Texas, United States"],
+        "institution_address_peerj": [
+            "Continuum Analytics, Inc., Austin, Texas, United States"
+        ],
         "institution_address_siam": "Austin, TX 78701",
         "name": "Mateusz Paprocki",
         "sympy_commits": 1450
@@ -35,7 +41,9 @@
         "github_id": "certik",
         "institution": "Los Alamos National Laboratory",
         "institution_address": "P.O. Box 1663, Los Alamos, New Mexico 87545, USA",
-        "institution_address_peerj": ["Los Alamos National Laboratory, Los Alamos, New Mexico, United States"],
+        "institution_address_peerj": [
+            "Los Alamos National Laboratory, Los Alamos, New Mexico, United States"
+        ],
         "institution_address_siam": "Los Alamos, NM 87545",
         "institution_explanation": "The Los Alamos National Laboratory is operated by Los Alamos National Security, LLC, for the National Nuclear Security Administration of the U.S. Department of Energy under Contract No. DE-AC52-06NA25396.",
         "name": "Ondřej Čertík",
@@ -46,7 +54,9 @@
         "github_id": "skirpichev",
         "institution": "Moscow State University, Faculty of Physics",
         "institution_address": "Leninskie Gory, Moscow, 119991, Russia",
-        "institution_address_peerj": ["Faculty of Physics, Moscow State University, Moscow, Russia"],
+        "institution_address_peerj": [
+            "Faculty of Physics, Moscow State University, Moscow, Russia"
+        ],
         "institution_address_siam": "Leninskie Gory, Moscow, 119991, Russia",
         "name": "Sergey B. Kirpichev",
         "sympy_commits": 1055
@@ -56,7 +66,9 @@
         "github_id": "mrocklin",
         "institution": "Continuum Analytics, Inc.",
         "institution_address": "221 W. 6th St. #1550, Austin, TX 78701 USA",
-        "institution_address_peerj": ["Continuum Analytics, Inc., Austin, Texas, United States"],
+        "institution_address_peerj": [
+            "Continuum Analytics, Inc., Austin, Texas, United States"
+        ],
         "institution_address_siam": "Austin, TX 78701",
         "name": "Matthew Rocklin",
         "sympy_commits": 1046
@@ -66,7 +78,9 @@
         "github_id": "aktech",
         "institution": "Delhi Technological University",
         "institution_address": "Delhi Technological University, Shahbad Daulatpur, Bawana Road, New Delhi 110042, India",
-        "institution_address_peerj": ["Department of Applied Mathematics, Delhi Technological University, New Delhi, India"],
+        "institution_address_peerj": [
+            "Department of Applied Mathematics, Delhi Technological University, New Delhi, India"
+        ],
         "institution_address_siam": "Shahbad Daulatpur, Bawana Road, New Delhi 110042, India",
         "name": "AMiT Kumar",
         "sympy_commits": 263
@@ -76,7 +90,9 @@
         "github_id": "scolobb",
         "institution": "Université Paris Est Créteil",
         "institution_address": "61 av. Général de Gaulle, 94010 Créteil, France",
-        "institution_address_peerj": ["Université Paris Est Créteil, Créteil, France"],
+        "institution_address_peerj": [
+            "Université Paris Est Créteil, Créteil, France"
+        ],
         "institution_address_siam": "61 av. Général de Gaulle, 94010 Créteil, France",
         "name": "Sergiu Ivanov",
         "sympy_commits": 260
@@ -86,7 +102,9 @@
         "github_id": "moorepants",
         "institution": "University of California, Davis",
         "institution_address": "One Shields Ave, Davis, CA, 95616, USA",
-        "institution_address_peerj": ["Mechanical and Aerospace Engineering, University of California, Davis, Davis, California, United States"],
+        "institution_address_peerj": [
+            "Mechanical and Aerospace Engineering, University of California, Davis, Davis, California, United States"
+        ],
         "institution_address_siam": "Davis, CA 95616",
         "name": "Jason K. Moore",
         "sympy_commits": 255
@@ -96,7 +114,9 @@
         "github_id": "leosartaj",
         "institution": "Indian Institute of Technology (BHU)",
         "institution_address": "Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India -- 221005",
-        "institution_address_peerj": ["Mathematical Sciences, Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India"],
+        "institution_address_peerj": [
+            "Mathematical Sciences, Indian Institute of Technology (BHU), Varanasi, Uttar Pradesh, India"
+        ],
         "institution_address_siam": "Varanasi, Uttar Pradesh 221005, India",
         "name": "Sartaj Singh",
         "sympy_commits": 200
@@ -106,7 +126,9 @@
         "github_id": "thilinarmtb",
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
-        "institution_address_peerj": ["Department of Computer Science and Engineering, University of Moratuwa, Katubedda, Moratuwa, Sri Lanka"],
+        "institution_address_peerj": [
+            "Department of Computer Science and Engineering, University of Moratuwa, Katubedda, Moratuwa, Sri Lanka"
+        ],
         "institution_address_siam": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Thilina Rathnayake",
         "sympy_commits": 186
@@ -116,7 +138,9 @@
         "github_id": "flacjacket",
         "institution": "University of Illinois at Urbana-Champaign",
         "institution_address": "1110 W Green St, Urbana, IL 61801, USA",
-        "institution_address_peerj": ["University of Illinois at Urbana-Champaign, Urbana, Illinois, United States"],
+        "institution_address_peerj": [
+            "University of Illinois at Urbana-Champaign, Urbana, Illinois, United States"
+        ],
         "institution_address_siam": "Urbana, IL 61801",
         "name": "Sean Vig",
         "sympy_commits": 186
@@ -126,7 +150,9 @@
         "github_id": "ellisonbg",
         "institution": "California Polytechnic State University",
         "institution_address": "1 Grand Avenue, San Luis Obispo, CA 93407, USA",
-        "institution_address_peerj": ["California Polytechnic State University, San Luis Obispo, California, United States"],
+        "institution_address_peerj": [
+            "California Polytechnic State University, San Luis Obispo, California, United States"
+        ],
         "institution_address_siam": "San Luis Obispo, CA 93407",
         "name": "Brian E. Granger",
         "sympy_commits": 160
@@ -136,7 +162,9 @@
         "github_id": "rpmuller",
         "institution": "Center for Computing Research, Sandia National Laboratories",
         "institution_address": "P.O. Box 5800, Mail Stop 1322, Albuquerque, NM 87185-1322, USA",
-        "institution_address_peerj": ["Center for Computing Research, Sandia National Laboratories, Albuquerque, New Mexico, United States"],
+        "institution_address_peerj": [
+            "Center for Computing Research, Sandia National Laboratories, Albuquerque, New Mexico, United States"
+        ],
         "institution_address_siam": "Albuquerque, NM 87185",
         "institution_explanation": "Sandia is a multiprogram laboratory operated by Sandia Corporation, a Lockheed Martin Company, for the United States Department of Energy's National Nuclear Security Administration under Contract DE-AC04-94AL85000.",
         "name": "Richard P. Muller",
@@ -147,7 +175,9 @@
         "github_id": "Upabjojr",
         "institution": "Max Planck Institute of Colloids and Interfaces, Department of Theory and Bio-Systems",
         "institution_address": "Science Park Golm, 14424 Potsdam, Germany",
-        "institution_address_peerj": ["Department of Theory and Bio-Systems, Max Planck Institute of Colloids and Interfaces, Potsdam, Germany"],
+        "institution_address_peerj": [
+            "Department of Theory and Bio-Systems, Max Planck Institute of Colloids and Interfaces, Potsdam, Germany"
+        ],
         "institution_address_siam": "Science Park Golm, 14424 Potsdam, Germany",
         "name": "Francesco Bonazzi",
         "sympy_commits": 156
@@ -157,7 +187,9 @@
         "github_id": "hargup",
         "institution": "Indian Institute of Technology Kharagpur",
         "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India -- 721302",
-        "institution_address_peerj": ["Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India"],
+        "institution_address_peerj": [
+            "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India"
+        ],
         "institution_address_siam": "Kharagpur, West Bengal 721302, India",
         "name": "Harsh Gupta",
         "sympy_commits": 123
@@ -167,7 +199,9 @@
         "github_id": "shivamvats",
         "institution": "Indian Institute of Technology Kharagpur",
         "institution_address": "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India -- 721302",
-        "institution_address_peerj": ["Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India"],
+        "institution_address_peerj": [
+            "Indian Institute of Technology Kharagpur, Kharagpur, West Bengal, India"
+        ],
         "institution_address_siam": "Kharagpur, West Bengal 721302, India",
         "name": "Shivam Vats",
         "sympy_commits": 122
@@ -177,7 +211,9 @@
         "github_id": "fredrik-johansson",
         "institution": "INRIA Bordeaux-Sud-Ouest -- LFANT project-team",
         "institution_address": "200 Avenue de la Vieille Tour, 33405 Talence, France",
-        "institution_address_peerj": ["INRIA Bordeaux-Sud-Ouest -- LFANT project-team, Talence, France"],
+        "institution_address_peerj": [
+            "INRIA Bordeaux-Sud-Ouest -- LFANT project-team, Talence, France"
+        ],
         "institution_address_siam": "200 Avenue de la Vieille Tour, 33405 Talence, France",
         "name": "Fredrik Johansson",
         "sympy_commits": 119
@@ -187,7 +223,9 @@
         "github_id": "fabianp",
         "institution": "INRIA -- SIERRA project-team",
         "institution_address": "2 Rue Simone IFF, 75012 Paris",
-        "institution_address_peerj": ["INRIA -- SIERRA project-team, Paris, France"],
+        "institution_address_peerj": [
+            "INRIA -- SIERRA project-team, Paris, France"
+        ],
         "institution_address_siam": "2 Rue Simone IFF, 75012 Paris, France",
         "name": "Fabian Pedregosa",
         "sympy_commits": 114
@@ -197,7 +235,11 @@
         "github_id": "mattcurry",
         "institution": "Department of Physics and Astronomy, University of New Mexico",
         "institution_address": "1919 Lomas Blvd NE, Albuquerque, NM 87131",
-        "institution_address_peerj": ["Department of Physics and Astronomy, University of New Mexico, Albuquerque, New Mexico, United States", "Center for Quantum Information and Control, University of New Mexico, Albuquerque, New Mexico, United States", "Sandia National Laboratories, Albuquerque, New Mexico, United States"],
+        "institution_address_peerj": [
+            "Department of Physics and Astronomy, University of New Mexico, Albuquerque, New Mexico, United States",
+            "Center for Quantum Information and Control, University of New Mexico, Albuquerque, New Mexico, United States",
+            "Sandia National Laboratories, Albuquerque, New Mexico, United States"
+        ],
         "institution_address_siam": "Albuquerque, NM 87131",
         "name": "Matthew J. Curry",
         "sympy_commit_email": "mattjcurry@gmail.com",
@@ -208,7 +250,10 @@
         "github_id": "aterrel",
         "institution": "Fashion Metric, Inc",
         "institution_address": "221 E. 9th St, Austin, TX 78681",
-        "institution_address_peerj": ["Fashion Metric, Inc, Austin, Texas, United States", "NumFOCUS, Austin, TX, United States"],
+        "institution_address_peerj": [
+            "Fashion Metric, Inc, Austin, Texas, United States",
+            "NumFOCUS, Austin, TX, United States"
+        ],
         "institution_address_siam": "Austin, TX 78681",
         "name": "Andy R. Terrel",
         "sympy_commits": 46
@@ -218,7 +263,9 @@
         "github_id": "rouckas",
         "institution": "Faculty of Mathematics and Physics, Charles University in Prague",
         "institution_address": "V Holešovičkách 2, 180 00 Praha, Czech Republic",
-        "institution_address_peerj": ["Department of Surface and Plasma Science, Faculty of Mathematics and Physics, Charles University in Prague, Praha, Czech Republic"],
+        "institution_address_peerj": [
+            "Department of Surface and Plasma Science, Faculty of Mathematics and Physics, Charles University in Prague, Praha, Czech Republic"
+        ],
         "institution_address_siam": "V Holešovičkách 2, 180 00 Praha, Czech Republic",
         "name": "Štěpán Roučka",
         "sympy_commits": 24
@@ -228,7 +275,9 @@
         "github_id": "ashutoshsaboo",
         "institution": "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus",
         "institution_address": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
-        "institution_address_peerj": ["Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus, Sancoale, Goa, India"],
+        "institution_address_peerj": [
+            "Birla Institute of Technology and Science, Pilani, K.K. Birla Goa Campus, Sancoale, Goa, India"
+        ],
         "institution_address_siam": "NH 17B Bypass Road, Zuarinagar, Sancoale, Goa 403726, India",
         "name": "Ashutosh Saboo",
         "sympy_commits": 17
@@ -238,7 +287,9 @@
         "github_id": "isuruf",
         "institution": "University of Moratuwa",
         "institution_address": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
-        "institution_address_peerj": ["Department of Computer Science and Engineering, University of Moratuwa, Katubedda, Moratuwa, Sri Lanka"],
+        "institution_address_peerj": [
+            "Department of Computer Science and Engineering, University of Moratuwa, Katubedda, Moratuwa, Sri Lanka"
+        ],
         "institution_address_siam": "Bandaranayake Mawatha, Katubedda, Moratuwa 10400, Sri Lanka",
         "name": "Isuru Fernando",
         "sympy_commits": 7
@@ -248,7 +299,9 @@
         "github_id": "Sumith1896",
         "institution": "Indian Institute of Technology Bombay",
         "institution_address": "Indian Institute of Technology Bombay, Powai, Mumbai, Maharashtra, India -- 400076",
-        "institution_address_peerj": ["Indian Institute of Technology Bombay, Mumbai, Maharashtra, India"],
+        "institution_address_peerj": [
+            "Indian Institute of Technology Bombay, Mumbai, Maharashtra, India"
+        ],
         "institution_address_siam": "Powai, Mumbai, Maharashtra 400076, India",
         "name": "Sumith Kulal",
         "sympy_commits": 7
@@ -258,7 +311,9 @@
         "github_id": "rc",
         "institution": "New Technologies -- Research Centre, University of West Bohemia",
         "institution_address": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
-        "institution_address_peerj": ["New Technologies -- Research Centre, University of West Bohemia, Plzeň, Czech Republic"],
+        "institution_address_peerj": [
+            "New Technologies -- Research Centre, University of West Bohemia, Plzeň, Czech Republic"
+        ],
         "institution_address_siam": "Univerzitní 8, 306 14 Plzeň, Czech Republic",
         "name": "Robert Cimrman",
         "sympy_commit_email": "robert.cimrman@gmail.com",
@@ -270,7 +325,9 @@
         "github_id": "scopatz",
         "institution": "University of South Carolina",
         "institution_address": "541 Main St., Columbia, SC, 29201",
-        "institution_address_peerj": ["Department of Mechanical Engineering, University of South Carolina, Columbia, South Carolina, United States"],
+        "institution_address_peerj": [
+            "Department of Mechanical Engineering, University of South Carolina, Columbia, South Carolina, United States"
+        ],
         "institution_address_siam": "Columbia, SC 29201",
         "name": "Anthony Scopatz",
         "sympy_commits": 15
