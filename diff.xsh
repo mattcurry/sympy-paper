@@ -40,14 +40,14 @@ def difftex(old):
     cp authors.tex authors-diff.tex
 
     rm -rf /tmp/paper-diff
-    git clone . /tmp/paper-diff
+    git clone @(os.path.dirname($ARG0)) /tmp/paper-diff
 
-    cwd = os.path.abspath('.')
+    cwd = os.path.abspath(os.path.dirname($ARG0))
     cd /tmp/paper-diff
     git checkout @(old)
     make
-    cp /tmp/paper-diff/paper.bbl @(cwd + 'paper-' + old + '.bbl')
-    cp /tmp/paper-diff/supplement.bbl @(cwd + 'supplement-' + old + '.bbl')
+    cp /tmp/paper-diff/paper.bbl @(os.path.join(cwd, 'paper-' + old + '.bbl'))
+    cp /tmp/paper-diff/supplement.bbl @(os.path.join(cwd, 'supplement-' + old + '.bbl'))
     cd @(cwd)
 
     latexdiff @(cwd + 'paper-' + old + '.bbl') paper.bbl > paper-diff.bbl
