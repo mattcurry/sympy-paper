@@ -5,6 +5,7 @@ import os
 import sys
 from argparse import ArgumentParser
 
+$RAISE_SUBPROC_ERROR = True
 
 def replace_inputs(diffname, files):
     with open(diffname, 'r') as fh:
@@ -18,8 +19,14 @@ def replace_inputs(diffname, files):
 
 def difftex(old):
     files = set(`.*?\.tex`) - set(`.*?-diff\.tex`)
-    if 'authors.tex' in files:
-        files.remove('authors.tex')
+    files -= {
+        'authors.tex',
+        'coverletter.tex',
+        'rebuttal.tex',
+        'assumptions.tex',
+        'basic_usage.tex',
+        'projects_that_depend_on_sympy.tex',
+        }
     for f in files:
         print('diffing ' + f)
         fbase, fext = os.path.splitext(f)
