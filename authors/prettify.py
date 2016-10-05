@@ -2,10 +2,12 @@
 
 from __future__ import print_function
 
+from os.path import join, dirname
 from json import load, dumps
 from io import open
 
-author_list = load(open("authors.json"))
+authors_json = join(dirname(__file__), "authors.json")
+author_list = load(open(authors_json))
 for author in author_list:
     if "author_order" not in author:
         author["author_order"] = author["sympy_commits"]
@@ -14,7 +16,7 @@ for author in author_list:
     if author["author_order"] == author["sympy_commits"]:
         del author["author_order"]
 
-with open("authors.json", "w", encoding='utf-8') as f:
+with open(authors_json, "w", encoding='utf-8') as f:
     data = dumps(author_list, ensure_ascii=False, sort_keys=True, indent=4,
             separators=(',', ': '))
     f.write(data + "\n")
