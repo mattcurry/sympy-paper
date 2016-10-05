@@ -16,10 +16,6 @@ with open(authors_tex, "w", encoding='utf-8') as f:
     for n, author in enumerate(author_list):
         f.write((u"\\author[%d]{%s}%%\n" % (n+1, author["name"])))
     for n, author in enumerate(author_list):
-        if "institution_explanation" in author:
-            institution_explanation = u" %s" % author["institution_explanation"]
-        else:
-            institution_explanation = u""
         f.write(u"\\affil[%d]{%s.}%%\n" \
                 % (n+1,
                    author["institution_address_peerj"],
