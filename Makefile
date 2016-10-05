@@ -9,7 +9,7 @@ paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex 
 .PHONY: diff
 diff: paper-diff.pdf supplement-diff.pdf
 
-paper-diff.tex: supplement.pdf paper.pdf
+paper-diff.tex: supplement.pdf paper.pdf diff.xsh
 	./diff.xsh PeerJ-version-3
 
 supplement-diff.pdf: paper-diff.tex
