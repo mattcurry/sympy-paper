@@ -20,8 +20,8 @@ with open(authors_tex, "w", encoding='utf-8') as f:
             institution_explanation = u" %s" % author["institution_explanation"]
         else:
             institution_explanation = u""
-        f.write(u"\\affil[%d]{%s, %s (\\email{%s}).%s}%%\n" \
-                % (n+1, author["institution"],
-                    author["institution_address_peerj"],
-                    author["email"],
-                    institution_explanation))
+        f.write(u"\\affil[%d]{%s (\\email{%s}).%s}%%\n" \
+                % (n+1,
+                   author["institution_address_peerj"],
+                   author["email"],
+                   institution_explanation))
