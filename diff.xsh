@@ -53,6 +53,12 @@ def difftex(old):
     latexdiff @(cwd + 'paper-' + old + '.bbl') paper.bbl > paper-diff.bbl
     latexdiff @(cwd + 'supplement-' + old + '.bbl') supplement.bbl > supplement-diff.bbl
 
+def fixes():
+    with open('comparison_with_mma-diff.tex') as f:
+        text = f.read()
+    with open('comparison_with_mma-diff.tex', 'w') as f:
+        f.write(text.replace('\\PAR', ''))
+
 def main(args=None):
     parser = ArgumentParser('diff')
     parser.add_argument('old', help='Tree to compare against.')
@@ -61,7 +67,7 @@ def main(args=None):
     ns = parser.parse_args(args=args or $ARGS[1:])
 
     difftex(ns.old)
-
+    fixes()
 
 if __name__ == '__main__':
     main()
