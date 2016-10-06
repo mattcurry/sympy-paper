@@ -162,6 +162,7 @@ TSWLatexianTemp*
 authors.tex
 test_full_paper.py
 authors/authors_table.md
+*-diff.tex
 
 # Temp files
 *~

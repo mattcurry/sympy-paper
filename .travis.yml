@@ -3,17 +3,18 @@ dist: trusty
 before_install:
 - sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
   texlive-latex-extra texlive-fonts-extra texlive-humanities texlive-science latex-xcolor
-  dvipng texlive-latex-recommended python-pygments lmodern texlive-xetex
+  dvipng texlive-latex-recommended python-pygments lmodern texlive-xetex latexdiff texlive-generic-recommended
 
 # install sympy, numpy and matplotlib for doctesting
-- wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+- wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
 - bash miniconda.sh -b -p $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
 - hash -r
 - conda config --set always_yes yes --set changeps1 no
+- conda config --add channels conda-forge
 - conda update -q conda
 - conda info -a
-- conda create -q -n test-environment python=2.7 sympy=1.0 numpy matplotlib
+- conda create -q -n test-environment sympy=1.0 numpy matplotlib xonsh
 - source activate test-environment
 
 # for matplotlib
@@ -23,6 +24,7 @@ before_install:
 script:
 - make
 - make test
+- make diff
 - sh upload_travis.sh
 notifications:
   email: false
