@@ -34,10 +34,6 @@ def difftex(old):
         'basic_usage.tex',
         'projects_that_depend_on_sympy.tex',
         }
-    deleted_files = {
-        'acknowledgements.tex',
-        }
-    files |= deleted_files
     for f in files:
         print('diffing ' + f)
         fbase, fext = os.path.splitext(f)
@@ -48,8 +44,6 @@ def difftex(old):
             touch @(oldname)
         else:
             git show @(oldspec) > @(oldname)
-        if f in deleted_files:
-            touch @(f)
         latexdiff @(oldname) @(f) > @(diffname)
         replace_inputs(diffname, files)
 
