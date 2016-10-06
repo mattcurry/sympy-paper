@@ -17,6 +17,7 @@ def replace_inputs(diffname, files):
     for f in files:
         fbase, _ = os.path.splitext(f)
         s = s.replace('\\input{' + fbase + '}', '\\input{' + fbase + '-diff}')
+        s = s.replace('\\input{' + f + '}', '\\input{' + fbase + '-diff}')
     with open(diffname, 'w') as fh:
         fh.write(s)
 
