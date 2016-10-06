@@ -12,7 +12,7 @@ diff: paper-diff.pdf supplement-diff.pdf
 paper-diff.tex: supplement.pdf paper.pdf diff.xsh
 	./diff.xsh PeerJ-version-3
 
-supplement-diff.pdf: paper-diff.tex
+supplement-diff.pdf: paper-diff.tex supplement-diff.bbl
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
 	pdflatex -shell-escape --halt-on-error supplement-diff.tex
