@@ -44,7 +44,7 @@ def difftex(old):
             touch @(oldname)
         else:
             git show @(oldspec) > @(oldname)
-        latexdiff @(oldname) @(f) > @(diffname)
+        latexdiff -c "PICTUREENV=(?:picture|DIFnomarkup|lstlisting)[\w\d*@]*" @(oldname) @(f) > @(diffname)
         replace_inputs(diffname, files)
 
     cp authors.tex authors-diff.tex
