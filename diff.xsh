@@ -28,20 +28,28 @@ def difftex(old):
         'authors.tex',
         'coverletter.tex',
         'rebuttal.tex',
+        }
+    new_files = {
         'assumptions.tex',
         'basic_usage.tex',
-        # 'projects_that_depend_on_sympy.tex',
+        'projects_that_depend_on_sympy.tex',
         }
+    deleted_files = {
+        'acknowledgements.tex',
+        }
+    files |= deleted_files
     for f in files:
         print('diffing ' + f)
         fbase, fext = os.path.splitext(f)
         oldspec = old + ':' + f
         oldname = '/tmp/{0}-{1}{2}'.format(fbase, old, fext)
         diffname = '{0}-diff{1}'.format(fbase, fext)
-        if f == 'projects_that_depend_on_sympy.tex':
+        if f in new_files:
             touch @(oldname)
         else:
             git show @(oldspec) > @(oldname)
+        if f in deleted_files:
+            touch @(f)
         latexdiff @(oldname) @(f) > @(diffname)
         replace_inputs(diffname, files)
 
