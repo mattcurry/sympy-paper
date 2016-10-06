@@ -39,7 +39,7 @@ mv ../supplement-diff.pdf ${namediffsupplement}
 git add ${name}
 git add ${namesupplement}
 git add ${namediff}
-git add ${namesupplementdiff}
+git add ${namediffsupplement}
 git commit -m "${msg} - [skip ci]."
 
 PUSH_COUNTER=0
