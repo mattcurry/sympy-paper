@@ -29,7 +29,7 @@ def difftex(old):
         'rebuttal.tex',
         'assumptions.tex',
         'basic_usage.tex',
-        'projects_that_depend_on_sympy.tex',
+        # 'projects_that_depend_on_sympy.tex',
         }
     for f in files:
         print('diffing ' + f)
@@ -37,7 +37,10 @@ def difftex(old):
         oldspec = old + ':' + f
         oldname = '/tmp/{0}-{1}{2}'.format(fbase, old, fext)
         diffname = '{0}-diff{1}'.format(fbase, fext)
-        git show @(oldspec) > @(oldname)
+        if f == 'projects_that_depend_on_sympy.tex':
+            touch @(oldname)
+        else:
+            git show @(oldspec) > @(oldname)
         latexdiff @(oldname) @(f) > @(diffname)
         replace_inputs(diffname, files)
 
