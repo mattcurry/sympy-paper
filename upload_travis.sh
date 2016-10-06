@@ -28,7 +28,7 @@ else
     export name=paper-${TRAVIS_PULL_REQUEST}.pdf
     export namesupplement=paper-${TRAVIS_PULL_REQUEST}-supplement.pdf
     export namediff=paper-diff-${TRAVIS_PULL_REQUEST}.pdf
-    export namediffsupplement=paper-diff-${TRAVIS_REQUEST}-supplement.pdf
+    export namediffsupplement=paper-diff-${TRAVIS_PULL_REQUEST}-supplement.pdf
     export msg="Upload for sympy/sympy-paper#${TRAVIS_PULL_REQUEST} - ${commit_id}"
 fi
 
