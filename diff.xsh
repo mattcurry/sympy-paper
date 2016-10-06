@@ -61,14 +61,22 @@ def difftex(old):
     cd @(cwd)
 
     latexdiff @(os.path.join(cwd, 'paper-' + old + '.bbl')) paper.bbl > paper-diff.bbl
-    # latexdiff @(os.path.join(cwd, 'supplement-' + old + '.bbl')) supplement.bbl > supplement-diff.bbl
-    latexdiff @(os.path.join(cwd, 'supplement' + '.bbl')) supplement.bbl > supplement-diff.bbl
+    latexdiff @(os.path.join(cwd, 'supplement-' + old + '.bbl')) supplement.bbl > supplement-diff.bbl
+    # latexdiff @(os.path.join(cwd, 'supplement' + '.bbl')) supplement.bbl > supplement-diff.bbl
 
 def fixes():
     with open('comparison_with_mma-diff.tex') as f:
         text = f.read()
     with open('comparison_with_mma-diff.tex', 'w') as f:
         f.write(text.replace('\\PAR', ''))
+
+    with open('supplement-diff.bbl') as f:
+        text = f.read()
+    with open('supplement-diff.bbl', 'w') as f:
+        f.write(text.replace(r'\DIFdelbegin %DIFDELCMD < \bibitem[Abramowitz and Stegun, 1964]{Abramowitz1964handbook}',
+r'''\DIFdelbegin %DIFDELCMD <
+\bibitem[Abramowitz and Stegun, 1964]{Abramowitz1964handbook}'''))
+
 
 def main(args=None):
     parser = ArgumentParser('diff')
