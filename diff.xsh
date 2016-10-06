@@ -7,6 +7,10 @@ from argparse import ArgumentParser
 
 $RAISE_SUBPROC_ERROR = True
 
+# Uncomment this for debugging
+
+# trace on
+
 def replace_inputs(diffname, files):
     with open(diffname, 'r') as fh:
         s = fh.read()
