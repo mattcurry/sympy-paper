@@ -1,6 +1,6 @@
 all: authors.tex pprint.pdf paper.pdf supplement.pdf rebuttal.pdf
 
-paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex assumptions.tex basic_usage.tex simplification.tex numerics.tex domain_specific.tex projects_that_depend_on_sympy.tex conclusion_and_future_work.tex siamart0216_uppercase_fix.tex pprint.pdf pprint.tex printers.tex calculus.tex matrices.tex solvers.tex images/fig1-circuitplot-qft.pdf paper.bib
+paper.pdf: paper.tex authors.tex introduction.tex architecture.tex features.tex assumptions.tex basic_usage.tex simplification.tex numerics.tex domain_specific.tex projects_that_depend_on_sympy.tex conclusion_and_future_work.tex siamart0216_uppercase_fix.tex pprint.pdf pprint.tex printers.tex calculus.tex matrices.tex solvers.tex images/fig1-circuitplot-qft.pdf paper.bib wlpeerj.cls
 	pdflatex -shell-escape --halt-on-error paper.tex
 	bibtex paper.aux
 	pdflatex -shell-escape --halt-on-error paper.tex
@@ -22,7 +22,7 @@ paper-diff.pdf: paper-diff.tex
 	pdflatex -shell-escape --halt-on-error paper-diff.tex
 	pdflatex -shell-escape --halt-on-error paper-diff.tex
 
-supplement.pdf: categories.tex comparison_with_mma.tex diophantine.tex examples.tex gamma.tex gruntz.tex logic.tex nsimplify.tex polys.tex series.tex sets.tex stats.tex supplement.tex tensors.tex paper.bib images/supp-fig2-integral_steps.png
+supplement.pdf: categories.tex comparison_with_mma.tex diophantine.tex examples.tex gamma.tex gruntz.tex logic.tex nsimplify.tex polys.tex series.tex sets.tex stats.tex supplement.tex tensors.tex paper.bib images/supp-fig2-integral_steps.png wlpeerj.cls
 	pdflatex -shell-escape --halt-on-error supplement.tex
 	bibtex supplement
 	pdflatex -shell-escape --halt-on-error supplement.tex
